@@ -1,4 +1,15 @@
-<?php include 'header.php'; ?>
+<?php 
+require_once 'db.php'; 
+include 'header.php'; 
+
+// Fetch all gallery items
+try {
+    $stmt = $db->query("SELECT * FROM gallery ORDER BY date_created DESC");
+    $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (Exception $e) {
+    $items = [];
+}
+?>
 <!-- Include the global premium CSS -->
 <link rel="stylesheet" href="assets/css/premium-theme.css">
 
@@ -27,48 +38,32 @@
         <div class="container position-relative z-index-common">
             <div class="row gy-4">
                 
-                <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6 fade-up delay-100">
-                    <div class="glass-card h-100 overflow-hidden d-flex flex-column" style="padding: 0; border: 1px solid rgba(255,255,255,0.05);">
-                        <div class="gallery-img-wrapper" style="overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <img src="assets/topology.png" alt="Data Topology Diagram" class="w-100" style="object-fit: cover; height: 250px; filter: contrast(120%) brightness(80%) hue-rotate(180deg) sepia(20%) saturate(150%); transition: transform 0.4s ease;">
-                        </div>
-                        <div class="p-4 flex-grow-1">
-                            <h3 class="box-title text-white mb-2" style="font-size: 1.25rem;">Network Topology Schema</h3>
-                            <p class="sidebar-text mb-0" style="font-family: 'Space Grotesk', monospace; font-size: 0.85rem; color: #60a5fa;">DIAG // 01 - Zero-Trust Segmented Architecture</p>
-                        </div>
+                <?php if (empty($items)): ?>
+                    <div class="col-12 text-center py-5">
+                        <i class="fas fa-images fa-3x mb-3 text-white-50"></i>
+                        <p class="text-white-50">No operational schemas indexed. Check back later.</p>
                     </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6 fade-up delay-200">
-                    <div class="glass-card h-100 overflow-hidden d-flex flex-column" style="padding: 0; border: 1px solid rgba(255,255,255,0.05);">
-                        <div class="gallery-img-wrapper" style="overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <img src="assets/dashboard.png" alt="SOC Dashboard" class="w-100" style="object-fit: cover; height: 250px; filter: contrast(120%) brightness(80%) hue-rotate(180deg) sepia(20%) saturate(150%); transition: transform 0.4s ease;">
+                <?php else: ?>
+                    <?php foreach ($items as $index => $item): ?>
+                        <!-- Dynamic Card -->
+                        <div class="col-lg-4 col-md-6 fade-up" style="animation-delay: <?php echo ($index + 1) * 100; ?>ms;">
+                            <div class="glass-card h-100 overflow-hidden d-flex flex-column" style="padding: 0; border: 1px solid rgba(255,255,255,0.05);">
+                                <div class="gallery-img-wrapper" style="overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <img src="<?php echo htmlspecialchars($item['image']); ?>" alt="<?php echo htmlspecialchars($item['title']); ?>" class="w-100" style="object-fit: cover; height: 250px; filter: contrast(120%) brightness(80%) hue-rotate(180deg) sepia(20%) saturate(150%); transition: transform 0.4s ease;">
+                                </div>
+                                <div class="p-4 flex-grow-1">
+                                    <h3 class="box-title text-white mb-2" style="font-size: 1.25rem;"><?php echo htmlspecialchars($item['title']); ?></h3>
+                                    <p class="sidebar-text mb-0" style="font-family: 'Space Grotesk', monospace; font-size: 0.85rem; color: #60a5fa;"><?php echo htmlspecialchars($item['label']); ?></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="p-4 flex-grow-1">
-                            <h3 class="box-title text-white mb-2" style="font-size: 1.25rem;">SOC Global Dashboard</h3>
-                            <p class="sidebar-text mb-0" style="font-family: 'Space Grotesk', monospace; font-size: 0.85rem; color: #60a5fa;">DIAG // 02 - Real-Time Threat Hunting Interface</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6 fade-up delay-300">
-                    <div class="glass-card h-100 overflow-hidden d-flex flex-column" style="padding: 0; border: 1px solid rgba(255,255,255,0.05);">
-                        <div class="gallery-img-wrapper" style="overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <img src="assets/encryption.png" alt="Encrypted Data Stream" class="w-100" style="object-fit: cover; height: 250px; filter: contrast(120%) brightness(80%) hue-rotate(180deg) sepia(20%) saturate(150%); transition: transform 0.4s ease;">
-                        </div>
-                        <div class="p-4 flex-grow-1">
-                            <h3 class="box-title text-white mb-2" style="font-size: 1.25rem;">Data Stream Encryption</h3>
-                            <p class="sidebar-text mb-0" style="font-family: 'Space Grotesk', monospace; font-size: 0.85rem; color: #60a5fa;">DIAG // 03 - TLS 1.3 Payload Tunneling</p>
-                        </div>
-                    </div>
-                </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+                
             </div>
             
             <!-- CLASSIFIED NOTICE BANNER -->
-            <div class="mt-5 fade-up delay-400">
+            <div class="mt-5 fade-up">
                 <div class="emergency-card" style="padding: 30px; border-radius: 12px; text-align: center;">
                     <div class="mb-3">
                         <i class="fas fa-lock" style="font-size: 2rem; color: #ef4444; filter: drop-shadow(0 0 10px rgba(239,68,68,0.5));"></i>
@@ -86,7 +81,8 @@
 <style>
 /* Add a smooth zoom on hover for the gallery images */
 .glass-card:hover .gallery-img-wrapper img {
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
+    filter: contrast(125%) brightness(95%) hue-rotate(180deg) !important;
 }
 </style>
 

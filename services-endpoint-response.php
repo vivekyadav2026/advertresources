@@ -204,11 +204,6 @@
                     <span style="color: #E0009B; font-weight: 600;">Endpoint Detection & Response</span>
                 </div>
                 
-                <span class="detail-status-tag mb-4">
-                    <span class="detail-pulse-dot"></span>
-                    CAPABILITY // 13 ACTIVE
-                </span>
-                
                 <h1 class="sec-title text-white mb-3" style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; background: linear-gradient(135deg, #ffffff 40%, #E0009B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Endpoint Detection and Response (EDR)</h1>
                 <p class="sec-text text-white-50 mx-auto" style="max-width: 700px; font-size: 1.1rem; line-height: 1.6;">
                     Proactively detect, investigate, and respond to advanced threats targeting your endpoints. Our EDR solution.

@@ -1860,6 +1860,371 @@
         </div>
       </div>
     </section>
+
+    <!-- ============================================ -->
+    <!-- LIVE CYBER WARFARE TELEMETRY SECTION -->
+    <!-- ============================================ -->
+    <style>
+    #cyber-telemetry-sec {
+        background-color: #050B18;
+        padding: 100px 0;
+        position: relative;
+        overflow: hidden;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        z-index: 2;
+    }
+    
+    .console-box {
+        background: rgba(3, 8, 20, 0.95);
+        border: 1px solid rgba(37, 99, 235, 0.3);
+        border-radius: 12px;
+        box-shadow: 0 0 25px rgba(37, 99, 235, 0.15), inset 0 0 15px rgba(0, 0, 0, 0.8);
+        overflow: hidden;
+        font-family: 'Space Grotesk', monospace;
+        height: 420px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .console-header {
+        background: rgba(15, 23, 42, 0.9);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 12px 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .console-dots {
+        display: flex;
+        gap: 6px;
+    }
+    
+    .console-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+    .console-dot.red { background-color: #ef4444; }
+    .console-dot.yellow { background-color: #eab308; }
+    .console-dot.green { background-color: #22c55e; }
+    
+    .console-title {
+        font-size: 0.8rem;
+        color: #94a3b8;
+        letter-spacing: 1px;
+    }
+    
+    .console-body {
+        padding: 20px;
+        flex-grow: 1;
+        overflow-y: auto;
+        font-size: 0.85rem;
+        line-height: 1.6;
+        color: #10b981; /* Matrix green */
+    }
+    
+    .console-body::-webkit-scrollbar {
+        width: 5px;
+    }
+    .console-body::-webkit-scrollbar-thumb {
+        background: rgba(37, 99, 235, 0.3);
+        border-radius: 10px;
+    }
+    
+    .console-line {
+        margin-bottom: 8px;
+        opacity: 0;
+        animation: consoleFadeIn 0.3s forwards;
+    }
+    
+    @keyframes consoleFadeIn {
+        to { opacity: 1; }
+    }
+    
+    .tag-danger { color: #f43f5e; font-weight: bold; }
+    .tag-warning { color: #f59e0b; font-weight: bold; }
+    .tag-success { color: #10b981; font-weight: bold; }
+    .tag-info { color: #3b82f6; font-weight: bold; }
+    
+    /* Radar Tracking Box */
+    .radar-box {
+        background: rgba(15, 23, 42, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(12px);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .radar-container {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 2px solid rgba(224, 0, 155, 0.2);
+        margin: 0 auto 25px;
+        background: radial-gradient(circle, rgba(224, 0, 155, 0.05) 0%, transparent 70%);
+        overflow: hidden;
+    }
+    
+    .radar-grid {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+    }
+    .radar-grid::before {
+        content: '';
+        position: absolute;
+        inset: 20px;
+        border: 1px dashed rgba(224, 0, 155, 0.15);
+        border-radius: 50%;
+    }
+    .radar-grid::after {
+        content: '';
+        position: absolute;
+        inset: 50px;
+        border: 1px dashed rgba(224, 0, 155, 0.15);
+        border-radius: 50%;
+    }
+    
+    .radar-crosshair-x {
+        position: absolute;
+        top: 50%; left: 0; right: 0;
+        height: 1px;
+        background: rgba(224, 0, 155, 0.15);
+    }
+    .radar-crosshair-y {
+        position: absolute;
+        left: 50%; top: 0; bottom: 0;
+        width: 1px;
+        background: rgba(224, 0, 155, 0.15);
+    }
+    
+    .radar-sweep {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: conic-gradient(from 0deg, rgba(224, 0, 155, 0.3) 0deg, transparent 90deg, transparent 360deg);
+        border-radius: 50%;
+        animation: radarSweepAnim 4s linear infinite;
+        transform-origin: 50% 50%;
+    }
+    
+    @keyframes radarSweepAnim {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    
+    /* Pulsing Threat Targets on Radar */
+    .threat-dot {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #f43f5e;
+        box-shadow: 0 0 10px #f43f5e;
+        opacity: 0;
+    }
+    
+    .threat-dot.d1 { top: 30%; left: 40%; animation: threatPulse 3s infinite 0.5s; }
+    .threat-dot.d2 { top: 60%; left: 70%; animation: threatPulse 3s infinite 1.2s; }
+    .threat-dot.d3 { top: 20%; left: 80%; animation: threatPulse 3s infinite 2.1s; }
+    .threat-dot.d4 { top: 75%; left: 25%; animation: threatPulse 3s infinite 2.8s; }
+    
+    @keyframes threatPulse {
+        0% { opacity: 0; transform: scale(0.5); }
+        40% { opacity: 1; transform: scale(1); }
+        70% { opacity: 0.2; }
+        100% { opacity: 0; }
+    }
+    
+    .threat-metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    .threat-metric-item {
+        background: rgba(5, 11, 24, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        padding: 15px;
+    }
+    
+    .threat-metric-item h4 {
+        font-size: 0.8rem;
+        color: #94a3b8;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        letter-spacing: 0.5px;
+    }
+    .threat-metric-item p {
+        font-family: 'Space Grotesk', monospace;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0;
+    }
+    </style>
+
+    <section id="cyber-telemetry-sec">
+      <div class="container">
+        <div class="row justify-content-center align-items-center mb-50">
+          <div class="col-xl-10 text-center">
+            <span class="sub-title style2" style="color: #E0009B; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700;">[ LIVE CYBER COMM SECURITY CONTROL ]</span>
+            <h2 class="sec-title text-white mt-2" style="font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 800;">Real-Time Intrusion Telemetry</h2>
+            <p class="sec-text mx-auto" style="max-width: 600px;">
+                Visualizing threat vector interceptions, payload containment audits, and compliance shielding live from our automated SOC operations console.
+            </p>
+          </div>
+        </div>
+        
+        <div class="row gy-4 align-items-stretch">
+            <!-- Left Console Screen -->
+            <div class="col-lg-7">
+                <div class="console-box">
+                    <div class="console-header">
+                        <div class="console-dots">
+                            <span class="console-dot red"></span>
+                            <span class="console-dot yellow"></span>
+                            <span class="console-dot green"></span>
+                        </div>
+                        <span class="console-title"><i class="fas fa-terminal"></i> security-threats-monitor.log</span>
+                        <span style="font-size: 0.75rem; color: #10b981; animation: pulse 1s infinite;"><i class="fas fa-circle"></i> SIMULATOR ACTIVE</span>
+                    </div>
+                    <div class="console-body" id="threatConsole">
+                        <div class="console-line"><span class="tag-info">[SYSTEM]</span> Command telemetry daemon connection handshake established.</div>
+                        <div class="console-line"><span class="tag-info">[SYSTEM]</span> Mapping active zero-trust perimeter nodes...</div>
+                        <div class="console-line"><span class="tag-success">[SHIELD]</span> Firewall routing protocols fully established on all compliance ports.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Radar Metrics -->
+            <div class="col-lg-5">
+                <div class="radar-box">
+                    <div class="text-center">
+                        <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8; display: block; margin-bottom: 15px;">Target Vector Radar Sweep</span>
+                        <div class="radar-container">
+                            <div class="radar-grid"></div>
+                            <div class="radar-crosshair-x"></div>
+                            <div class="radar-crosshair-y"></div>
+                            <div class="radar-sweep"></div>
+                            <!-- threat node indicators -->
+                            <div class="threat-dot d1"></div>
+                            <div class="threat-dot d2"></div>
+                            <div class="threat-dot d3"></div>
+                            <div class="threat-dot d4"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="threat-metrics">
+                        <div class="threat-metric-item">
+                            <h4>Attacks Intercepted</h4>
+                            <p id="totalAttacksCount" style="color: #E0009B;">5,219,842</p>
+                        </div>
+                        <div class="threat-metric-item">
+                            <h4>Threat Level</h4>
+                            <p style="color: #ef4444;"><i class="fas fa-warning"></i> ELEVATED</p>
+                        </div>
+                        <div class="threat-metric-item">
+                            <h4>Shield Efficiency</h4>
+                            <p style="color: #10b981;">99.998%</p>
+                        </div>
+                        <div class="threat-metric-item">
+                            <h4>Honeypot Decoys</h4>
+                            <p id="honeypotsDecoysCount" style="color: #60a5fa;">142 ACTIVE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const consoleBody = document.getElementById('threatConsole');
+        const totalAttacksNode = document.getElementById('totalAttacksCount');
+        const decoysNode = document.getElementById('honeypotsDecoysCount');
+        
+        if (consoleBody && totalAttacksNode && decoysNode) {
+            let attackCounter = 5219842;
+            let decoyCounter = 142;
+            
+            // Threat logs template arrays
+            const tags = [
+                '<span class="tag-danger">[BLOCKED]</span>', 
+                '<span class="tag-warning">[INTERCEPTED]</span>', 
+                '<span class="tag-success">[SECURED]</span>', 
+                '<span class="tag-danger">[IP_BANNED]</span>', 
+                '<span class="tag-info">[HONEYPOT]</span>'
+            ];
+            
+            const threats = [
+                'SSH Bruteforce attempt on Port 22 from ',
+                'SQL Injection attack payload routed on root directory from ',
+                'Cross-Site Scripting (XSS) exploit attempt detected from ',
+                'DDoS UDP Packet Flood volumetric surge mitigated from ',
+                'Detonated malicious ransomware zip payload in sandbox from ',
+                'Anomalous memory extraction packet sniff detected from ',
+                'Suspicious API endpoint sweep bypass query from ',
+                'LDAP Directory traversal lateral command attempt from '
+            ];
+            
+            const statusDetails = [
+                ' - payload blocked and isolated.',
+                ' - host routing to internal honeypot.',
+                ' - threat signature validated & blacklisted.',
+                ' - IP blocked via software-defined edge firewalls.',
+                ' - security keys revoked and isolated.'
+            ];
+            
+            // Random IP Generator
+            function getRandomIP() {
+                return `${Math.floor(Math.random() * 200) + 10}.${Math.floor(Math.random() * 250)}.${Math.floor(Math.random() * 250)}.${Math.floor(Math.random() * 254) + 1}`;
+            }
+            
+            // Dynamic Threat Log Generator
+            function generateThreatLog() {
+                const randomTag = tags[Math.floor(Math.random() * tags.length)];
+                const randomThreat = threats[Math.floor(Math.random() * threats.length)];
+                const ip = getRandomIP();
+                const details = statusDetails[Math.floor(Math.random() * statusDetails.length)];
+                
+                const time = new Date().toLocaleTimeString();
+                const logLine = `<div class="console-line">[${time}] ${randomTag} ${randomThreat}<strong>${ip}</strong>${details}</div>`;
+                
+                consoleBody.insertAdjacentHTML('beforeend', logLine);
+                
+                // Auto scroll console to bottom
+                consoleBody.scrollTop = consoleBody.scrollHeight;
+                
+                // Prune old console lines to keep RAM clean
+                if (consoleBody.children.length > 50) {
+                    consoleBody.removeChild(consoleBody.firstChild);
+                }
+                
+                // Increment UI stats counters
+                attackCounter += Math.floor(Math.random() * 3) + 1;
+                totalAttacksNode.innerText = attackCounter.toLocaleString();
+                
+                if (Math.random() > 0.85) {
+                    decoyCounter += 1;
+                    decoysNode.innerText = `${decoyCounter} ACTIVE`;
+                }
+            }
+            
+            // Run simulator
+            setInterval(generateThreatLog, 1200);
+        }
+    });
+    </script>
     <!-- Scoped Premium Why Choose Us Style Overrides -->
     <style>
     .premium-why-sec {

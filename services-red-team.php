@@ -206,11 +206,6 @@
                     <span style="color: #E0009B; font-weight: 600;">Red Team Assessment</span>
                 </div>
                 
-                <span class="detail-status-tag mb-4">
-                    <span class="detail-pulse-dot"></span>
-                    CAPABILITY // 03 ACTIVE
-                </span>
-                
                 <h1 class="sec-title text-white mb-3" style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; background: linear-gradient(135deg, #ffffff 40%, #E0009B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Red Team Assessment</h1>
                 <p class="sec-text text-white-50 mx-auto" style="max-width: 700px; font-size: 1.1rem; line-height: 1.6;">
                     Simulated advanced persistent threat (APT) attacks to comprehensively test detection and response capabilities.

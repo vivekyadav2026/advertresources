@@ -1,4 +1,43 @@
-<?php include 'header.php'; ?>
+<?php 
+require_once 'db.php'; 
+
+$success_msg = "";
+$error_msg = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = $_POST['name'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $company = $_POST['company'] ?? '';
+    $phone = $_POST['phone'] ?? '';
+    $country = $_POST['country'] ?? '';
+    $service = $_POST['service'] ?? '';
+    $budget = $_POST['budget'] ?? '';
+    $message = $_POST['message'] ?? '';
+    
+    if (!empty($name) && !empty($email) && !empty($message)) {
+        try {
+            $stmt = $db->prepare("INSERT INTO enquiries (name, email, company, phone, country, service, budget, message) VALUES (:name, :email, :company, :phone, :country, :service, :budget, :message)");
+            $stmt->execute([
+                ':name' => $name,
+                ':email' => $email,
+                ':company' => $company,
+                ':phone' => $phone,
+                ':country' => $country,
+                ':service' => $service,
+                ':budget' => $budget,
+                ':message' => $message
+            ]);
+            $success_msg = "Secure transmission initiated. Incident Response command center has received your request.";
+        } catch (Exception $e) {
+            $error_msg = "Transmission failure. Please try again. Info: " . $e->getMessage();
+        }
+    } else {
+        $error_msg = "Verification error. Please fill out all required fields.";
+    }
+}
+
+include 'header.php'; 
+?>
 <!-- Include the custom premium CSS specifically for this page -->
 <link rel="stylesheet" href="assets/css/premium-theme.css">
 
@@ -490,28 +529,28 @@
                                     <i class="fas fa-map-location-dot"></i>
                                 </div>
                                 <h5>Office Location</h5>
-                                <p>London, United Kingdom</p>
+                                <p><?php echo htmlspecialchars(getSetting('address', 'London, United Kingdom')); ?></p>
                             </div>
                             <div class="premium-contact-card">
                                 <div class="card-icon-wrap">
                                     <i class="fas fa-envelope-open-text"></i>
                                 </div>
                                 <h5>Business Email</h5>
-                                <a href="mailto:info@advertresources.com">info@advertresources.com</a>
+                                <a href="mailto:<?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?>"><?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?></a>
                             </div>
                             <div class="premium-contact-card">
                                 <div class="card-icon-wrap">
                                     <i class="fas fa-phone-volume"></i>
                                 </div>
                                 <h5>Phone Number</h5>
-                                <a href="tel:+4402012345678">+44 (0) 20 1234 5678</a>
+                                <a href="tel:<?php echo preg_replace('/[^0-9+]/', '', getSetting('phone1', '+165-5577-8749')); ?>"><?php echo htmlspecialchars(getSetting('phone1', '+165-5577-8749')); ?></a>
                             </div>
                             <div class="premium-contact-card">
                                 <div class="card-icon-wrap">
                                     <i class="fas fa-clock"></i>
                                 </div>
                                 <h5>Working Hours</h5>
-                                <p>Mon - Fri, 09:00 - 18:00 (GMT)</p>
+                                <p><?php echo htmlspecialchars(getSetting('hours', 'Mon - Sat: 10.00 AM - 4.00 PM')); ?></p>
                             </div>
                         </div>
                     </div>
@@ -521,7 +560,20 @@
                 <div class="col-lg-6 align-self-stretch fade-up delay-100">
                     <div class="premium-form-glass-card">
                         <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.5rem; color: #ffffff; margin-bottom: 24px;">Secure Transmission Protocol</h3>
-                        <form action="#" method="POST">
+                        
+                        <?php if (!empty($success_msg)): ?>
+                            <div style="background: rgba(6, 152, 69, 0.1); border: 1px solid rgba(6, 152, 69, 0.4); border-radius: 8px; color: #069845; padding: 15px; margin-bottom: 20px; font-size: 0.9rem; font-family: 'Space Grotesk', sans-serif;">
+                                <i class="fas fa-check-circle me-2"></i> <?php echo $success_msg; ?>
+                            </div>
+                        <?php endif; ?>
+                        
+                        <?php if (!empty($error_msg)): ?>
+                            <div style="background: rgba(224, 0, 155, 0.1); border: 1px solid rgba(224, 0, 155, 0.4); border-radius: 8px; color: #E0009B; padding: 15px; margin-bottom: 20px; font-size: 0.9rem; font-family: 'Space Grotesk', sans-serif;">
+                                <i class="fas fa-exclamation-circle me-2"></i> <?php echo $error_msg; ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <form action="" method="POST">
                             <div class="row">
                                 <div class="col-md-6 form-floating-custom">
                                     <i class="far fa-user input-icon"></i>

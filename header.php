@@ -1,3 +1,4 @@
+<?php require_once 'db.php'; ?>
 <!doctype html>
 <!-- saved from url=(0033)index.html -->
 <html class="no-js" lang="zxx">
@@ -103,6 +104,41 @@
     <link rel="stylesheet" href="./index/app.min.css" />
     <link rel="stylesheet" href="./index/fontawesome.min.css" />
     <link rel="stylesheet" href="./index/style.css" />
+    <style>
+      /* Services Dropdown 2-Column Layout Override */
+      @media (min-width: 992px) {
+          .main-menu ul li ul.sub-menu.services-two-column-menu {
+              width: 580px !important;
+              display: flex !important;
+              flex-wrap: wrap !important;
+              padding: 20px 10px !important;
+              background: #090f1d !important;
+              border: 1px solid rgba(224, 0, 155, 0.2) !important;
+              box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
+              border-radius: 12px !important;
+          }
+          .main-menu ul li ul.sub-menu.services-two-column-menu li {
+              width: 50% !important;
+              float: none !important;
+              display: inline-block !important;
+              border: none !important;
+          }
+          .main-menu ul li ul.sub-menu.services-two-column-menu li a {
+              padding: 8px 20px !important;
+              font-weight: 500 !important;
+              color: #cbd5e1 !important;
+              font-size: 0.9rem !important;
+              transition: all 0.3s !important;
+              display: block !important;
+          }
+          .main-menu ul li ul.sub-menu.services-two-column-menu li a:hover {
+              color: #E0009B !important;
+              background: rgba(224, 0, 155, 0.05) !important;
+              border-radius: 6px !important;
+              padding-left: 25px !important;
+          }
+      }
+    </style>
   </head>
   <body>
     <div class="ot-menu-wrapper">
@@ -124,9 +160,17 @@
                 <li><a href="services-red-team.php">Red Team Assessment</a></li>
                 <li><a href="services-digital-forensics.php">Digital Forensics</a></li>
                 <li><a href="services-managed-security.php">Managed Security (SOC)</a></li>
+                <li><a href="advanced-threat-detection.php">Advanced Threat Detection</a></li>
+                <li><a href="robust-data-protection.php">Robust Data Protection</a></li>
+                <li><a href="security-monitoring.php">Security Monitoring</a></li>
+                <li><a href="services-access-broker.php">Access Broker Security</a></li>
+                <li><a href="services-cloud-posture.php">Cloud Posture Control</a></li>
+                <li><a href="services-endpoint-response.php">Endpoint Response</a></li>
+                <li><a href="services-workload-protection.php">Workload Protection</a></li>
               </ul>
             </li>
             <li><a href="gallery.php">Gallery</a></li>
+            <li><a href="blog.php">Blog</a></li>
             <li><a href="contact-us.php">Contact Us</a></li>
           </ul>
         </div>
@@ -194,7 +238,7 @@
               <div class="media-body">
                 <h3 class="box-title">Location</h3>
                 <p class="box-text">
-                  London, United Kingdom
+                  <?php echo htmlspecialchars(getSetting('address', 'London, United Kingdom')); ?>
                 </p>
               </div>
             </div>
@@ -202,19 +246,19 @@
               <div class="box-icon"><i class="far fa-phone"></i></div>
               <div class="media-body">
                 <h3 class="box-title">Phone</h3>
-                <a class="box-link" href="tel:16555778749">+165-5577-8749,</a>
-                <a class="box-link" href="tel:16535647488">+165-3564-7488</a>
+                <a class="box-link" href="tel:<?php echo preg_replace('/[^0-9+]/', '', getSetting('phone1', '+165-5577-8749')); ?>"><?php echo htmlspecialchars(getSetting('phone1', '+165-5577-8749')); ?>,</a>
+                <a class="box-link" href="tel:<?php echo preg_replace('/[^0-9+]/', '', getSetting('phone2', '+165-3564-7488')); ?>"><?php echo htmlspecialchars(getSetting('phone2', '+165-3564-7488')); ?></a>
               </div>
             </div>
             <div class="info-box">
               <div class="box-icon"><i class="far fa-envelope"></i></div>
               <div class="media-body">
                 <h3 class="box-title">Email</h3>
-                <a class="box-link" href="mailto:info@advertresources.com"
-                  >info@advertresources.com,</a
+                <a class="box-link" href="mailto:<?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?>"
+                  ><?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?>,</a
                 >
-                <a class="box-link" href="mailto:contact-us@advertresources.com"
-                  >contact-us@advertresources.com</a
+                <a class="box-link" href="mailto:<?php echo htmlspecialchars(getSetting('email2', 'contact-us@advertresources.com')); ?>"
+                  ><?php echo htmlspecialchars(getSetting('email2', 'contact-us@advertresources.com')); ?></a
                 >
               </div>
             </div>
@@ -265,18 +309,18 @@
               <div class="header-links">
                 <ul>
                   <li>
-                    <i class="fal fa-map-marker-alt"></i
-                    ><a target="_blank" href="https://www.google.com/maps/"
-                      >London, United Kingdom</a
+                    <i class="fal fa-map-marker-alt"></i>
+                    <a target="_blank" href="https://www.google.com/maps/"
+                      ><?php echo htmlspecialchars(getSetting('address', 'London, United Kingdom')); ?></a
                     >
                   </li>
                   <li>
                     <i class="fal fa-phone"></i>
-                    <a href="tel:1655778749">+165-5577-8749</a>
+                    <a href="tel:<?php echo preg_replace('/[^0-9+]/', '', getSetting('phone1', '+165-5577-8749')); ?>"><?php echo htmlspecialchars(getSetting('phone1', '+165-5577-8749')); ?></a>
                   </li>
                   <li>
                     <i class="fal fa-envelope"></i>
-                    <a href="mailto:info@advertresources.com">info@advertresources.com</a>
+                    <a href="mailto:<?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?>"><?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?></a>
                   </li>
                 </ul>
               </div>
@@ -302,16 +346,24 @@
                     <li><a href="about-us.php">About us</a></li>
                     <li class="menu-item-has-children">
                       <a href="services.php">Services</a>
-                      <ul class="sub-menu">
+                      <ul class="sub-menu services-two-column-menu">
                         <li><a href="services-application-security.php">Application Security</a></li>
                         <li><a href="services-network-security.php">Network Security</a></li>
                         <li><a href="services-compliance-and-data-privacy.php">Compliance & Privacy</a></li>
                         <li><a href="services-red-team.php">Red Team Assessment</a></li>
                         <li><a href="services-digital-forensics.php">Digital Forensics</a></li>
                         <li><a href="services-managed-security.php">Managed Security (SOC)</a></li>
+                        <li><a href="advanced-threat-detection.php">Advanced Threat Detection</a></li>
+                        <li><a href="robust-data-protection.php">Robust Data Protection</a></li>
+                        <li><a href="security-monitoring.php">Security Monitoring</a></li>
+                        <li><a href="services-access-broker.php">Access Broker Security</a></li>
+                        <li><a href="services-cloud-posture.php">Cloud Posture Control</a></li>
+                        <li><a href="services-endpoint-response.php">Endpoint Response</a></li>
+                        <li><a href="services-workload-protection.php">Workload Protection</a></li>
                       </ul>
                     </li>
                     <li><a href="gallery.php">Gallery</a></li>
+                    <li><a href="blog.php">Blog</a></li>
                     <li><a href="contact-us.php">Contact Us</a></li>
                   </ul>
                 </nav>
