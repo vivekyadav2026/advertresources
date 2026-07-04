@@ -15,9 +15,9 @@
     <section class="hero-premium fade-up">
         <div class="container position-relative z-index-common">
             <div class="sec-badge">
-                <i class="fas fa-radar"></i> Operational Telemetry
+                <i class="fas fa-images"></i> Operational Gallery
             </div>
-            <h1>Visual Telemetry</h1>
+            <h1>Visual Gallery</h1>
             <p>A look into the structural topology and interfaces of our cybersecurity operations.</p>
         </div>
     </section>
@@ -74,7 +74,7 @@
                         <i class="fas fa-lock" style="font-size: 2rem; color: #ef4444; filter: drop-shadow(0 0 10px rgba(239,68,68,0.5));"></i>
                     </div>
                     <p class="mb-0 text-white" style="font-family: 'Space Grotesk', monospace; font-size: 0.95rem; letter-spacing: 1px; line-height: 1.6;">
-                        <span class="fw-bold" style="color: #fca5a5;">CONFIDENTIALITY NOTICE:</span> All live operational telemetry and client data topologies are strictly classified. Images above represent sanitized structural models for demonstration purposes only.
+                        <span class="fw-bold" style="color: #fca5a5;">CONFIDENTIALITY NOTICE:</span> All live operational systems and client data topologies are strictly classified. Images above represent sanitized structural models for demonstration purposes only.
                     </p>
                 </div>
             </div>

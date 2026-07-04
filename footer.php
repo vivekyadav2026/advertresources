@@ -24,186 +24,206 @@
             animation-fill-mode: both;
           "
         >
-          <div class="" id="contact-sec">
+          <style>
+          .footer-wrapper.space-top {
+              padding-top: 30px !important;
+          }
+          .footer-contact-sec {
+              position: relative;
+              z-index: 2;
+          }
+          .footer-contact-badge {
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
+              padding: 5px 12px;
+              background: rgba(224, 0, 155, 0.1);
+              border: 1px solid rgba(224, 0, 155, 0.3);
+              border-radius: 30px;
+              color: #fff;
+              font-size: 0.75rem;
+              font-weight: 600;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+              margin-bottom: 20px;
+          }
+          .footer-contact-pulse-dot {
+              width: 6px;
+              height: 6px;
+              background-color: #069845;
+              border-radius: 50%;
+              display: inline-block;
+              box-shadow: 0 0 10px #069845;
+              animation: activePulse 1.5s infinite;
+          }
+          .footer-contact-title {
+              font-size: clamp(1.8rem, 4vw, 2.5rem);
+              font-weight: 800;
+              line-height: 1.25;
+              color: #ffffff;
+              margin-bottom: 20px;
+              background: linear-gradient(135deg, #ffffff 40%, #E0009B 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+          }
+          .footer-contact-text {
+              font-size: 0.95rem;
+              line-height: 1.6;
+              color: #a9a9a9;
+              margin-bottom: 30px;
+          }
+          .footer-contact-card {
+              display: flex;
+              align-items: center;
+              gap: 15px;
+              padding: 15px 20px;
+              background: rgba(255, 255, 255, 0.03);
+              border: 1px solid rgba(255, 255, 255, 0.06);
+              border-radius: 12px;
+              backdrop-filter: blur(10px);
+              transition: all 0.3s ease;
+          }
+          .footer-contact-card:hover {
+              border-color: rgba(60, 114, 252, 0.3);
+              background: rgba(255, 255, 255, 0.05);
+              transform: translateY(-2px);
+          }
+          .footer-contact-card-icon {
+              width: 44px;
+              height: 44px;
+              border-radius: 50%;
+              background: rgba(60, 114, 252, 0.1);
+              border: 1px solid rgba(60, 114, 252, 0.2);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1.2rem;
+              color: #60a5fa;
+          }
+          .footer-glass-form {
+              background: rgba(15, 23, 42, 0.55);
+              border: 1px solid rgba(255, 255, 255, 0.08);
+              border-radius: 20px;
+              padding: 30px;
+              box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+              backdrop-filter: blur(15px);
+          }
+          .footer-glass-form .form-control,
+          .footer-glass-form .form-select {
+              background: rgba(0, 0, 0, 0.2) !important;
+              border: 1px solid rgba(255, 255, 255, 0.08) !important;
+              color: #ffffff !important;
+              border-radius: 8px !important;
+              padding-left: 42px !important;
+              height: 48px !important;
+              font-size: 0.9rem !important;
+              transition: all 0.3s ease !important;
+          }
+          .footer-glass-form textarea.form-control {
+              padding-left: 15px !important;
+              height: auto !important;
+          }
+          .footer-glass-form .form-control:focus,
+          .footer-glass-form .form-select:focus {
+              border-color: #3C72FC !important;
+              box-shadow: 0 0 10px rgba(60, 114, 252, 0.25) !important;
+              background: rgba(0, 0, 0, 0.3) !important;
+          }
+          .footer-glass-form .form-group {
+              position: relative;
+              margin-bottom: 20px;
+          }
+          .footer-glass-form .form-group i {
+              position: absolute;
+              left: 15px;
+              top: 50%;
+              transform: translateY(-50%);
+              color: rgba(255, 255, 255, 0.3);
+              font-size: 0.95rem;
+              transition: color 0.3s ease;
+          }
+          .footer-glass-form .form-group .form-control:focus + i,
+          .footer-glass-form .form-group .form-select:focus + i {
+              color: #3C72FC;
+          }
+          </style>
+
+          <div class="footer-contact-sec" id="contact-sec">
             <div class="container">
-              <div
-                class="row gy-40 gx-60 justify-content-center align-items-center"
-              >
+              <div class="row gy-40 gx-60 justify-content-center align-items-center">
+                <!-- Left side -->
                 <div class="col-lg-6">
                   <div class="title-area">
-                    <span
-                      class="sub-title style2"
-                      data-cue="slideInUp"
-                      data-show="true"
-                      style="
-                        animation-name: slideInUp;
-                        animation-duration: 900ms;
-                        animation-timing-function: ease;
-                        animation-delay: 0ms;
-                        animation-direction: normal;
-                        animation-fill-mode: both;
-                      "
-                      >Contact Us</span
-                    >
-                    <h2
-                      class="sec-title"
-                      data-cue="slideInUp"
-                      data-show="true"
-                      style="
-                        animation-name: slideInUp;
-                        animation-duration: 900ms;
-                        animation-timing-function: ease;
-                        animation-delay: 0ms;
-                        animation-direction: normal;
-                        animation-fill-mode: both;
-                      "
-                    >
-                      Ready to elevate your protection with tailored cloud
-                      security solutions?
+                    <span class="footer-contact-badge">
+                      <span class="footer-contact-pulse-dot"></span>
+                      Secure Link Active
+                    </span>
+                    <h2 class="footer-contact-title">
+                      Ready to elevate your protection with tailored cloud security solutions?
                     </h2>
-                    <p
-                      class="sec-text"
-                      data-cue="slideInUp"
-                      data-show="true"
-                      style="
-                        animation-name: slideInUp;
-                        animation-duration: 900ms;
-                        animation-timing-function: ease;
-                        animation-delay: 0ms;
-                        animation-direction: normal;
-                        animation-fill-mode: both;
-                      "
-                    >
-                      For over two decades, Advert Resource Ltd has been at the forefront of
-                      cybersecurity, adapting to the ever-evolving threat
-                      landscape. Our seasoned professionals have a deep
-                      understanding of the latest attack vectors.
+                    <p class="footer-contact-text">
+                      For over two decades, Advert Resource Ltd has been at the forefront of cybersecurity, adapting to the ever-evolving threat landscape. Our seasoned professionals have a deep understanding of the latest attack vectors.
                     </p>
                   </div>
-                  <div class="contact-feature-wrap">
-                    <div class="contact-feature-wrap-details">
-                      <div
-                        class="contact-feature style2"
-                        data-cue="slideInLeft"
-                        data-show="true"
-                        style="
-                          animation-name: slideInLeft;
-                          animation-duration: 900ms;
-                          animation-timing-function: ease;
-                          animation-delay: 0ms;
-                          animation-direction: normal;
-                          animation-fill-mode: both;
-                        "
-                      >
-                        <div class="box-icon">
+                  
+                  <div class="row g-3">
+                    <div class="col-sm-6">
+                      <div class="footer-contact-card">
+                        <div class="footer-contact-card-icon">
                           <i class="far fa-envelope"></i>
                         </div>
-                        <div class="media-body">
-                          <h4 class="box-title">Email</h4>
-                          <p class="box-text">
-                            <a href="mailto:info@advertresources.com">info@advertresources.com,</a
-                            ><a href="mailto:contact-us@advertresources.com"
-                              >contact-us@advertresources.com</a
-                            >
-                          </p>
+                        <div>
+                          <h6 class="text-white mb-1" style="font-size: 0.9rem; font-weight: 700;">Secure Email</h6>
+                          <a href="mailto:info@advertresources.com" style="font-size: 0.8rem; color: #a9a9a9; word-break: break-all;">info@advertresources.com</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="footer-contact-card">
+                        <div class="footer-contact-card-icon">
+                          <i class="far fa-shield-halved" style="color: #c084fc;"></i>
+                        </div>
+                        <div>
+                          <h6 class="text-white mb-1" style="font-size: 0.9rem; font-weight: 700;">Global Support</h6>
+                          <a href="mailto:contact-us@advertresources.com" style="font-size: 0.8rem; color: #a9a9a9; word-break: break-all;">contact-us@advertresources.com</a>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                <!-- Right side (Form) -->
                 <div class="col-lg-6">
-                  <div
-                    class="contact-form2"
-                    data-cue="slideInUp"
-                    data-show="true"
-                    style="
-                      animation-name: slideInUp;
-                      animation-duration: 900ms;
-                      animation-timing-function: ease;
-                      animation-delay: 0ms;
-                      animation-direction: normal;
-                      animation-fill-mode: both;
-                    "
-                  >
-                    <form
-                      action="index.htmlmail.php"
-                      method="POST"
-                      class="input-label ajax-contact"
-                    >
+                  <div class="footer-glass-form">
+                    <form action="index.htmlmail.php" method="POST" class="input-label ajax-contact">
                       <div class="row">
                         <div class="form-group col-sm-6">
-                          <input
-                            type="text"
-                            class="form-control style2"
-                            placeholder="Name"
-                            name="name"
-                            id="name"
-                            required=""
-                          />
-                          <i class="far fa-user text-theme"></i>
+                          <input type="text" class="form-control" placeholder="Name" name="name" id="name" required="" />
+                          <i class="far fa-user"></i>
                         </div>
                         <div class="form-group col-sm-6">
-                          <input
-                            type="email"
-                            class="form-control style2"
-                            placeholder="Email"
-                            name="email"
-                            id="email"
-                            required=""
-                          />
-                          <i class="far fa-envelope text-theme"></i>
+                          <input type="email" class="form-control" placeholder="Email" name="email" id="email" required="" />
+                          <i class="far fa-envelope"></i>
                         </div>
                         <div class="form-group col-sm-6">
-                          <input
-                            type="number"
-                            class="form-control style2"
-                            placeholder="Number"
-                            name="number"
-                            id="number"
-                            required=""
-                          />
-                          <i class="far fa-phone text-theme"></i>
+                          <input type="number" class="form-control" placeholder="Number" name="number" id="number" required="" />
+                          <i class="far fa-phone"></i>
                         </div>
                         <div class="form-group col-sm-6">
-                          <select
-                            name="subject"
-                            id="subject"
-                            class="form-select style2"
-                          >
-                            <option
-                              value=""
-                              disabled="disabled"
-                              selected="selected"
-                              hidden=""
-                            >
-                              Service
-                            </option>
-                            <option value="Security Consulting">
-                              Security Consulting
-                            </option>
-                            <option value="Security Training">
-                              Security Training
-                            </option>
+                          <select name="subject" id="subject" class="form-select">
+                            <option value="" disabled="disabled" selected="selected" hidden="">Service</option>
+                            <option value="Security Consulting">Security Consulting</option>
+                            <option value="Security Training">Security Training</option>
                             <option value="Data Security">Data Security</option>
-                            <option value="Security Assessment">
-                              Security Assessment
-                            </option>
+                            <option value="Security Assessment">Security Assessment</option>
                           </select>
-                          <i class="far fa-angle-down text-theme"></i>
+                          <i class="far fa-angle-down"></i>
                         </div>
                         <div class="form-group col-12">
-                          <textarea
-                            name="message"
-                            id="message"
-                            cols="30"
-                            placeholder="Write Message"
-                            rows="3"
-                            class="form-control style2"
-                            required=""
-                          ></textarea>
+                          <textarea name="message" id="message" cols="30" placeholder="Write Message" rows="3" class="form-control" required=""></textarea>
                         </div>
                         <div class="form-btn col-12 mt-10">
-                          <button class="ot-btn w-100">
+                          <button class="ot-btn w-100" style="min-height: 48px;">
                             Submit Now
                             <i class="far fa-long-arrow-right ms-2"></i>
                           </button>

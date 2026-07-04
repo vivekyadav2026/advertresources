@@ -201,19 +201,17 @@
                 <div class="banner-breadcrumbs mb-15" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #a9a9a9;">
                     <a href="index.php" style="color: #ffffff; opacity: 0.7; transition: opacity 0.3s;">Home</a> 
                     <span style="margin: 0 10px; opacity: 0.5;">/</span> 
-                    <a href="services.php" style="color: #ffffff; opacity: 0.7; transition: opacity 0.3s;">Services</a>
-                    <span style="margin: 0 10px; opacity: 0.5;">/</span> 
-                    <span style="color: #E0009B; font-weight: 600;">Application Security</span>
+                    <span style="color: #E0009B; font-weight: 600;">Cloud Security Posture Management</span>
                 </div>
                 
                 <span class="detail-status-tag mb-4">
                     <span class="detail-pulse-dot"></span>
-                    CAPABILITY // 01 ACTIVE
+                    CAPABILITY // 10 ACTIVE
                 </span>
                 
-                <h1 class="sec-title text-white mb-3" style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; background: linear-gradient(135deg, #ffffff 40%, #E0009B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Application Security</h1>
+                <h1 class="sec-title text-white mb-3" style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; background: linear-gradient(135deg, #ffffff 40%, #E0009B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Cloud Security Posture Management (CSPM)</h1>
                 <p class="sec-text text-white-50 mx-auto" style="max-width: 700px; font-size: 1.1rem; line-height: 1.6;">
-                    Harden your internal and external software infrastructure against injection, XSS, and critical logic flaws.
+                    Continuously assess your cloud environments for misconfigurations, vulnerabilities, and deviations from security best practices.
                 </p>
             </div>
         </div>
@@ -226,36 +224,36 @@
                 <!-- Left: Content Card -->
                 <div class="col-lg-8">
                     <div class="detail-content-card">
-                        <h2 class="sec-title mb-4" style="font-size: 1.8rem; font-weight: 800;">Secure Code Architecture</h2>
+                        <h2 class="sec-title mb-4" style="font-size: 1.8rem; font-weight: 800;">Multi-Cloud Guardrails & Visibility</h2>
                         <p class="sec-text text-white-50 mb-3" style="font-size: 1.05rem; line-height: 1.75;">
-                            Modern applications are the primary vector for advanced persistent threats. Our application security protocols dive deep into the source code and runtime environments of your software, identifying vulnerabilities before they can be exploited in production.
+                            Securing modern multi-cloud deployments requires unified visibility. Advert Resource Ltd configures automated CSPM guardrails that monitor AWS, Google Cloud, and Microsoft Azure systems in a single telemetry console.
                         </p>
                         <p class="sec-text text-white-50 mb-5" style="font-size: 1.05rem; line-height: 1.75;">
-                            We deploy a hybrid approach of automated SAST/DAST tools alongside manual penetration testing by elite code auditors, ensuring comprehensive coverage against the OWASP Top 10 and zero-day vulnerabilities.
+                            By mapping assets to compliance baselines, our security scanner detects open database segments, overly broad IAM roles, and configuration drift, allowing your team to remediate vulnerabilities before exploitation.
                         </p>
 
                         <h3 class="sec-title mb-4" style="font-size: 1.4rem; font-weight: 800;">Deployment Scope</h3>
                         <div class="detail-check-list">
                             <ul>
                                 <li class="d-flex align-items-start gap-3">
-                                    <div class="detail-check-icon"><i class="fas fa-shield-halved"></i></div>
+                                    <div class="detail-check-icon"><i class="fas fa-route"></i></div>
                                     <div>
-                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">Static Analysis (SAST)</h5>
-                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Automated source code scanning integrated directly into your CI/CD pipeline.</p>
+                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">Compliance Alignment mapping</h5>
+                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Automatic alignment with CIS Benchmarks, PCI-DSS, SOC 2, and ISO 27001.</p>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-start gap-3">
                                     <div class="detail-check-icon"><i class="fas fa-radar"></i></div>
                                     <div>
-                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">Dynamic Analysis (DAST)</h5>
-                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Runtime vulnerability assessment mimicking real-world attacker behavior.</p>
+                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">Configuration Auditing</h5>
+                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Detecting exposed storage buckets, unencrypted volumes, and inactive accounts.</p>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-start gap-3">
-                                    <div class="detail-check-icon"><i class="fas fa-lock"></i></div>
+                                    <div class="detail-check-icon"><i class="fas fa-arrow-rotate-right"></i></div>
                                     <div>
-                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">API & Microservices Security</h5>
-                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Rigorous authentication and data authorization checks across interconnected systems.</p>
+                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">Drift Remediation</h5>
+                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Automated playbooks and alerting systems to close security configuration gaps instantly.</p>
                                     </div>
                                 </li>
                             </ul>
@@ -276,8 +274,8 @@
                         </a>
                     </div>
                     <div class="mt-4 text-center">
-                        <a href="services.php" class="detail-back-link">
-                            <i class="far fa-arrow-left"></i> Return to Capabilities
+                        <a href="index.php" class="detail-back-link">
+                            <i class="far fa-arrow-left"></i> Return Home
                         </a>
                     </div>
                 </div>

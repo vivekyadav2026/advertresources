@@ -126,7 +126,7 @@
                 <li><a href="services-managed-security.php">Managed Security (SOC)</a></li>
               </ul>
             </li>
-            <li><a href="gallery.php">Telemetry</a></li>
+            <li><a href="gallery.php">Gallery</a></li>
             <li><a href="contact-us.php">Contact Us</a></li>
           </ul>
         </div>
@@ -311,7 +311,7 @@
                         <li><a href="services-managed-security.php">Managed Security (SOC)</a></li>
                       </ul>
                     </li>
-                    <li><a href="gallery.php">Telemetry</a></li>
+                    <li><a href="gallery.php">Gallery</a></li>
                     <li><a href="contact-us.php">Contact Us</a></li>
                   </ul>
                 </nav>

@@ -22,6 +22,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 1b. Mobile Submenu Toggle Fix
+    const mobileMenuLinks = document.querySelectorAll('.ot-mobile-menu .ot-item-has-children > a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const parentLi = link.parentElement;
+            const submenu = link.nextElementSibling;
+            
+            if (submenu) {
+                parentLi.classList.toggle('ot-active');
+                if (submenu.style.display === 'none' || submenu.style.display === '') {
+                    submenu.style.display = 'block';
+                    submenu.classList.add('ot-open');
+                } else {
+                    submenu.style.display = 'none';
+                    submenu.classList.remove('ot-open');
+                }
+            }
+        });
+    });
+
     // 2. Intersection Observer for simple Fade-In (Not glowing tilt)
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {

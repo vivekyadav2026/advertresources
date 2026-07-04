@@ -2231,13 +2231,13 @@ textarea.is-invalid {
     text-align: center;
     color: var(--white-color);
     font-family: var(--title-font);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 1;
-    padding: 20px 26px;
-    min-width: 170px;
+    padding: 12px 24px;
+    min-width: 150px;
     border-radius: 50px;
-    min-height: 56px;
+    min-height: 46px;
     display: -webkit-inline-box;
     display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
@@ -2253,19 +2253,27 @@ textarea.is-invalid {
     background: -webkit-linear-gradient(120deg, var(--theme-color), var(--theme-color2), var(--theme-color)) no-repeat;
     background: linear-gradient(-30deg, var(--theme-color), var(--theme-color2), var(--theme-color)) no-repeat;
     background-size: 300%;
-    background-position: left center
+    background-position: left center;
+    box-shadow: 0 4px 15px rgba(60, 114, 252, 0.2);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .ot-btn i {
-    font-size: 0.94em
+    font-size: 0.94em;
+    transition: transform 0.3s ease;
 }
 
 .ot-btn:hover,
 .ot-btn.active {
     color: var(--white-color);
-    box-shadow: none;
     background-size: 320%;
-    background-position: right center
+    background-position: right center;
+    box-shadow: 0 8px 24px rgba(60, 114, 252, 0.45);
+    transform: translateY(-2px);
+}
+
+.ot-btn:hover i {
+    transform: translateX(3px);
 }
 
 .ot-btn:hover::before,
@@ -2278,14 +2286,15 @@ textarea.is-invalid {
     background: linear-gradient(-30deg, var(--theme-color2), var(--theme-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    z-index: 1
+    z-index: 1;
+    box-shadow: none;
 }
 
 .ot-btn.style-border:after {
     content: "";
     position: absolute;
     inset: 0;
-    padding: 2px;
+    padding: 1.5px;
     border-radius: inherit;
     background: -webkit-linear-gradient(120deg, var(--theme-color2), var(--theme-color) 80%);
     background: linear-gradient(-30deg, var(--theme-color2), var(--theme-color) 80%);
@@ -2313,7 +2322,8 @@ textarea.is-invalid {
 }
 
 .ot-btn.style-border:hover {
-    -webkit-text-fill-color: var(--white-color)
+    -webkit-text-fill-color: var(--white-color);
+    box-shadow: 0 8px 24px rgba(224, 0, 155, 0.3);
 }
 
 .ot-btn.style-border:hover:before {
@@ -2336,8 +2346,10 @@ textarea.is-invalid {
 }
 
 .ot-btn.btn-sm {
-    padding: 14.5px 25px;
-    min-width: 145px
+    padding: 9px 20px;
+    min-width: 120px;
+    min-height: 38px;
+    font-size: 13px;
 }
 
 .icon-btn {

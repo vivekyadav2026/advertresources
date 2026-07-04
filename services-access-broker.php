@@ -201,19 +201,17 @@
                 <div class="banner-breadcrumbs mb-15" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #a9a9a9;">
                     <a href="index.php" style="color: #ffffff; opacity: 0.7; transition: opacity 0.3s;">Home</a> 
                     <span style="margin: 0 10px; opacity: 0.5;">/</span> 
-                    <a href="services.php" style="color: #ffffff; opacity: 0.7; transition: opacity 0.3s;">Services</a>
-                    <span style="margin: 0 10px; opacity: 0.5;">/</span> 
-                    <span style="color: #E0009B; font-weight: 600;">Application Security</span>
+                    <span style="color: #E0009B; font-weight: 600;">Cloud Access Security Broker</span>
                 </div>
                 
                 <span class="detail-status-tag mb-4">
                     <span class="detail-pulse-dot"></span>
-                    CAPABILITY // 01 ACTIVE
+                    CAPABILITY // 12 ACTIVE
                 </span>
                 
-                <h1 class="sec-title text-white mb-3" style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; background: linear-gradient(135deg, #ffffff 40%, #E0009B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Application Security</h1>
+                <h1 class="sec-title text-white mb-3" style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; background: linear-gradient(135deg, #ffffff 40%, #E0009B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Cloud Access Security Broker (CASB)</h1>
                 <p class="sec-text text-white-50 mx-auto" style="max-width: 700px; font-size: 1.1rem; line-height: 1.6;">
-                    Harden your internal and external software infrastructure against injection, XSS, and critical logic flaws.
+                    Safeguard sensitive data shared with cloud applications by enforcing granular access controls, monitoring.
                 </p>
             </div>
         </div>
@@ -226,36 +224,36 @@
                 <!-- Left: Content Card -->
                 <div class="col-lg-8">
                     <div class="detail-content-card">
-                        <h2 class="sec-title mb-4" style="font-size: 1.8rem; font-weight: 800;">Secure Code Architecture</h2>
+                        <h2 class="sec-title mb-4" style="font-size: 1.8rem; font-weight: 800;">SaaS Security & Data Sovereignty</h2>
                         <p class="sec-text text-white-50 mb-3" style="font-size: 1.05rem; line-height: 1.75;">
-                            Modern applications are the primary vector for advanced persistent threats. Our application security protocols dive deep into the source code and runtime environments of your software, identifying vulnerabilities before they can be exploited in production.
+                            With data distributed across hundreds of third-party SaaS tools, perimeters are no longer defined by offices. Advert Resource Ltd integrates CASB policies that sit between users and cloud applications.
                         </p>
                         <p class="sec-text text-white-50 mb-5" style="font-size: 1.05rem; line-height: 1.75;">
-                            We deploy a hybrid approach of automated SAST/DAST tools alongside manual penetration testing by elite code auditors, ensuring comprehensive coverage against the OWASP Top 10 and zero-day vulnerabilities.
+                            By mapping corporate data streams, we prevent unauthorized downloads to personal machines, identify Shadow IT (unregulated software), and enforce active access restrictions across Google Workspace, Office 365, and Salesforce.
                         </p>
 
                         <h3 class="sec-title mb-4" style="font-size: 1.4rem; font-weight: 800;">Deployment Scope</h3>
                         <div class="detail-check-list">
                             <ul>
                                 <li class="d-flex align-items-start gap-3">
-                                    <div class="detail-check-icon"><i class="fas fa-shield-halved"></i></div>
+                                    <div class="detail-check-icon"><i class="fas fa-ghost"></i></div>
                                     <div>
-                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">Static Analysis (SAST)</h5>
-                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Automated source code scanning integrated directly into your CI/CD pipeline.</p>
+                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">Shadow IT Discovery</h5>
+                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Auditing firewall logs to identify and block unsafe third-party SaaS cloud applications.</p>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-start gap-3">
-                                    <div class="detail-check-icon"><i class="fas fa-radar"></i></div>
+                                    <div class="detail-check-icon"><i class="fas fa-file-export"></i></div>
                                     <div>
-                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">Dynamic Analysis (DAST)</h5>
-                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Runtime vulnerability assessment mimicking real-world attacker behavior.</p>
+                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">SaaS Data Loss Prevention</h5>
+                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Real-time scanning of files shared, uploaded, or synced within SaaS drives.</p>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-start gap-3">
-                                    <div class="detail-check-icon"><i class="fas fa-lock"></i></div>
+                                    <div class="detail-check-icon"><i class="fas fa-laptop-code"></i></div>
                                     <div>
-                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">API & Microservices Security</h5>
-                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Rigorous authentication and data authorization checks across interconnected systems.</p>
+                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">Device Profiling</h5>
+                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Enforcing that only corporate-managed devices can access enterprise SaaS resources.</p>
                                     </div>
                                 </li>
                             </ul>
@@ -276,8 +274,8 @@
                         </a>
                     </div>
                     <div class="mt-4 text-center">
-                        <a href="services.php" class="detail-back-link">
-                            <i class="far fa-arrow-left"></i> Return to Capabilities
+                        <a href="index.php" class="detail-back-link">
+                            <i class="far fa-arrow-left"></i> Return Home
                         </a>
                     </div>
                 </div>

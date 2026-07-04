@@ -201,19 +201,17 @@
                 <div class="banner-breadcrumbs mb-15" style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: #a9a9a9;">
                     <a href="index.php" style="color: #ffffff; opacity: 0.7; transition: opacity 0.3s;">Home</a> 
                     <span style="margin: 0 10px; opacity: 0.5;">/</span> 
-                    <a href="services.php" style="color: #ffffff; opacity: 0.7; transition: opacity 0.3s;">Services</a>
-                    <span style="margin: 0 10px; opacity: 0.5;">/</span> 
-                    <span style="color: #E0009B; font-weight: 600;">Application Security</span>
+                    <span style="color: #E0009B; font-weight: 600;">24/7 Security Monitoring</span>
                 </div>
                 
                 <span class="detail-status-tag mb-4">
                     <span class="detail-pulse-dot"></span>
-                    CAPABILITY // 01 ACTIVE
+                    CAPABILITY // 09 ACTIVE
                 </span>
                 
-                <h1 class="sec-title text-white mb-3" style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; background: linear-gradient(135deg, #ffffff 40%, #E0009B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Application Security</h1>
+                <h1 class="sec-title text-white mb-3" style="font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; background: linear-gradient(135deg, #ffffff 40%, #E0009B 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">24/7 Security Monitoring</h1>
                 <p class="sec-text text-white-50 mx-auto" style="max-width: 700px; font-size: 1.1rem; line-height: 1.6;">
-                    Harden your internal and external software infrastructure against injection, XSS, and critical logic flaws.
+                    Our team of security experts monitors your environment around the clock, detecting and responding to threats in real-time.
                 </p>
             </div>
         </div>
@@ -226,36 +224,36 @@
                 <!-- Left: Content Card -->
                 <div class="col-lg-8">
                     <div class="detail-content-card">
-                        <h2 class="sec-title mb-4" style="font-size: 1.8rem; font-weight: 800;">Secure Code Architecture</h2>
+                        <h2 class="sec-title mb-4" style="font-size: 1.8rem; font-weight: 800;">Continuous Operational Telemetry & Surveillance</h2>
                         <p class="sec-text text-white-50 mb-3" style="font-size: 1.05rem; line-height: 1.75;">
-                            Modern applications are the primary vector for advanced persistent threats. Our application security protocols dive deep into the source code and runtime environments of your software, identifying vulnerabilities before they can be exploited in production.
+                            Sophisticated cyber attacks rarely happen instantly. Threat actors spend weeks inside target networks conducting reconnaissance and seeking lateral pathways. Advert Resource Ltd provides around-the-clock Security Monitoring, shutting down threats before they propagate.
                         </p>
                         <p class="sec-text text-white-50 mb-5" style="font-size: 1.05rem; line-height: 1.75;">
-                            We deploy a hybrid approach of automated SAST/DAST tools alongside manual penetration testing by elite code auditors, ensuring comprehensive coverage against the OWASP Top 10 and zero-day vulnerabilities.
+                            By routing security event alerts from endpoints, cloud infrastructure, and network firewalls through a centralized SIEM pipeline, we ingest and analyze telemetry feeds to instantly spot anomalies, verify active risks, and execute swift eviction scripts.
                         </p>
 
                         <h3 class="sec-title mb-4" style="font-size: 1.4rem; font-weight: 800;">Deployment Scope</h3>
                         <div class="detail-check-list">
                             <ul>
                                 <li class="d-flex align-items-start gap-3">
-                                    <div class="detail-check-icon"><i class="fas fa-shield-halved"></i></div>
+                                    <div class="detail-check-icon"><i class="fas fa-eye"></i></div>
                                     <div>
-                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">Static Analysis (SAST)</h5>
-                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Automated source code scanning integrated directly into your CI/CD pipeline.</p>
+                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">Around-The-Clock SOC Surveillance</h5>
+                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Continuous monitoring by elite security analysts to protect data 24/7/365.</p>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-start gap-3">
-                                    <div class="detail-check-icon"><i class="fas fa-radar"></i></div>
+                                    <div class="detail-check-icon"><i class="fas fa-network-wired"></i></div>
                                     <div>
-                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">Dynamic Analysis (DAST)</h5>
-                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Runtime vulnerability assessment mimicking real-world attacker behavior.</p>
+                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">SIEM & Log Aggregation</h5>
+                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Correlating system authentications, file modifications, and network traffic metrics.</p>
                                     </div>
                                 </li>
                                 <li class="d-flex align-items-start gap-3">
-                                    <div class="detail-check-icon"><i class="fas fa-lock"></i></div>
+                                    <div class="detail-check-icon"><i class="fas fa-crosshairs"></i></div>
                                     <div>
-                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">API & Microservices Security</h5>
-                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Rigorous authentication and data authorization checks across interconnected systems.</p>
+                                        <h5 class="text-white mb-1" style="font-size: 1.05rem; font-weight: 700;">Threat Hunting Operations</h5>
+                                        <p class="m-0 text-white-50" style="font-size: 0.9rem; line-height: 1.5;">Proactive host scanning to discover stealthy persistence mechanisms and backdoor tunnels.</p>
                                     </div>
                                 </li>
                             </ul>
@@ -276,8 +274,8 @@
                         </a>
                     </div>
                     <div class="mt-4 text-center">
-                        <a href="services.php" class="detail-back-link">
-                            <i class="far fa-arrow-left"></i> Return to Capabilities
+                        <a href="index.php" class="detail-back-link">
+                            <i class="far fa-arrow-left"></i> Return Home
                         </a>
                     </div>
                 </div>

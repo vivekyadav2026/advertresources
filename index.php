@@ -119,16 +119,30 @@
               animation-fill-mode: both;
             "
           >
-            <div class="feature-card">
-              <div class="box-icon">
-                <img src="./index/feature-icon1-1.svg" alt="icon" />
+            <style>
+            .feature-card-link {
+                text-decoration: none;
+                display: block;
+                height: 100%;
+            }
+            .feature-card-link:hover .feature-card {
+                transform: translateY(-5px);
+                border-color: rgba(60, 114, 252, 0.3) !important;
+                box-shadow: 0 10px 25px rgba(60, 114, 252, 0.15) !important;
+            }
+            </style>
+            <a href="advanced-threat-detection.php" class="feature-card-link">
+              <div class="feature-card h-100" style="transition: all 0.3s ease;">
+                <div class="box-icon">
+                  <img src="./index/feature-icon1-1.svg" alt="icon" />
+                </div>
+                <h3 class="box-title text-white">Advanced Threat Detection</h3>
+                <p class="box-text text-white-50">
+                  Proactively identify and respond to emerging threats,
+                  safeguarding your critical assets from potential harm.
+                </p>
               </div>
-              <h3 class="box-title">Advanced Threat Detection</h3>
-              <p class="box-text">
-                Proactively identify and respond to emerging threats,
-                safeguarding your critical assets from potential harm.
-              </p>
-            </div>
+            </a>
           </div>
           <div
             class="col-lg-4"
@@ -143,16 +157,18 @@
               animation-fill-mode: both;
             "
           >
-            <div class="feature-card">
-              <div class="box-icon">
-                <img src="./index/feature-icon1-2.svg" alt="icon" />
+            <a href="robust-data-protection.php" class="feature-card-link">
+              <div class="feature-card h-100" style="transition: all 0.3s ease;">
+                <div class="box-icon">
+                  <img src="./index/feature-icon1-2.svg" alt="icon" />
+                </div>
+                <h3 class="box-title text-white">Robust Data Protection</h3>
+                <p class="box-text text-white-50">
+                  Safeguard your sensitive data with robust encryption, secure
+                  access controls, and data loss prevention measures.
+                </p>
               </div>
-              <h3 class="box-title">Robust Data Protection</h3>
-              <p class="box-text">
-                Safeguard your sensitive data with robust encryption, secure
-                access controls, and data loss prevention measures.
-              </p>
-            </div>
+            </a>
           </div>
           <div
             class="col-lg-4"
@@ -167,16 +183,18 @@
               animation-fill-mode: both;
             "
           >
-            <div class="feature-card">
-              <div class="box-icon">
-                <img src="./index/feature-icon1-3.svg" alt="icon" />
+            <a href="security-monitoring.php" class="feature-card-link">
+              <div class="feature-card h-100" style="transition: all 0.3s ease;">
+                <div class="box-icon">
+                  <img src="./index/feature-icon1-3.svg" alt="icon" />
+                </div>
+                <h3 class="box-title text-white">24/7 Security Monitoring</h3>
+                <p class="box-text text-white-50">
+                  Our team of security experts monitors your environment around
+                  the clock, detecting and responding to threats in real-time.
+                </p>
               </div>
-              <h3 class="box-title">24/7 Security Monitoring</h3>
-              <p class="box-text">
-                Our team of security experts monitors your environment around
-                the clock, detecting and responding to threats in real-time.
-              </p>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -347,6 +365,81 @@
         background-image: url(&quot;assets/img/bg/bg-wave-shape1.png&quot;);
       "
     >
+      <!-- Mobile Layout & Click Override Styles -->
+      <style>
+      @media (max-width: 991px) {
+          #service-sec {
+              background: #000916 !important;
+              padding: 60px 0 !important;
+          }
+          #service-sec .service-list-wrap {
+              margin-bottom: 20px;
+          }
+          #service-sec .service-list {
+              display: block !important;
+              background: rgba(15, 23, 42, 0.55) !important;
+              border: 1px solid rgba(255, 255, 255, 0.08) !important;
+              border-radius: 16px !important;
+              padding: 24px !important;
+              margin: 0 !important;
+              text-align: left !important;
+              position: relative !important;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+          }
+          #service-sec .service-list .box-img {
+              display: none !important; /* Hide massive images on mobile for a clean layout */
+          }
+          #service-sec .service-list .box-number {
+              font-size: 1.1rem !important;
+              color: #E0009B !important;
+              font-weight: 700 !important;
+              margin-bottom: 10px !important;
+              display: inline-block !important;
+              order: unset !important;
+          }
+          #service-sec .service-list .box-content {
+              max-width: 100% !important;
+              margin: 0 0 15px 0 !important;
+              order: unset !important;
+          }
+          #service-sec .service-list .box-title {
+              font-size: 1.3rem !important;
+              font-weight: 800 !important;
+              margin-bottom: 10px !important;
+              line-height: 1.3 !important;
+          }
+          #service-sec .service-list .box-title a {
+              color: #ffffff !important;
+              text-decoration: none !important;
+          }
+          #service-sec .service-list .box-text {
+              font-size: 0.95rem !important;
+              line-height: 1.6 !important;
+              color: #a9a9a9 !important;
+              margin: 0 !important;
+          }
+          #service-sec .service-list .btn-wrap {
+              display: block !important;
+              margin-top: 15px !important;
+              text-align: left !important;
+              order: unset !important;
+              align-self: unset !important;
+          }
+          #service-sec .service-list .btn-wrap .ot-btn {
+              width: auto !important;
+              display: inline-flex !important;
+              padding: 10px 20px !important;
+              font-size: 0.85rem !important;
+              min-height: auto !important;
+              background: linear-gradient(135deg, #3C72FC 0%, #E0009B 100%) !important;
+              border: none !important;
+              color: #ffffff !important;
+              -webkit-background-clip: border-box !important;
+              -webkit-text-fill-color: #ffffff !important;
+              border-radius: 30px !important;
+          }
+      }
+      </style>
       <div class="container">
         <div class="title-area text-center">
           <span
@@ -376,10 +469,11 @@
               animation-fill-mode: both;
             "
           >
-            Cloud Security Solutions
+            All-In-One Cyber Security Services
           </h2>
         </div>
         <div class="row justify-content-center">
+          <!-- 01: CSPM -->
           <div
             class="col-12 service-list-wrap"
             data-cue="slideInUp"
@@ -397,14 +491,12 @@
               <div class="box-number">01</div>
               <div class="box-content">
                 <h3 class="box-title">
-                  <a href="index.htmlservice-details.php"
+                  <a href="services-cloud-posture.php"
                     >Cloud Security Posture Management</a
                   >
                 </h3>
                 <p class="box-text">
-                  Continuously assess your cloud environments for
-                  misconfigurations, vulnerabilities, and deviations from
-                  security best practices.
+                  Continuously assess your cloud environments for misconfigurations, vulnerabilities, and compliance drifts.
                 </p>
               </div>
               <div class="box-img">
@@ -412,13 +504,14 @@
               </div>
               <div class="btn-wrap">
                 <a
-                  href="index.htmlservice-details.php"
+                  href="services-cloud-posture.php"
                   class="ot-btn style-border"
                   >Read More<i class="far fa-long-arrow-right ms-2"></i
                 ></a>
               </div>
             </div>
           </div>
+          <!-- 02: CWPP -->
           <div
             class="col-12 service-list-wrap"
             data-cue="slideInUp"
@@ -436,13 +529,12 @@
               <div class="box-number">02</div>
               <div class="box-content">
                 <h3 class="box-title">
-                  <a href="index.htmlservice-details.php"
+                  <a href="services-workload-protection.php"
                     >Cloud Workload Protection Platform</a
                   >
                 </h3>
                 <p class="box-text">
-                  Safeguard your cloud-based workloads and containers from a
-                  wide range of threats, including malware, ransomware.
+                  Safeguard your cloud-based workloads, containers, and serverless architectures from advanced runtime threat vectors.
                 </p>
               </div>
               <div class="box-img">
@@ -450,13 +542,14 @@
               </div>
               <div class="btn-wrap">
                 <a
-                  href="index.htmlservice-details.php"
+                  href="services-workload-protection.php"
                   class="ot-btn style-border"
                   >Read More<i class="far fa-long-arrow-right ms-2"></i
                 ></a>
               </div>
             </div>
           </div>
+          <!-- 03: CASB -->
           <div
             class="col-12 service-list-wrap"
             data-cue="slideInUp"
@@ -474,13 +567,12 @@
               <div class="box-number">03</div>
               <div class="box-content">
                 <h3 class="box-title">
-                  <a href="index.htmlservice-details.php"
+                  <a href="services-access-broker.php"
                     >Cloud Access Security Broker</a
                   >
                 </h3>
                 <p class="box-text">
-                  Safeguard sensitive data shared with cloud applications by
-                  enforcing granular access controls, monitoring.
+                  Enforce secure data sovereignty policies across SaaS cloud infrastructure through real-time inspection.
                 </p>
               </div>
               <div class="box-img">
@@ -488,13 +580,14 @@
               </div>
               <div class="btn-wrap">
                 <a
-                  href="index.htmlservice-details.php"
+                  href="services-access-broker.php"
                   class="ot-btn style-border"
                   >Read More<i class="far fa-long-arrow-right ms-2"></i
                 ></a>
               </div>
             </div>
           </div>
+          <!-- 04: EDR -->
           <div
             class="col-12 service-list-wrap"
             data-cue="slideInUp"
@@ -508,17 +601,16 @@
               animation-fill-mode: both;
             "
           >
-            <div class="service-list hover-item item-active">
+            <div class="service-list hover-item">
               <div class="box-number">04</div>
               <div class="box-content">
                 <h3 class="box-title">
-                  <a href="index.htmlservice-details.php"
+                  <a href="services-endpoint-response.php"
                     >Endpoint Detection and Response</a
                   >
                 </h3>
                 <p class="box-text">
-                  Proactively detect, investigate, and respond to advanced
-                  threats targeting your endpoints. Our EDR solution.
+                  Detect, isolate, and evict advanced malware, ransomware, and fileless exploits targeting corporate endpoint systems.
                 </p>
               </div>
               <div class="box-img">
@@ -526,7 +618,235 @@
               </div>
               <div class="btn-wrap">
                 <a
-                  href="index.htmlservice-details.php"
+                  href="services-endpoint-response.php"
+                  class="ot-btn style-border"
+                  >Read More<i class="far fa-long-arrow-right ms-2"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- 05: App Sec -->
+          <div
+            class="col-12 service-list-wrap"
+            data-cue="slideInUp"
+            data-show="true"
+            style="
+              animation-name: slideInUp;
+              animation-duration: 900ms;
+              animation-timing-function: ease;
+              animation-delay: 0ms;
+              animation-direction: normal;
+              animation-fill-mode: both;
+            "
+          >
+            <div class="service-list hover-item">
+              <div class="box-number">05</div>
+              <div class="box-content">
+                <h3 class="box-title">
+                  <a href="services-application-security.php"
+                    >Application Security Assessment</a
+                  >
+                </h3>
+                <p class="box-text">
+                  Audit source code repositories, secure active API endpoints, and mitigate runtime logic vulnerabilities.
+                </p>
+              </div>
+              <div class="box-img">
+                <img src="./index/service2-1.jpg" alt="img" />
+              </div>
+              <div class="btn-wrap">
+                <a
+                  href="services-application-security.php"
+                  class="ot-btn style-border"
+                  >Read More<i class="far fa-long-arrow-right ms-2"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- 06: Net Sec -->
+          <div
+            class="col-12 service-list-wrap"
+            data-cue="slideInUp"
+            data-show="true"
+            style="
+              animation-name: slideInUp;
+              animation-duration: 900ms;
+              animation-timing-function: ease;
+              animation-delay: 0ms;
+              animation-direction: normal;
+              animation-fill-mode: both;
+            "
+          >
+            <div class="service-list hover-item">
+              <div class="box-number">06</div>
+              <div class="box-content">
+                <h3 class="box-title">
+                  <a href="services-network-security.php"
+                    >Network & Perimeter Security</a
+                  >
+                </h3>
+                <p class="box-text">
+                  Deploy edge firewalls, configure intrusion prevention systems, and orchestrate encrypted VPN tunnels.
+                </p>
+              </div>
+              <div class="box-img">
+                <img src="./index/service2-2.jpg" alt="img" />
+              </div>
+              <div class="btn-wrap">
+                <a
+                  href="services-network-security.php"
+                  class="ot-btn style-border"
+                  >Read More<i class="far fa-long-arrow-right ms-2"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- 07: Red Team -->
+          <div
+            class="col-12 service-list-wrap"
+            data-cue="slideInUp"
+            data-show="true"
+            style="
+              animation-name: slideInUp;
+              animation-duration: 900ms;
+              animation-timing-function: ease;
+              animation-delay: 0ms;
+              animation-direction: normal;
+              animation-fill-mode: both;
+            "
+          >
+            <div class="service-list hover-item">
+              <div class="box-number">07</div>
+              <div class="box-content">
+                <h3 class="box-title">
+                  <a href="services-red-team.php"
+                    >Red Team Operations & Pentesting</a
+                  >
+                </h3>
+                <p class="box-text">
+                  Simulate adversary tactics, run automated compromise scripts, and test physical security perimeters.
+                </p>
+              </div>
+              <div class="box-img">
+                <img src="./index/service2-3.jpg" alt="img" />
+              </div>
+              <div class="btn-wrap">
+                <a
+                  href="services-red-team.php"
+                  class="ot-btn style-border"
+                  >Read More<i class="far fa-long-arrow-right ms-2"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- 08: Compliance -->
+          <div
+            class="col-12 service-list-wrap"
+            data-cue="slideInUp"
+            data-show="true"
+            style="
+              animation-name: slideInUp;
+              animation-duration: 900ms;
+              animation-timing-function: ease;
+              animation-delay: 0ms;
+              animation-direction: normal;
+              animation-fill-mode: both;
+            "
+          >
+            <div class="service-list hover-item">
+              <div class="box-number">08</div>
+              <div class="box-content">
+                <h3 class="box-title">
+                  <a href="services-compliance-and-data-privacy.php"
+                    >Regulatory Compliance & Privacy</a
+                  >
+                </h3>
+                <p class="box-text">
+                  Establish ISMS systems for ISO 27001, model security standards for NIST, and enforce GDPR compliance.
+                </p>
+              </div>
+              <div class="box-img">
+                <img src="./index/service2-4.jpg" alt="img" />
+              </div>
+              <div class="btn-wrap">
+                <a
+                  href="services-compliance-and-data-privacy.php"
+                  class="ot-btn style-border"
+                  >Read More<i class="far fa-long-arrow-right ms-2"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- 09: Forensics -->
+          <div
+            class="col-12 service-list-wrap"
+            data-cue="slideInUp"
+            data-show="true"
+            style="
+              animation-name: slideInUp;
+              animation-duration: 900ms;
+              animation-timing-function: ease;
+              animation-delay: 0ms;
+              animation-direction: normal;
+              animation-fill-mode: both;
+            "
+          >
+            <div class="service-list hover-item">
+              <div class="box-number">09</div>
+              <div class="box-content">
+                <h3 class="box-title">
+                  <a href="services-digital-forensics.php"
+                    >Digital Forensics & Incident Response</a
+                  >
+                </h3>
+                <p class="box-text">
+                  Contain active network ransomware incursions, rebuild data logs, and recover lost file blocks.
+                </p>
+              </div>
+              <div class="box-img">
+                <img src="./index/service2-1.jpg" alt="img" />
+              </div>
+              <div class="btn-wrap">
+                <a
+                  href="services-digital-forensics.php"
+                  class="ot-btn style-border"
+                  >Read More<i class="far fa-long-arrow-right ms-2"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- 10: Managed Security -->
+          <div
+            class="col-12 service-list-wrap"
+            data-cue="slideInUp"
+            data-show="true"
+            style="
+              animation-name: slideInUp;
+              animation-duration: 900ms;
+              animation-timing-function: ease;
+              animation-delay: 0ms;
+              animation-direction: normal;
+              animation-fill-mode: both;
+            "
+          >
+            <div class="service-list hover-item">
+              <div class="box-number">10</div>
+              <div class="box-content">
+                <h3 class="box-title">
+                  <a href="services-managed-security.php"
+                    >Managed Security Services (SOC)</a
+                  >
+                </h3>
+                <p class="box-text">
+                  Continuous 24/7/365 operational surveillance and automated triage managed by security architects.
+                </p>
+              </div>
+              <div class="box-img">
+                <img src="./index/service2-2.jpg" alt="img" />
+              </div>
+              <div class="btn-wrap">
+                <a
+                  href="services-managed-security.php"
                   class="ot-btn style-border"
                   >Read More<i class="far fa-long-arrow-right ms-2"></i
                 ></a>
@@ -885,65 +1205,254 @@
         </div>
       </div>
     </div>
+    <!-- Scoped Premium Team Style Overrides -->
+    <style>
+    #team-sec {
+        background-color: #000916 !important;
+        position: relative;
+        overflow: hidden;
+        padding: 100px 0 !important;
+    }
+    #team-sec::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: 
+            linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+        background-size: 60px 60px;
+        z-index: 0;
+        pointer-events: none;
+    }
+    #team-sec .container {
+        position: relative;
+        z-index: 1;
+    }
+    .team-title-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        background: rgba(224, 0, 155, 0.1);
+        border: 1px solid rgba(224, 0, 155, 0.3);
+        border-radius: 30px;
+        color: #fff;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        box-shadow: 0 0 15px rgba(224, 0, 155, 0.15);
+    }
+    .team-pulse-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #069845;
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 10px #069845;
+        animation: activePulse 1.5s infinite;
+    }
+    .team-desc-text {
+        font-size: 1.02rem;
+        line-height: 1.65;
+        color: #94a3b8;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+    
+    /* Telemetry Widget below left column text */
+    .team-telemetry-widget {
+        background: rgba(15, 23, 42, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 20px;
+        text-align: left;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .team-telemetry-widget .widget-hdr {
+        font-family: "Space Grotesk", monospace;
+        font-size: 0.75rem;
+        color: #60a5fa;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        margin-bottom: 12px;
+        display: block;
+    }
+    .team-telemetry-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        font-family: "Space Grotesk", monospace;
+        font-size: 0.8rem;
+    }
+    .team-telemetry-grid .grid-item {
+        color: #cbd5e1;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        padding-bottom: 6px;
+    }
+    .team-telemetry-grid .grid-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .team-telemetry-grid .grid-val {
+        font-weight: 700;
+    }
+    
+    /* Team Card modern overrides */
+    .team-card2 {
+        background: rgba(15, 23, 42, 0.5) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        position: relative;
+    }
+    .team-card2::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
+        background: linear-gradient(135deg, rgba(60, 114, 252, 0.2), rgba(224, 0, 155, 0.2));
+        -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        z-index: 2;
+    }
+    .team-card2:hover {
+        transform: translateY(-8px) !important;
+        border-color: transparent !important;
+        box-shadow: 0 20px 45px rgba(224, 0, 155, 0.15) !important;
+    }
+    .team-card2 .box-img {
+        overflow: hidden !important;
+        position: relative !important;
+        margin: 0 !important;
+        transform: none !important;
+        aspect-ratio: 1/1.2 !important;
+        background: #020813;
+    }
+    /* Add a subtle dark blue overlay to blend the photo */
+    .team-card2 .box-img::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(180deg, transparent 60%, rgba(0, 9, 22, 0.9) 100%);
+        z-index: 1;
+    }
+    .team-card2 .box-img img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        filter: grayscale(20%) contrast(105%);
+    }
+    .team-card2:hover .box-img img {
+        transform: scale(1.04) !important;
+        filter: grayscale(0%) contrast(105%);
+    }
+    .team-card2 .box-content {
+        padding: 25px 20px !important;
+        background: transparent !important;
+        text-align: center !important;
+        position: relative;
+        z-index: 2;
+    }
+    .team-card2 .box-title {
+        font-size: 1.3rem !important;
+        font-weight: 800 !important;
+        margin-bottom: 6px !important;
+        letter-spacing: -0.5px;
+    }
+    .team-card2 .box-title a {
+        color: #ffffff !important;
+        text-decoration: none !important;
+        transition: color 0.3s ease !important;
+    }
+    .team-card2 .box-title a:hover {
+        color: #E0009B !important;
+    }
+    .team-card2 .box-desig {
+        font-size: 0.8rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 1.5px !important;
+        text-transform: uppercase !important;
+        color: #60a5fa !important;
+        display: inline-block !important;
+        margin-bottom: 18px !important;
+    }
+    
+    /* Social items: only show clean LinkedIn style */
+    .team-card2 .ot-social {
+        justify-content: center !important;
+        gap: 12px !important;
+        display: flex !important;
+    }
+    .team-card2 .ot-social a {
+        padding: 6px 16px !important;
+        border-radius: 30px !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        color: #cbd5e1 !important;
+        font-size: 0.75rem !important;
+        font-family: "Space Grotesk", monospace;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        transition: all 0.3s ease !important;
+    }
+    .team-card2 .ot-social a:hover {
+        background: linear-gradient(135deg, #3C72FC 0%, #E0009B 100%) !important;
+        border-color: transparent !important;
+        color: #ffffff !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 5px 15px rgba(224, 0, 155, 0.3) !important;
+    }
+    </style>
+
     <section
-      class="space bg-smoke overflow-hidden background-image arrow-wrap"
+      class="bg-top-center team-sec2"
       id="team-sec"
-      style="background-image: url(&quot;assets/img/bg/team-bg2-1.png&quot;)"
     >
       <div class="container">
-        <div class="row">
-          <div class="col-xl-4">
+        <div class="row gy-40">
+          <div class="col-xl-4 col-lg-5">
             <div class="title-area">
-              <span
-                class="sub-title style2"
-                data-cue="slideInUp"
-                data-show="true"
-                style="
-                  animation-name: slideInUp;
-                  animation-duration: 900ms;
-                  animation-timing-function: ease;
-                  animation-delay: 0ms;
-                  animation-direction: normal;
-                  animation-fill-mode: both;
-                "
-                >Our Expert Team</span
-              >
+              <span class="team-title-label">
+                <span class="team-pulse-dot"></span>
+                CORE OPERATIVES // SECURE
+              </span>
               <h2
-                class="sec-title"
-                data-cue="slideInUp"
-                data-show="true"
-                style="
-                  animation-name: slideInUp;
-                  animation-duration: 900ms;
-                  animation-timing-function: ease;
-                  animation-delay: 0ms;
-                  animation-direction: normal;
-                  animation-fill-mode: both;
-                "
+                class="sec-title text-white"
+                style="font-size: clamp(2rem, 4vw, 2.5rem); line-height: 1.2; font-weight: 800;"
               >
-                Our Dedicated Team Is Committed To Safeguarding Your Digital
-                Future.
+                Meet the Elite Cyber Command
               </h2>
-              <div
-                class="btn-wrap"
-                data-cue="slideInUp"
-                data-show="true"
-                style="
-                  animation-name: slideInUp;
-                  animation-duration: 900ms;
-                  animation-timing-function: ease;
-                  animation-delay: 0ms;
-                  animation-direction: normal;
-                  animation-fill-mode: both;
-                "
-              >
-                <a href="team.php" class="ot-btn mb-0"
-                  >More Team<i class="far fa-long-arrow-right ms-2"></i
-                ></a>
+              <p class="team-desc-text">
+                Our operations are led by ex-intelligence agents, security researchers, and certified network defense commanders with decades of active warfare containment experience.
+              </p>
+              
+              <!-- Telemetry diagnostic panel -->
+              <div class="team-telemetry-widget">
+                  <span class="widget-hdr">> DIAGNOSTIC_OVERVIEW</span>
+                  <div class="team-telemetry-grid">
+                      <div class="grid-item"><span>SOC OPERATIVES:</span> <span class="grid-val text-success">ALL ACTIVE</span></div>
+                      <div class="grid-item"><span>CERTIFICATIONS:</span> <span class="grid-val" style="color: #60a5fa;">CREST / CISSP</span></div>
+                      <div class="grid-item"><span>RESPONSE WINDOW:</span> <span class="grid-val" style="color: #E0009B;">SUB-30 MINS</span></div>
+                  </div>
               </div>
             </div>
           </div>
-          <div class="col-xl-8">
+          <div class="col-xl-8 col-lg-7">
             <div class="slider-area">
               <div
                 class="swiper ot-slider team-slider2 swiper-initialized swiper-horizontal swiper-backface-hidden"
@@ -970,6 +1479,7 @@
                     transition-delay: 0ms;
                   "
                 >
+                  <!-- Slide 1 -->
                   <div
                     class="swiper-slide"
                     role="group"
@@ -983,28 +1493,18 @@
                       </div>
                       <div class="box-content">
                         <h3 class="box-title">
-                          <a href="index.htmlteam-details.php"
-                            >Michael Johnson</a
-                          >
+                          <a href="javascript:void(0)">Michael Johnson</a>
                         </h3>
-                        <span class="box-desig">UI/UX Designer</span>
+                        <span class="box-desig">Principal Security Architect</span>
                         <div class="ot-social style3">
-                          <a target="_blank" href="https://facebook.com/"
-                            ><i class="fab fa-facebook-f"></i
-                          ></a>
-                          <a target="_blank" href="https://twitter.com/"
-                            ><i class="fab fa-twitter"></i
-                          ></a>
-                          <a target="_blank" href="https://linkedin.com/"
-                            ><i class="fab fa-linkedin-in"></i
-                          ></a>
-                          <a target="_blank" href="https://instagram.com/"
-                            ><i class="fab fa-instagram"></i
-                          ></a>
+                          <a target="_blank" href="https://linkedin.com/">
+                            <i class="fab fa-linkedin-in"></i> SECURE PROFILE
+                          </a>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <!-- Slide 2 -->
                   <div
                     class="swiper-slide"
                     role="group"
@@ -1018,26 +1518,18 @@
                       </div>
                       <div class="box-content">
                         <h3 class="box-title">
-                          <a href="index.htmlteam-details.php">Sarah Rahman</a>
+                          <a href="javascript:void(0)">Sarah Rahman</a>
                         </h3>
-                        <span class="box-desig">UI/UX Designer</span>
+                        <span class="box-desig">Director of Incident Response</span>
                         <div class="ot-social style3">
-                          <a target="_blank" href="https://facebook.com/"
-                            ><i class="fab fa-facebook-f"></i
-                          ></a>
-                          <a target="_blank" href="https://twitter.com/"
-                            ><i class="fab fa-twitter"></i
-                          ></a>
-                          <a target="_blank" href="https://linkedin.com/"
-                            ><i class="fab fa-linkedin-in"></i
-                          ></a>
-                          <a target="_blank" href="https://instagram.com/"
-                            ><i class="fab fa-instagram"></i
-                          ></a>
+                          <a target="_blank" href="https://linkedin.com/">
+                            <i class="fab fa-linkedin-in"></i> SECURE PROFILE
+                          </a>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <!-- Slide 3 -->
                   <div
                     class="swiper-slide swiper-slide-prev"
                     role="group"
@@ -1051,28 +1543,18 @@
                       </div>
                       <div class="box-content">
                         <h3 class="box-title">
-                          <a href="index.htmlteam-details.php"
-                            >Justin Kingdony</a
-                          >
+                          <a href="javascript:void(0)">Justin Kingdony</a>
                         </h3>
-                        <span class="box-desig">UI/UX Designer</span>
+                        <span class="box-desig">Lead Red Team Operative</span>
                         <div class="ot-social style3">
-                          <a target="_blank" href="https://facebook.com/"
-                            ><i class="fab fa-facebook-f"></i
-                          ></a>
-                          <a target="_blank" href="https://twitter.com/"
-                            ><i class="fab fa-twitter"></i
-                          ></a>
-                          <a target="_blank" href="https://linkedin.com/"
-                            ><i class="fab fa-linkedin-in"></i
-                          ></a>
-                          <a target="_blank" href="https://instagram.com/"
-                            ><i class="fab fa-instagram"></i
-                          ></a>
+                          <a target="_blank" href="https://linkedin.com/">
+                            <i class="fab fa-linkedin-in"></i> SECURE PROFILE
+                          </a>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <!-- Slide 4 -->
                   <div
                     class="swiper-slide swiper-slide-active"
                     role="group"
@@ -1086,28 +1568,18 @@
                       </div>
                       <div class="box-content">
                         <h3 class="box-title">
-                          <a href="index.htmlteam-details.php"
-                            >Michael Johnson</a
-                          >
+                          <a href="javascript:void(0)">Michael Johnson</a>
                         </h3>
-                        <span class="box-desig">UI/UX Designer</span>
+                        <span class="box-desig">Principal Security Architect</span>
                         <div class="ot-social style3">
-                          <a target="_blank" href="https://facebook.com/"
-                            ><i class="fab fa-facebook-f"></i
-                          ></a>
-                          <a target="_blank" href="https://twitter.com/"
-                            ><i class="fab fa-twitter"></i
-                          ></a>
-                          <a target="_blank" href="https://linkedin.com/"
-                            ><i class="fab fa-linkedin-in"></i
-                          ></a>
-                          <a target="_blank" href="https://instagram.com/"
-                            ><i class="fab fa-instagram"></i
-                          ></a>
+                          <a target="_blank" href="https://linkedin.com/">
+                            <i class="fab fa-linkedin-in"></i> SECURE PROFILE
+                          </a>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <!-- Slide 5 -->
                   <div
                     class="swiper-slide swiper-slide-next"
                     role="group"
@@ -1121,26 +1593,18 @@
                       </div>
                       <div class="box-content">
                         <h3 class="box-title">
-                          <a href="index.htmlteam-details.php">Sarah Rahman</a>
+                          <a href="javascript:void(0)">Sarah Rahman</a>
                         </h3>
-                        <span class="box-desig">UI/UX Designer</span>
+                        <span class="box-desig">Director of Incident Response</span>
                         <div class="ot-social style3">
-                          <a target="_blank" href="https://facebook.com/"
-                            ><i class="fab fa-facebook-f"></i
-                          ></a>
-                          <a target="_blank" href="https://twitter.com/"
-                            ><i class="fab fa-twitter"></i
-                          ></a>
-                          <a target="_blank" href="https://linkedin.com/"
-                            ><i class="fab fa-linkedin-in"></i
-                          ></a>
-                          <a target="_blank" href="https://instagram.com/"
-                            ><i class="fab fa-instagram"></i
-                          ></a>
+                          <a target="_blank" href="https://linkedin.com/">
+                            <i class="fab fa-linkedin-in"></i> SECURE PROFILE
+                          </a>
                         </div>
                       </div>
                     </div>
                   </div>
+                  <!-- Slide 6 -->
                   <div
                     class="swiper-slide"
                     role="group"
@@ -1154,35 +1618,19 @@
                       </div>
                       <div class="box-content">
                         <h3 class="box-title">
-                          <a href="index.htmlteam-details.php"
-                            >Justin Kingdony</a
-                          >
+                          <a href="javascript:void(0)">Justin Kingdony</a>
                         </h3>
-                        <span class="box-desig">UI/UX Designer</span>
+                        <span class="box-desig">Lead Red Team Operative</span>
                         <div class="ot-social style3">
-                          <a target="_blank" href="https://facebook.com/"
-                            ><i class="fab fa-facebook-f"></i
-                          ></a>
-                          <a target="_blank" href="https://twitter.com/"
-                            ><i class="fab fa-twitter"></i
-                          ></a>
-                          <a target="_blank" href="https://linkedin.com/"
-                            ><i class="fab fa-linkedin-in"></i
-                          ></a>
-                          <a target="_blank" href="https://instagram.com/"
-                            ><i class="fab fa-instagram"></i
-                          ></a>
+                          <a target="_blank" href="https://linkedin.com/">
+                            <i class="fab fa-linkedin-in"></i> SECURE PROFILE
+                          </a>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <span
-                  class="swiper-notification"
-                  aria-live="assertive"
-                  aria-atomic="true"
-                ></span
-                ><span
                   class="swiper-notification"
                   aria-live="assertive"
                   aria-atomic="true"
@@ -1193,227 +1641,323 @@
         </div>
       </div>
     </section>
-    <section class="space overflow-hidden shape-mockup-wrap">
+    <!-- Scoped Style Overrides for Global Network Section -->
+    <style>
+    #global-network-sec {
+        background-color: #000916 !important;
+        padding: 80px 0 !important;
+        position: relative;
+    }
+    #global-network-sec::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: 
+            linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+        pointer-events: none;
+    }
+    
+    .edge-metric-item {
+        margin-bottom: 22px;
+    }
+    .edge-metric-item:last-child {
+        margin-bottom: 0;
+    }
+    .edge-metric-item .metric-lbl {
+        font-family: "Space Grotesk", monospace;
+        font-size: 0.75rem;
+        color: #94a3b8;
+        letter-spacing: 1px;
+        display: block;
+        margin-bottom: 6px;
+    }
+    .edge-metric-item .metric-val {
+        font-family: "Space Grotesk", monospace;
+        font-size: 1.25rem;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 8px;
+    }
+    .edge-metric-item .metric-bar {
+        height: 6px;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 3px;
+        overflow: hidden;
+    }
+    .edge-metric-item .metric-bar .bar-fill {
+        height: 100%;
+        border-radius: 3px;
+    }
+    
+    .globe-vector-wrap {
+        position: relative;
+        margin: 0 auto;
+        display: inline-block;
+    }
+    
+    .edge-nodes-list {
+        background: rgba(15, 23, 42, 0.55);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 24px 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        text-align: left;
+    }
+    .edge-nodes-list .nodes-hdr {
+        font-family: "Space Grotesk", monospace;
+        font-size: 0.75rem;
+        color: #60a5fa;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        display: block;
+        margin-bottom: 18px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        padding-bottom: 10px;
+    }
+    .node-status-card {
+        margin-bottom: 16px;
+    }
+    .node-status-card:last-child {
+        margin-bottom: 0;
+    }
+    .node-status-card .node-title {
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #ffffff;
+        display: block;
+        margin-bottom: 4px;
+    }
+    .node-status-card .node-status {
+        font-family: "Space Grotesk", monospace;
+        font-size: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .node-status-card .node-status i {
+        font-size: 0.65rem;
+    }
+    </style>
+
+    <section class="overflow-hidden shape-mockup-wrap" id="global-network-sec">
       <div
         class="shape-mockup bg-gradient-shape1"
         style="top: 20%; right: -3%; left: auto"
       ></div>
       <div class="container">
-        <div class="row justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center mb-50">
           <div class="col-xl-10">
             <div class="title-area text-center">
-              <span
-                class="sub-title style2"
-                data-cue="slideInUp"
-                data-show="true"
-                style="
-                  animation-name: slideInUp;
-                  animation-duration: 900ms;
-                  animation-timing-function: ease;
-                  animation-delay: 0ms;
-                  animation-direction: normal;
-                  animation-fill-mode: both;
-                "
-                >Global Network</span
-              >
+              <span class="sub-title style2">Global Network</span>
               <h2
-                class="sec-title"
-                data-cue="slideInUp"
-                data-show="true"
-                style="
-                  animation-name: slideInUp;
-                  animation-duration: 900ms;
-                  animation-timing-function: ease;
-                  animation-delay: 0ms;
-                  animation-direction: normal;
-                  animation-fill-mode: both;
-                "
+                class="sec-title text-white"
+                style="font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 800;"
               >
                 A Global Network of Cloud Security
               </h2>
-              <p
-                class="sec-text"
-                data-cue="slideInUp"
-                data-show="true"
-                style="
-                  animation-name: slideInUp;
-                  animation-duration: 900ms;
-                  animation-timing-function: ease;
-                  animation-delay: 0ms;
-                  animation-direction: normal;
-                  animation-fill-mode: both;
-                "
-              >
-                Advert Resource Ltd is a pioneering cybersecurity firm dedicated to
-                safeguarding your digital assets. With over two decades of
-                experience, we've been at the forefront of innovation, providing
-                comprehensive.
+              <p class="sec-text">
+                Advert Resource Ltd is a pioneering cybersecurity firm dedicated to safeguarding your digital assets. With over two decades of experience, we've been at the forefront of innovation, providing comprehensive network protection.
               </p>
             </div>
           </div>
         </div>
-        <div
-          class="network-wrap bg-auto background-image"
-          data-cue="slideInUp"
-          style="
-            background-image: url(&quot;assets/img/bg/map-bg1-1.png&quot;);
-            animation-name: slideInUp;
-            animation-duration: 900ms;
-            animation-timing-function: ease;
-            animation-delay: 0ms;
-            animation-direction: normal;
-            animation-fill-mode: both;
-          "
-          data-show="true"
-        >
-          <div
-            class="network-line"
-            data-cue="slideInUp"
-            data-show="true"
-            style="
-              animation-name: slideInUp;
-              animation-duration: 900ms;
-              animation-timing-function: ease;
-              animation-delay: 270ms;
-              animation-direction: normal;
-              animation-fill-mode: both;
-            "
-          >
-            <svg
-              viewBox="0 0 1077 436"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M494 129.5C573.5 -27.5014 937.5 143.5 1000 394.498"
-                stroke="#069845"
-              ></path>
-              <path
-                d="M494.5 128.501C573 -38.9998 990.5 74.5002 1076 435"
-                stroke="#E0009B"
-              ></path>
-              <path
-                d="M494.5 128.506C570.5 -64.499 938.5 -4.50002 1048.5 90.5006"
-                stroke="#F0A230"
-              ></path>
-              <path
-                d="M494 129.5C440 4.9998 258.5 71.9994 178 215.998"
-                stroke="#E0009B"
-              ></path>
-              <path
-                d="M494 128.496C472 120 441 179 470 269.999"
-                stroke="#3C72FC"
-              ></path>
-              <path
-                d="M494 129.315C520.5 83.5004 600.5 129.315 622 189.501"
-                stroke="#069845"
-              ></path>
-              <path
-                d="M494 129.316C546.5 106.999 602 314.499 606 390"
-                stroke="#8F54FF"
-              ></path>
-              <path
-                d="M493.5 129.5C434 -15.3582 297 221 258.5 342.5"
-                stroke="#F0A230"
-              ></path>
-              <path
-                d="M494 129.501C469 -79.4987 96.5 11.0001 1 116"
-                stroke="#8F54FF"
-              ></path>
-            </svg>
-          </div>
-          <div class="location-wrap">
-            <div class="location-card">
-              <div class="box-content">
-                <div class="box-icon">
-                  <svg
-                    width="33"
-                    height="32"
-                    viewBox="0 0 33 32"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M17.3173 16.9705C16.6492 16.3024 15.4831 16.3024 14.8151 16.9705C13.8122 17.9733 12.4793 18.5253 11.0613 18.5253H10.3652V22.7497C10.3652 25.7401 12.131 28.4574 14.8638 29.6717C15.2453 29.8412 15.6495 29.9272 16.0662 29.9272C16.4829 29.9272 16.8871 29.8412 17.2686 29.6722C20.0014 28.4574 21.7672 25.7401 21.7672 22.7497V18.5253H21.0711C19.6531 18.5253 18.3201 17.9733 17.3173 16.9705ZM20.7306 22.7497C20.7306 25.3307 19.2069 27.6764 16.8477 28.7243C16.3518 28.9451 15.7806 28.9451 15.2846 28.7243C12.9255 27.6764 11.4018 25.3312 11.4018 22.7497V19.5525C12.9685 19.4706 14.43 18.8212 15.5479 17.7033C15.8252 17.4271 16.3072 17.4271 16.5845 17.7033C17.7024 18.8212 19.1639 19.4706 20.7306 19.5525V22.7497Z"
-                      fill="currentColor"
-                    ></path>
-                    <path
-                      d="M13.8412 23.341L13.1084 24.0738L15.0296 25.9951L20.0605 20.9642L19.3276 20.2314L15.0296 24.5294L13.8412 23.341Z"
-                      fill="currentColor"
-                    ></path>
-                    <path
-                      d="M28.3208 15.4283C28.0171 14.1254 27.3465 12.9852 26.4317 12.1062V5.56828H24.836L27.4683 1.80772L30.1005 5.56828H28.5048V12.3058H29.5413V6.60482H32.0917L27.4683 0L22.8448 6.60482H25.3952V11.2926C24.3436 10.6204 23.0982 10.2327 21.7673 10.2327C20.4664 10.2327 19.2112 10.6183 18.1394 11.3034V6.60482H20.6898L16.0663 0L11.4429 6.60482H13.9933V8.80435C13.0308 8.38559 11.9767 8.15963 10.8836 8.15963C9.35838 8.15963 7.93936 8.60741 6.7375 9.36875V6.60482H9.2879L4.66442 0L0.0409432 6.60482H2.59134V12.3058H3.62788V5.56828H2.03213L4.66442 1.80772L7.29671 5.56828H5.70096V10.1555C4.20523 11.4988 3.23503 13.4087 3.12931 15.5465C1.33402 16.0021 0 17.6268 0 19.5615C0 21.8476 1.86007 23.7077 4.14615 23.7077H8.34569C8.68774 27.1293 10.836 30.1503 14.0223 31.5662C14.6712 31.8544 15.3584 32 16.0663 32C16.7738 32 17.4615 31.8544 18.1109 31.5662C21.2967 30.1498 23.4449 27.1293 23.787 23.7077H27.9865C30.2726 23.7077 32.1327 21.8476 32.1327 19.5615C32.1327 17.3879 30.4514 15.5989 28.3208 15.4283ZM13.434 5.56828L16.0663 1.80772L18.6986 5.56828H17.1029V11.2729C16.5281 10.5043 15.8253 9.85696 15.0298 9.35527V5.56828H13.434ZM22.8038 22.7494C22.8038 26.1487 20.7966 29.2376 17.6906 30.6188C16.6587 31.0764 15.4729 31.0764 14.4436 30.6188C11.3366 29.2381 9.32884 26.1493 9.32884 22.7494V17.4885H11.0614C12.2026 17.4885 13.2755 17.0443 14.0824 16.2374C14.6121 15.7072 15.3169 15.4154 16.0663 15.4154C16.8158 15.4154 17.5206 15.7072 18.0503 16.2374C18.8572 17.0443 19.93 17.4885 21.0713 17.4885H22.8038V22.7494ZM27.9865 22.6712H23.8404V16.4519H21.0713C20.2068 16.4519 19.3941 16.1156 18.7831 15.5045C18.058 14.7784 17.093 14.3789 16.0663 14.3789C15.0396 14.3789 14.0746 14.7784 13.3496 15.5045C12.7385 16.1156 11.9259 16.4519 11.0614 16.4519H8.2923V22.6712H4.14615C2.4312 22.6712 1.03654 21.2765 1.03654 19.5615C1.03654 17.8466 2.4312 16.4519 4.14615 16.4519C4.9645 16.4519 5.73724 16.767 6.32184 17.3402L7.04742 16.6002C6.27365 15.8419 5.25369 15.4232 4.17207 15.4164C4.43794 11.943 7.34335 9.19617 10.8836 9.19617C13.2983 9.19617 15.4947 10.4696 16.7017 12.5395C16.5613 12.7002 16.4219 12.8619 16.2959 13.0371L17.1371 13.6424C18.2078 12.1565 19.9383 11.2692 21.7673 11.2692C24.5602 11.2692 26.9215 13.2687 27.3827 16.0238L27.4563 16.4639L27.9865 16.4519C29.7015 16.4519 31.0961 17.8466 31.0961 19.5615C31.0961 21.2765 29.7015 22.6712 27.9865 22.6712Z"
-                      fill="currentColor"
-                    ></path>
-                    <path
-                      d="M3.10978 19.5614C3.10978 18.9897 3.57467 18.5248 4.14632 18.5248V17.4883C3.00302 17.4883 2.07324 18.4181 2.07324 19.5614C2.07324 20.7047 3.00302 21.6344 4.14632 21.6344H7.25593V20.5979H4.14632C3.57467 20.5979 3.10978 20.133 3.10978 19.5614Z"
-                      fill="currentColor"
-                    ></path>
-                    <path
-                      d="M5.44434 14.2237L6.43319 14.5346C7.04682 12.5813 8.83537 11.2695 10.8841 11.2695V10.233C8.38033 10.233 6.19427 11.837 5.44434 14.2237Z"
-                      fill="currentColor"
-                    ></path>
-                    <path
-                      d="M11.8174 11.3631C12.1361 11.4273 12.4497 11.5263 12.7492 11.6569L13.1644 10.7075C12.7974 10.5468 12.4139 10.4255 12.0231 10.3467L11.8174 11.3631Z"
-                      fill="currentColor"
-                    ></path>
-                    <path
-                      d="M19.4346 12.9306L19.9539 13.8272C20.2379 13.6629 20.5431 13.538 20.8598 13.4566L20.6017 12.4522C20.1933 12.5579 19.8005 12.7186 19.4346 12.9306Z"
-                      fill="currentColor"
-                    ></path>
-                    <path
-                      d="M21.7676 12.3056V13.3421C23.424 13.3421 24.8689 14.4606 25.2809 16.0625L26.2853 15.8044C25.7546 13.7443 23.8971 12.3056 21.7676 12.3056Z"
-                      fill="currentColor"
-                    ></path>
-                    <path
-                      d="M27.9863 17.4883V18.5248C28.558 18.5248 29.0229 18.9897 29.0229 19.5614H30.0594C30.0594 18.4181 29.1296 17.4883 27.9863 17.4883Z"
-                      fill="currentColor"
-                    ></path>
-                    <path
-                      d="M28.5049 13.3424H29.5414V14.3789H28.5049V13.3424Z"
-                      fill="currentColor"
-                    ></path>
-                  </svg>
+        
+        <div class="row gy-40 align-items-center">
+            <!-- Column 1: Stats & Progress Indicators -->
+            <div class="col-lg-5">
+                <div class="network-stats-box text-start">
+                    <h3 class="text-white mb-20" style="font-size: 1.5rem; font-weight: 800;">Enterprise Edge Infrastructure</h3>
+                    <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.65; margin-bottom: 30px;">
+                        Our secure edge platform routes traffic through optimized compliance POPs globally, scrubbing DDoS attempts and sniffing malware close to the source.
+                    </p>
+                    
+                    <div class="edge-metric-item">
+                        <span class="metric-lbl">TOTAL EDGE SCRUBBING CAPACITY</span>
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span class="metric-val text-success" style="margin:0;">280 Tbps</span>
+                            <span style="font-family: monospace; font-size: 0.75rem; color: #10b981;">85% EFFICIENCY</span>
+                        </div>
+                        <div class="metric-bar"><div class="bar-fill" style="width: 85%; background: #10b981;"></div></div>
+                    </div>
+                    <div class="edge-metric-item">
+                        <span class="metric-lbl">AVERAGE GLOBAL ROUTING LATENCY</span>
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span class="metric-val" style="margin:0; color: #60a5fa;">14.2 ms</span>
+                            <span style="font-family: monospace; font-size: 0.75rem; color: #60a5fa;">OPTIMIZED PATH</span>
+                        </div>
+                        <div class="metric-bar"><div class="bar-fill" style="width: 95%; background: #3c72fc;"></div></div>
+                    </div>
+                    <div class="edge-metric-item">
+                        <span class="metric-lbl">DDoS CONTAINMENT RATE</span>
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span class="metric-val" style="margin:0; color: #E0009B;">99.999%</span>
+                            <span style="font-family: monospace; font-size: 0.75rem; color: #E0009B;">MILITARY-GRADE</span>
+                        </div>
+                        <div class="metric-bar"><div class="bar-fill" style="width: 99%; background: #E0009B;"></div></div>
+                    </div>
                 </div>
-                <h6 class="box-title">Cloud Workload Protection</h6>
-                <a href="index.htmlservice-details.php" class="link-btn"
-                  >View All<i class="far fa-long-arrow-right ms-2"></i
-                ></a>
-              </div>
-              <div class="location-growth-wrap">
-                <div class="box-number">
-                  15 <img src="./index/growth-arrow.svg" alt="icon" />
-                </div>
-                <div class="chart-thumb">
-                  <img src="./index/network-chart.png" alt="img" />
-                </div>
-              </div>
             </div>
-            <h6 class="location-name">North Carolina</h6>
-          </div>
-          <ul class="location-branch-list">
-            <li class="location-branch">
-              <a href="index.php#">Global Data Center Network</a>
-            </li>
-            <li class="location-branch">
-              <a href="index.php#">Partner at Security Goup</a>
-            </li>
-            <li class="location-branch"><a href="index.php#">Finance</a></li>
-            <li class="location-branch">
-              <a href="index.php#">Low-Latency Connections</a>
-            </li>
-            <li class="location-branch">
-              <a href="index.php#">Compliance and Data Residency</a>
-            </li>
-          </ul>
+            
+            <!-- Column 2: Spinning Wireframe Globe Vector -->
+            <div class="col-lg-4 text-center">
+                <div class="globe-vector-wrap">
+                    <svg width="280" height="280" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Outer circles -->
+                        <circle cx="150" cy="150" r="140" stroke="rgba(96, 165, 250, 0.15)" stroke-width="1" />
+                        <circle cx="150" cy="150" r="120" stroke="rgba(224, 0, 155, 0.15)" stroke-width="1" />
+                        
+                        <!-- Globe Lat/Long grid lines -->
+                        <ellipse cx="150" cy="150" rx="120" ry="40" stroke="rgba(255,255,255,0.06)" stroke-width="1" style="transform-origin: 150px 150px; animation: rotateCW 20s linear infinite;" />
+                        <ellipse cx="150" cy="150" rx="40" ry="120" stroke="rgba(255,255,255,0.06)" stroke-width="1" style="transform-origin: 150px 150px; animation: rotateCW 20s linear infinite;" />
+                        
+                        <!-- Pulsing points representing regional edge hubs -->
+                        <g class="globe-hubs">
+                            <!-- NA -->
+                            <circle cx="90" cy="100" r="5" fill="#3c72fc" style="animation: pulseNode 2s infinite;" />
+                            <!-- Europe -->
+                            <circle cx="170" cy="90" r="5" fill="#E0009B" style="animation: pulseNode 2s infinite 0.5s;" />
+                            <!-- Asia -->
+                            <circle cx="210" cy="160" r="5" fill="#10b981" style="animation: pulseNode 2s infinite 1s;" />
+                            <!-- LatAm -->
+                            <circle cx="110" cy="200" r="5" fill="#f0a230" style="animation: pulseNode 2s infinite 1.5s;" />
+                        </g>
+                        
+                        <!-- Core connection paths -->
+                        <path d="M90,100 Q130,80 170,90 Q190,125 210,160 Q160,180 110,200 Q100,150 90,100 Z" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" stroke-dasharray="6 4" />
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Column 3: Edge Nodes Status Panel -->
+            <div class="col-lg-3">
+                <div class="edge-nodes-list">
+                    <span class="nodes-hdr">> EDGE_POPS_STATUS</span>
+                    
+                    <div class="node-status-card">
+                        <span class="node-title">North America Edge</span>
+                        <span class="node-status text-success"><i class="fas fa-circle"></i> ACTIVE // 11ms</span>
+                    </div>
+                    
+                    <div class="node-status-card">
+                        <span class="node-title">Europe & MEA Edge</span>
+                        <span class="node-status text-success"><i class="fas fa-circle"></i> ACTIVE // 16ms</span>
+                    </div>
+                    
+                    <div class="node-status-card">
+                        <span class="node-title">Asia Pacific Edge</span>
+                        <span class="node-status text-success"><i class="fas fa-circle"></i> ACTIVE // 22ms</span>
+                    </div>
+                    
+                    <div class="node-status-card">
+                        <span class="node-title">Compliance Edge</span>
+                        <span class="node-status" style="color: #60a5fa;"><i class="fas fa-shield"></i> SECURED // 14ms</span>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
     </section>
-    <div class="space-bottom overflow-hidden shape-mockup-wrap">
-      <div
-        class="shape-mockup bg-gradient-shape1 why-bg-gradient2"
-        style="top: auto; bottom: 30%; left: 3%"
-      ></div>
+    <!-- Scoped Premium Why Choose Us Style Overrides -->
+    <style>
+    .premium-why-sec {
+        background-color: #000916 !important;
+        position: relative;
+        overflow: hidden;
+        padding: 100px 0 !important;
+    }
+    .premium-why-sec::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background-image: 
+            linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+        background-size: 60px 60px;
+        z-index: 0;
+        pointer-events: none;
+    }
+    .premium-why-sec .container {
+        position: relative;
+        z-index: 1;
+    }
+    
+    /* Counter Glass Cards */
+    .why-counter-card {
+        background: rgba(15, 23, 42, 0.55) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 18px !important;
+        padding: 24px 20px !important;
+        margin-bottom: 24px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        text-align: left !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 16px !important;
+        backdrop-filter: blur(12px) !important;
+    }
+    .why-counter-card:hover {
+        transform: translateY(-5px) !important;
+        border-color: rgba(96, 165, 250, 0.3) !important;
+        box-shadow: 0 15px 35px rgba(96, 165, 250, 0.1) !important;
+    }
+    .why-card-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        transition: all 0.3s ease;
+    }
+    .why-counter-card:hover .why-card-icon {
+        background: rgba(96, 165, 250, 0.1);
+        border-color: rgba(96, 165, 250, 0.3);
+        color: #ffffff !important;
+        filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.5));
+    }
+    .why-counter-card .box-number {
+        font-size: 2rem !important;
+        font-weight: 800 !important;
+        line-height: 1.1 !important;
+        margin: 0 !important;
+        background: linear-gradient(135deg, #ffffff 40%, #a5b4fc 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: "Space Grotesk", sans-serif;
+    }
+    .why-counter-card .box-text {
+        font-size: 0.85rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 1px !important;
+        text-transform: uppercase !important;
+        margin-top: 4px !important;
+        display: block !important;
+    }
+
+    /* Radar Animations */
+    @keyframes rotateCW {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    @keyframes rotateCCW {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(-360deg); }
+    }
+    @keyframes pulseNode {
+        0% { transform: scale(1); opacity: 0.4; }
+        50% { transform: scale(1.5); opacity: 1; }
+        100% { transform: scale(1); opacity: 0.4; }
+    }
+    </style>
+
+    <div class="space-bottom overflow-hidden premium-why-sec">
       <div class="container">
         <div class="title-area mb-40 text-center">
           <span
@@ -1431,7 +1975,7 @@
             >Why Choose Us</span
           >
           <h2
-            class="sec-title"
+            class="sec-title text-white"
             data-cue="slideInUp"
             data-delay="100"
             data-show="true"
@@ -1442,218 +1986,289 @@
               animation-delay: 100ms;
               animation-direction: normal;
               animation-fill-mode: both;
+              font-size: clamp(2rem, 4vw, 2.5rem);
+              font-weight: 800;
             "
           >
             Forging a Path to Cybersecurity Leadership
           </h2>
         </div>
-        <div class="row gy-30 justify-content-between align-items-center">
-          <div class="col-lg-auto text-center order-lg-2">
-            <div
-              class="why-img-box2"
-              data-cue="slideInUp"
-              data-show="true"
-              style="
-                animation-name: slideInUp;
-                animation-duration: 900ms;
-                animation-timing-function: ease;
-                animation-delay: 0ms;
-                animation-direction: normal;
-                animation-fill-mode: both;
-              "
-            >
-              <img src="./index/why2-1.png" alt="img" />
-            </div>
-          </div>
-          <div class="col-lg-auto col-sm-6 order-lg-1">
-            <div
-              class="counter-card style2"
-              data-cue="slideInUp"
-              data-show="true"
-              style="
-                animation-name: slideInUp;
-                animation-duration: 900ms;
-                animation-timing-function: ease;
-                animation-delay: 0ms;
-                animation-direction: normal;
-                animation-fill-mode: both;
-              "
-            >
-              <div class="media-body">
-                <h2 class="box-number">
-                  <span class="counter-number">5</span>k+
-                </h2>
-                <span class="box-text" style="--theme-color: #069845"
-                  >Projects Completed</span
-                >
+        <div class="row gy-40 justify-content-center align-items-center">
+          <!-- Left Column: 2 Cards -->
+          <div class="col-lg-4 col-md-6 order-lg-1">
+            <div class="why-counter-card">
+              <div class="why-card-icon" style="color: #60a5fa;"><i class="fas fa-layer-group"></i></div>
+              <div>
+                <h2 class="box-number"><span class="counter-number">5</span>k+</h2>
+                <span class="box-text" style="color: #60a5fa;">Projects Completed</span>
               </div>
             </div>
-            <div
-              class="counter-card style2"
-              data-cue="slideInUp"
-              data-show="true"
-              style="
-                animation-name: slideInUp;
-                animation-duration: 900ms;
-                animation-timing-function: ease;
-                animation-delay: 0ms;
-                animation-direction: normal;
-                animation-fill-mode: both;
-              "
-            >
-              <div class="media-body">
-                <h2 class="box-number">
-                  <span class="counter-number">150</span>k+
-                </h2>
-                <span class="box-text" style="--theme-color: #e0009b"
-                  >Customers Globally</span
-                >
+            <div class="why-counter-card">
+              <div class="why-card-icon" style="color: #E0009B;"><i class="fas fa-globe"></i></div>
+              <div>
+                <h2 class="box-number"><span class="counter-number">150</span>k+</h2>
+                <span class="box-text" style="color: #E0009B;">Customers Globally</span>
               </div>
             </div>
           </div>
-          <div class="col-lg-auto col-sm-6 order-lg-3">
-            <div
-              class="counter-card style2"
-              data-cue="slideInUp"
-              data-show="true"
-              style="
-                animation-name: slideInUp;
-                animation-duration: 900ms;
-                animation-timing-function: ease;
-                animation-delay: 270ms;
-                animation-direction: normal;
-                animation-fill-mode: both;
-              "
-            >
-              <div class="media-body">
-                <h2 class="box-number">
-                  <span class="counter-number">95</span>%
-                </h2>
-                <span class="box-text" style="--theme-color: #f0a230"
-                  >Client Retention Rate</span
-                >
+          
+          <!-- Middle Column: Animated SVG Radar -->
+          <div class="col-lg-4 col-md-8 text-center order-lg-2">
+            <div class="radar-container" style="position: relative; width: 280px; height: 280px; margin: 0 auto;">
+                <svg width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Outer rotating grid -->
+                    <circle cx="140" cy="140" r="130" stroke="rgba(96, 165, 250, 0.15)" stroke-width="1.5" stroke-dasharray="10 10" style="animation: rotateCW 30s linear infinite;" />
+                    <!-- Middle circle -->
+                    <circle cx="140" cy="140" r="100" stroke="rgba(224, 0, 155, 0.2)" stroke-width="1.5" />
+                    <!-- Inner radar sweeping circle -->
+                    <circle cx="140" cy="140" r="70" stroke="rgba(96, 165, 250, 0.3)" stroke-width="1" stroke-dasharray="5 5" style="animation: rotateCCW 15s linear infinite;" />
+                    <circle cx="140" cy="140" r="40" stroke="rgba(224, 0, 155, 0.4)" stroke-width="2" />
+                    
+                    <!-- Radar line sweep -->
+                    <line x1="140" y1="140" x2="140" y2="10" stroke="url(#radarSweepGrad)" stroke-width="2" style="transform-origin: 140px 140px; animation: rotateCW 4s linear infinite;" />
+                    
+                    <!-- Target nodes -->
+                    <circle cx="90" cy="80" r="5" fill="#ef4444" style="animation: pulseNode 2s infinite;" />
+                    <circle cx="190" cy="200" r="4" fill="#10b981" style="animation: pulseNode 2s infinite 0.7s;" />
+                    <circle cx="70" cy="180" r="4" fill="#60a5fa" style="animation: pulseNode 2s infinite 1.4s;" />
+                    
+                    <!-- Central glowing core -->
+                    <circle cx="140" cy="140" r="10" fill="url(#coreGlow)" />
+                    
+                    <defs>
+                        <linearGradient id="radarSweepGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#E0009B" stop-opacity="1" />
+                            <stop offset="100%" stop-color="#E0009B" stop-opacity="0" />
+                        </linearGradient>
+                        <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" stop-color="#60a5fa" stop-opacity="1" />
+                            <stop offset="100%" stop-color="#60a5fa" stop-opacity="0" />
+                        </radialGradient>
+                    </defs>
+                </svg>
+                
+                <!-- Text overlays inside the radar -->
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-family: 'Space Grotesk', monospace; z-index: 2;">
+                    <span style="font-size: 0.75rem; color: #fff; font-weight: 700; letter-spacing: 2px; text-shadow: 0 0 10px rgba(96,165,250,0.8);">SECURE</span>
+                    <br>
+                    <span style="font-size: 0.65rem; color: #069845; font-weight: 700; letter-spacing: 1px;">ONLINE</span>
+                </div>
+            </div>
+          </div>
+          
+          <!-- Right Column: 2 Cards -->
+          <div class="col-lg-4 col-md-6 order-lg-3">
+            <div class="why-counter-card">
+              <div class="why-card-icon" style="color: #f0a230;"><i class="fas fa-users-gear"></i></div>
+              <div>
+                <h2 class="box-number"><span class="counter-number">95</span>%</h2>
+                <span class="box-text" style="color: #f0a230;">Retention Rate</span>
               </div>
             </div>
-            <div
-              class="counter-card style2"
-              data-cue="slideInUp"
-              data-show="true"
-              style="
-                animation-name: slideInUp;
-                animation-duration: 900ms;
-                animation-timing-function: ease;
-                animation-delay: 270ms;
-                animation-direction: normal;
-                animation-fill-mode: both;
-              "
-            >
-              <div class="media-body">
-                <h2 class="box-number">
-                  <span class="counter-number">25</span>+
-                </h2>
-                <span class="box-text" style="--theme-color: #8f54ff"
-                  >Years Of Experience</span
-                >
+            <div class="why-counter-card">
+              <div class="why-card-icon" style="color: #8f54ff;"><i class="fas fa-award"></i></div>
+              <div>
+                <h2 class="box-number"><span class="counter-number">25</span>+</h2>
+                <span class="box-text" style="color: #8f54ff;">Years Experience</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- Scoped Premium Get in Touch Style Overrides -->
+    <style>
+    .premium-cta-sec {
+        background-color: #000814 !important;
+        position: relative;
+        overflow: hidden;
+        padding: 120px 0 !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .premium-cta-sec::before {
+        content: '';
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(60, 114, 252, 0.08) 0%, transparent 70%);
+        top: -150px;
+        left: -150px;
+        pointer-events: none;
+    }
+    .premium-cta-sec::after {
+        content: '';
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(224, 0, 155, 0.06) 0%, transparent 70%);
+        bottom: -150px;
+        right: -150px;
+        pointer-events: none;
+    }
+    
+    .cta-channel-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 16px;
+        background: rgba(60, 114, 252, 0.1);
+        border: 1px solid rgba(60, 114, 252, 0.3);
+        border-radius: 30px;
+        color: #fff;
+        font-size: 0.8rem;
+        font-family: "Space Grotesk", monospace;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+        box-shadow: 0 0 15px rgba(60, 114, 252, 0.15);
+    }
+    .cta-channel-badge .pulse-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #3c72fc;
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 10px #3c72fc;
+        animation: activePulse 1.5s infinite;
+    }
+    
+    .cta-desc {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: #94a3b8;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    
+    /* Dual button structure */
+    .cta-btn-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: flex-start;
+    }
+    @media (max-width: 575px) {
+        .cta-btn-group {
+            justify-content: center;
+        }
+    }
+    .cta-btn-primary {
+        background: linear-gradient(135deg, #3C72FC 0%, #E0009B 100%) !important;
+        border: none !important;
+        color: #ffffff !important;
+        border-radius: 30px !important;
+        padding: 14px 32px !important;
+        font-size: 0.95rem !important;
+        font-weight: 700 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        box-shadow: 0 5px 20px rgba(60, 114, 252, 0.3) !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+    }
+    .cta-btn-primary:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(224, 0, 155, 0.5) !important;
+        color: #ffffff !important;
+    }
+    .cta-btn-secondary {
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        color: #ffffff !important;
+        border-radius: 30px !important;
+        padding: 14px 32px !important;
+        font-size: 0.95rem !important;
+        font-weight: 700 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        transition: all 0.3s ease !important;
+        text-decoration: none !important;
+    }
+    .cta-btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.08) !important;
+        border-color: rgba(255, 255, 255, 0.2) !important;
+        transform: translateY(-2px) !important;
+        color: #ffffff !important;
+    }
+    
+    @keyframes shieldPulse {
+        0% { filter: drop-shadow(0 0 5px rgba(60,114,252,0.4)); }
+        50% { filter: drop-shadow(0 0 15px rgba(60,114,252,0.8)) drop-shadow(0 0 25px rgba(224,0,155,0.4)); }
+        100% { filter: drop-shadow(0 0 5px rgba(60,114,252,0.4)); }
+    }
+    </style>
+
     <section
-      class="space bg-smoke overflow-hidden background-image"
-      style="background-image: url(&quot;assets/img/bg/cta_bg_2.png&quot;)"
+      class="premium-cta-sec"
+      id="cta-sec"
     >
       <div class="container">
-        <div class="row gy-50 justify-content-center">
-          <div class="col-xl-6">
-            <div class="title-area mb-0 text-xl-start text-center">
-              <span
-                class="sub-title style2"
-                data-cue="slideInUp"
-                data-show="true"
-                style="
-                  animation-name: slideInUp;
-                  animation-duration: 900ms;
-                  animation-timing-function: ease;
-                  animation-delay: 0ms;
-                  animation-direction: normal;
-                  animation-fill-mode: both;
-                "
-                >Get in Touch</span
-              >
+        <div class="row gy-50 justify-content-center align-items-center">
+          <div class="col-xl-6 col-lg-7 text-xl-start text-center">
+            <div class="title-area mb-0">
+              <span class="cta-channel-badge">
+                <span class="pulse-dot"></span>
+                SECURE ACCESS CHANNEL
+              </span>
               <h2
-                class="sec-title"
-                data-cue="slideInUp"
-                data-show="true"
-                style="
-                  animation-name: slideInUp;
-                  animation-duration: 900ms;
-                  animation-timing-function: ease;
-                  animation-delay: 0ms;
-                  animation-direction: normal;
-                  animation-fill-mode: both;
-                "
+                class="sec-title text-white"
+                style="font-size: clamp(2rem, 4.5vw, 2.8rem); line-height: 1.2; font-weight: 800;"
               >
-                Securing Your Digital World With Advanced Cloud Security
-                Solutions
+                Securing Your Digital World With Advanced Defense
               </h2>
-              <p
-                class="sec-text mt-30"
-                data-cue="slideInUp"
-                data-show="true"
-                style="
-                  animation-name: slideInUp;
-                  animation-duration: 900ms;
-                  animation-timing-function: ease;
-                  animation-delay: 0ms;
-                  animation-direction: normal;
-                  animation-fill-mode: both;
-                "
-              >
-                Advert Resource Ltd is a pioneering cybersecurity firm dedicated to
-                safeguarding your digital assets. With over two decades of
-                experience.
+              <p class="cta-desc">
+                Advert Resource Ltd is a pioneering cybersecurity firm dedicated to safeguarding enterprise infrastructure. Connect with an expert today to deploy threat intelligence, establish boundaries, and isolate vulnerabilities before they materialize.
               </p>
-              <a
-                href="contact-us.php"
-                class="ot-btn mb-0 mt-4"
-                data-cue="slideInUp"
-                data-show="true"
-                style="
-                  animation-name: slideInUp;
-                  animation-duration: 900ms;
-                  animation-timing-function: ease;
-                  animation-delay: 0ms;
-                  animation-direction: normal;
-                  animation-fill-mode: both;
-                "
-                >Contact Us<i class="fas fa-arrow-right ms-2"></i
-              ></a>
+              
+              <div class="cta-btn-group">
+                <a href="contact-us.php" class="cta-btn-primary">
+                  Speak with an Expert <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="contact-us.php" class="cta-btn-secondary">
+                  Schedule Audit
+                </a>
+              </div>
             </div>
           </div>
-          <div class="col-xl-6 text-center">
-            <div
-              class="cta-thumb1-1"
-              data-cue="slideInUp"
-              data-show="true"
-              style="
-                animation-name: slideInUp;
-                animation-duration: 900ms;
-                animation-timing-function: ease;
-                animation-delay: 0ms;
-                animation-direction: normal;
-                animation-fill-mode: both;
-              "
-            >
-              <img src="./index/cta1-1.png" alt="img" />
-              <div class="ripple-shape">
-                <span class="ripple-1"></span> <span class="ripple-2"></span>
-                <span class="ripple-3"></span> <span class="ripple-4"></span>
-                <span class="ripple-5"></span> <span class="ripple-6"></span>
-                <span class="ripple-7"></span> <span class="ripple-8"></span>
-                <span class="ripple-9"></span>
-              </div>
+          <div class="col-xl-6 col-lg-5 text-center">
+            <!-- Glowing Interactive Shield Hub -->
+            <div class="cyber-hub-container" style="position: relative; width: 320px; height: 320px; margin: 0 auto;">
+                <svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Rotating Outer Hexagon Grid -->
+                    <polygon points="160,20 280,90 280,230 160,300 40,230 40,90" stroke="rgba(96, 165, 250, 0.15)" stroke-width="1.5" stroke-dasharray="12 6" style="transform-origin: 160px 160px; animation: rotateCW 40s linear infinite;" />
+                    <!-- Inner Static Hexagon Grid -->
+                    <polygon points="160,50 255,105 255,215 160,270 65,215 65,105" stroke="rgba(224, 0, 155, 0.15)" stroke-width="1" />
+                    
+                    <!-- Animated Concentric Rings -->
+                    <circle cx="160" cy="160" r="100" stroke="rgba(96, 165, 250, 0.1)" stroke-dasharray="20 40" stroke-width="2" style="transform-origin: 160px 160px; animation: rotateCCW 20s linear infinite;" />
+                    <circle cx="160" cy="160" r="75" stroke="rgba(224, 0, 155, 0.25)" stroke-width="1.5" />
+                    <circle cx="160" cy="160" r="45" stroke="rgba(96, 165, 250, 0.3)" stroke-width="1" stroke-dasharray="5 5" style="transform-origin: 160px 160px; animation: rotateCW 12s linear infinite;" />
+                    
+                    <!-- Pulsing Defense Rays -->
+                    <path d="M160,20 L160,300 M20,160 L300,160" stroke="rgba(255,255,255,0.04)" stroke-width="1" />
+                    
+                    <!-- Center Cyber Shield Shape -->
+                    <path d="M160,110 C175,110 190,100 195,95 C195,145 190,195 160,215 C130,195 125,145 125,95 C130,100 145,110 160,110 Z" fill="url(#shieldGlow)" stroke="#3C72FC" stroke-width="2.5" style="animation: shieldPulse 3s infinite;" />
+                    
+                    <!-- Blinking Node Connections -->
+                    <circle cx="255" cy="105" r="4" fill="#3C72FC" style="animation: pulseNode 1.5s infinite;" />
+                    <circle cx="65" cy="215" r="4" fill="#E0009B" style="animation: pulseNode 1.5s infinite 0.5s;" />
+                    <circle cx="160" cy="50" r="4.5" fill="#10b981" style="animation: pulseNode 1.5s infinite 1s;" />
+                    
+                    <defs>
+                        <linearGradient id="shieldGlow" x1="160" y1="95" x2="160" y2="215">
+                            <stop offset="0%" stop-color="#3C72FC" stop-opacity="0.6" />
+                            <stop offset="100%" stop-color="#E0009B" stop-opacity="0.1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none;">
+                    <i class="fas fa-shield-alt" style="font-size: 2.2rem; color: #ffffff; text-shadow: 0 0 15px rgba(60,114,252,0.8);"></i>
+                </div>
             </div>
           </div>
         </div>
@@ -1680,7 +2295,7 @@
                   animation-direction: normal;
                   animation-fill-mode: both;
                 "
-                >Testimonial</span
+                ></span
               >
               <h2
                 class="sec-title"
@@ -1965,133 +2580,520 @@
         </div>
       </div>
     </section>
-    <section class="space bg-smoke overflow-hidden shape-mockup-wrap">
+    <!-- Tighten Layout Spacing & Title Alignment: Global Overrides -->
+    <style>
+    .space, .space-top, .space-bottom, 
+    #service-sec, #team-sec, #global-network-sec, 
+    .premium-why-sec, .premium-cta-sec, #blog-sec {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+    
+    /* Unified Title Area Alignment & Styling */
+    .title-area {
+        text-align: left !important;
+        position: relative !important;
+        padding-left: 24px !important;
+        border-left: 3px solid transparent !important;
+        border-image: linear-gradient(180deg, #3C72FC 0%, #E0009B 100%) 1 !important;
+        margin-bottom: 40px !important;
+    }
+    .title-area.text-center, .title-area.text-xl-start, .title-area.text-center.mb-40 {
+        text-align: left !important;
+    }
+    .title-area .sub-title {
+        margin-left: 0 !important;
+        margin-right: auto !important;
+        display: inline-flex !important;
+    }
+    
+    /* Scoped Style Overrides for Blog Section */
+    #blog-sec {
+        background-color: #000916 !important;
+        position: relative;
+    }
+    #blog-sec::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: 
+            linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+        background-size: 60px 60px;
+        pointer-events: none;
+    }
+    #blog-sec .sec-btn .ot-btn {
+                  </div>
+                  <div
+                    class="star-rating"
+                    role="img"
+                    aria-label="Rated 5.00 out of 5"
+                  >
+                    <span
+                      >Rated <strong class="rating">5.00</strong> out of 5 based
+                      on <span class="rating">1</span> customer rating</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-slide swiper-slide-active"
+                role="group"
+                aria-label="4 / 6"
+                style="width: 370px; margin-right: 30px"
+              >
+                <div class="testi-card style2">
+                  <div class="box-thumb">
+                    <img src="./index/1-4.png" alt="img" />
+                  </div>
+                  <h3 class="box-title">Pinakee Aveter</h3>
+                  <span class="box-subtitle">UX Designer</span>
+                  <div class="testi-card-content">
+                    <p class="box-text">
+                      "We were struggling to manage our growing cloud
+                      infrastructure and protect our sensitive data. Securs
+                      expert team provided us with a comprehensive security
+                      solution that not only met our needs but exceeded our
+                      expectations. Their proactive detection."
+                    </p>
+                  </div>
+                  <div
+                    class="star-rating"
+                    role="img"
+                    aria-label="Rated 5.00 out of 5"
+                  >
+                    <span
+                      >Rated <strong class="rating">5.00</strong> out of 5 based
+                      on <span class="rating">1</span> customer rating</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-slide swiper-slide-next"
+                role="group"
+                aria-label="5 / 6"
+                style="width: 370px; margin-right: 30px"
+              >
+                <div class="testi-card style2">
+                  <div class="box-thumb">
+                    <img src="./index/1-5.png" alt="img" />
+                  </div>
+                  <h3 class="box-title">Arif Rahman</h3>
+                  <span class="box-subtitle">UX Designer</span>
+                  <div class="testi-card-content">
+                    <p class="box-text">
+                      "Before partnering with Advert Resource Ltd, we were constantly worried
+                      about potential data breaches. With their robust data loss
+                      prevention solution, Their team stays ahead of the latest
+                      threats.we have significantly reduced our risk and can now
+                      focus on business."
+                    </p>
+                  </div>
+                  <div
+                    class="star-rating"
+                    role="img"
+                    aria-label="Rated 5.00 out of 5"
+                  >
+                    <span
+                      >Rated <strong class="rating">5.00</strong> out of 5 based
+                      on <span class="rating">1</span> customer rating</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="swiper-slide"
+                role="group"
+                aria-label="6 / 6"
+                style="width: 370px; margin-right: 30px"
+              >
+                <div class="testi-card style2">
+                  <div class="box-thumb">
+                    <img src="./index/1-6.png" alt="img" />
+                  </div>
+                  <h3 class="box-title">Emily Chowhan</h3>
+                  <span class="box-subtitle">UX Designer</span>
+                  <div class="testi-card-content">
+                    <p class="box-text">
+                      "The Advert Resource Ltd team is incredibly responsive and always
+                      willing to go the extra mile to address our concerns.
+                      Their customer support is top-notch, response plan, we
+                      were able to mitigateand we are confident in their ability
+                      to protect our cloud environment."
+                    </p>
+                  </div>
+                  <div
+                    class="star-rating"
+                    role="img"
+                    aria-label="Rated 5.00 out of 5"
+                  >
+                    <span
+                      >Rated <strong class="rating">5.00</strong> out of 5 based
+                      on <span class="rating">1</span> customer rating</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="slider-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"
+            >
+              <span
+                class="swiper-pagination-bullet"
+                aria-label="Go to Slide 1"
+                tabindex="0"
+              ></span
+              ><span
+                class="swiper-pagination-bullet"
+                aria-label="Go to Slide 2"
+                tabindex="0"
+              ></span
+              ><span
+                class="swiper-pagination-bullet"
+                aria-label="Go to Slide 3"
+                tabindex="0"
+              ></span
+              ><span
+                class="swiper-pagination-bullet swiper-pagination-bullet-active"
+                aria-label="Go to Slide 4"
+                tabindex="0"
+                aria-current="true"
+              ></span>
+            </div>
+            <span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span
+            ><span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Tighten Layout Spacing & Title Alignment: Global Overrides -->
+    <style>
+    .space, .space-top, .space-bottom, 
+    #service-sec, #team-sec, #global-network-sec, 
+    .premium-why-sec, .premium-cta-sec, #blog-sec {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+    
+    /* Unified Title Area Alignment & Styling (Centered) */
+    .title-area {
+        text-align: center !important;
+        position: relative !important;
+        margin-bottom: 45px !important;
+        padding-left: 0 !important;
+        border-left: none !important;
+    }
+    .title-area.text-center, .title-area.text-xl-start, .title-area.text-center.mb-40 {
+        text-align: center !important;
+    }
+    .title-area .sub-title {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: inline-flex !important;
+    }
+    /* Centered bottom gradient accent bar */
+    .title-area::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, #3C72FC, #E0009B);
+        border-radius: 2px;
+    }
+    
+    /* Scoped Style Overrides for Blog Section */
+    #blog-sec {
+        background-color: #000916 !important;
+        position: relative;
+    }
+    #blog-sec::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: 
+            linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+        background-size: 60px 60px;
+        pointer-events: none;
+    }
+    #blog-sec .sec-btn .ot-btn {
+        -webkit-background-clip: border-box !important;
+        -webkit-text-fill-color: #ffffff !important;
+        color: #ffffff !important;
+        background: linear-gradient(135deg, #3C72FC 0%, #E0009B 100%) !important;
+        border: none !important;
+        border-radius: 30px !important;
+        padding: 12px 28px !important;
+        font-size: 0.9rem !important;
+        min-height: auto !important;
+        box-shadow: 0 5px 15px rgba(60, 114, 252, 0.2) !important;
+        transition: all 0.3s ease !important;
+        display: inline-flex !important;
+        align-items: center;
+    }
+    #blog-sec .sec-btn .ot-btn:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 20px rgba(224, 0, 155, 0.4) !important;
+        color: #ffffff !important;
+    }
+    .blog-card {
+        background: rgba(15, 23, 42, 0.5) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 20px !important;
+        overflow: hidden !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .blog-card:hover {
+        transform: translateY(-8px) !important;
+        border-color: rgba(224, 0, 155, 0.3) !important;
+        box-shadow: 0 20px 40px rgba(224, 0, 155, 0.15) !important;
+    }
+    .blog-card .blog-img {
+        overflow: hidden !important;
+        position: relative !important;
+        aspect-ratio: 16/9 !important;
+        background: #020813;
+    }
+    .blog-card .blog-img img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .blog-card:hover .blog-img img {
+        transform: scale(1.05) !important;
+    }
+    .blog-card .blog-content {
+        padding: 30px !important;
+        background: transparent !important;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .blog-card .blog-meta {
+        margin-bottom: 15px !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        font-family: "Space Grotesk", monospace;
+        font-size: 0.8rem !important;
+    }
+    .blog-card .blog-meta a {
+        color: #60a5fa !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+    }
+    .blog-card .blog-meta .meta-date {
+        color: #94a3b8 !important;
+    }
+    .blog-card .box-title {
+        font-size: 1.35rem !important;
+        font-weight: 800 !important;
+        line-height: 1.35 !important;
+        margin-bottom: 25px !important;
+        letter-spacing: -0.5px;
+    }
+    .blog-card .box-title a {
+        color: #ffffff !important;
+        text-decoration: none !important;
+        transition: color 0.3s ease !important;
+    }
+    .blog-card .box-title a:hover {
+        color: #E0009B !important;
+    }
+    .blog-card .link-btn {
+        font-family: "Space Grotesk", monospace;
+        font-size: 0.85rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #ffffff !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        margin-top: auto !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+    }
+    .blog-card .link-btn i {
+        transition: transform 0.3s ease !important;
+    }
+    .blog-card:hover .link-btn {
+        color: #E0009B !important;
+    }
+    .blog-card:hover .link-btn i {
+        transform: translateX(5px) !important;
+    }
+    
+    .featured-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: linear-gradient(135deg, #3C72FC 0%, #E0009B 100%);
+        color: #fff;
+        padding: 5px 12px;
+        border-radius: 4px;
+        font-family: "Space Grotesk", monospace;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        z-index: 2;
+    }
+    
+    .terminal-diag-panel {
+        background: rgba(2, 8, 19, 0.6);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin-bottom: 20px;
+        font-family: "Space Grotesk", monospace;
+        font-size: 0.75rem;
+        text-align: left;
+    }
+    .terminal-diag-panel .term-hdr {
+        color: #60a5fa;
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 700;
+    }
+    .terminal-diag-panel .term-grid {
+        display: flex;
+        gap: 20px;
+        color: #94a3b8;
+    }
+    
+    .mini-blog-card .blog-content {
+        padding: 24px !important;
+    }
+    </style>
+
+    <section class="overflow-hidden shape-mockup-wrap" id="blog-sec">
       <div
         class="shape-mockup bg-gradient-shape1 blog-bg-gradient1"
         style="inset: auto 0px 20% auto"
       ></div>
       <div class="container">
-        <div class="row justify-content-between align-items-center">
-          <div class="col-lg-6">
-            <div class="title-area">
-              <span
-                class="sub-title style2"
-                data-cue="slideInUp"
-                data-show="true"
-                style="
-                  animation-name: slideInUp;
-                  animation-duration: 900ms;
-                  animation-timing-function: ease;
-                  animation-delay: 0ms;
-                  animation-direction: normal;
-                  animation-fill-mode: both;
-                "
-                >New &amp; Blog</span
-              >
+        <div class="row justify-content-center align-items-center mb-50">
+          <div class="col-xl-8 text-center">
+            <div class="title-area mb-0 text-center">
+              <span class="sub-title style2">New &amp; Blog</span>
               <h2
-                class="sec-title"
-                data-cue="slideInUp"
-                data-show="true"
-                style="
-                  animation-name: slideInUp;
-                  animation-duration: 900ms;
-                  animation-timing-function: ease;
-                  animation-delay: 0ms;
-                  animation-direction: normal;
-                  animation-fill-mode: both;
-                "
+                class="sec-title text-white"
+                style="font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 800;"
               >
                 Latest News and Insights
               </h2>
             </div>
           </div>
-          <div class="col-auto">
-            <div
-              class="sec-btn"
-              data-cue="slideInUp"
-              data-show="true"
-              style="
-                animation-name: slideInUp;
-                animation-duration: 900ms;
-                animation-timing-function: ease;
-                animation-delay: 0ms;
-                animation-direction: normal;
-                animation-fill-mode: both;
-              "
-            >
-              <a href="index.htmlblog.php" class="ot-btn style-border"
-                >View More<i class="far fa-long-arrow-right ms-2"></i
-              ></a>
-            </div>
-          </div>
         </div>
-        <div class="row gy-4 justify-content-center">
-          <div class="col-md-6">
-            <div
-              class="blog-card"
-              data-cue="slideInUp"
-              data-show="true"
-              style="
-                animation-name: slideInUp;
-                animation-duration: 900ms;
-                animation-timing-function: ease;
-                animation-delay: 0ms;
-                animation-direction: normal;
-                animation-fill-mode: both;
-              "
-            >
+        
+        <div class="row gy-40">
+          <!-- Left Column: Featured Threat Intel Bulletin -->
+          <div class="col-lg-7">
+            <div class="blog-card featured-blog-card">
               <div class="blog-img">
                 <img src="./index/blog_2_1.jpg" alt="blog image" />
+                <div class="featured-badge">FEATURED RESEARCH</div>
               </div>
               <div class="blog-content">
                 <div class="blog-meta">
-                  <a href="index.htmlblog.php">December 26, 2025</a>
+                  <a href="blog.php">THREAT INTEL</a>
+                  <span class="meta-date">// December 26, 2025</span>
                 </div>
                 <h3 class="box-title">
-                  <a href="index.htmlblog-details.php"
+                  <a href="blog-details.php"
                     >A strategic alliance to enhance cloud security offerings</a
                   >
                 </h3>
-                <a
-                  href="index.htmlblog-details.php"
-                  class="link-btn style-gradient"
-                  >Read More<i class="far fa-long-arrow-right ms-2"></i
-                ></a>
+                <p class="featured-summary text-start" style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
+                  Our joint partnership deployment integrates real-time malware scrubbing directly into AWS and Azure workloads, delivering low-latency security scanning for global enterprises.
+                </p>
+                <div class="terminal-diag-panel">
+                  <span class="term-hdr">> BRIEF_STATUS</span>
+                  <div class="term-grid">
+                      <span>AUDIT: <span class="text-success">VERIFIED</span></span>
+                      <span>THREAT: <span style="color: #60a5fa;">MINIMAL</span></span>
+                      <span>RESILIENCY: <span style="color: #E0009B;">100%</span></span>
+                  </div>
+                </div>
+                <a href="blog-details.php" class="link-btn mt-3">
+                  Read Full Report <i class="far fa-long-arrow-right ms-2"></i>
+                </a>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div
-              class="blog-card"
-              data-cue="slideInUp"
-              data-show="true"
-              style="
-                animation-name: slideInUp;
-                animation-duration: 900ms;
-                animation-timing-function: ease;
-                animation-delay: 270ms;
-                animation-direction: normal;
-                animation-fill-mode: both;
-              "
-            >
-              <div class="blog-img">
-                <img src="./index/blog_2_2.jpg" alt="blog image" />
-              </div>
-              <div class="blog-content">
-                <div class="blog-meta">
-                  <a href="index.htmlblog.php">March 05, 2025</a>
+          
+          <!-- Right Column: Secondary Bulletin Bulletins Stack -->
+          <div class="col-lg-5">
+            <div class="d-flex flex-column gap-24" style="height: 100%;">
+                
+                <!-- Card 2 -->
+                <div class="blog-card mini-blog-card text-start">
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <a href="blog.php" style="color: #E0009B !important;">CLOUD RESILIENCE</a>
+                      <span class="meta-date">// March 05, 2025</span>
+                    </div>
+                    <h3 class="box-title" style="font-size: 1.15rem !important; margin-bottom: 12px !important;">
+                      <a href="blog-details.php">A comprehensive analysis of emerging ransomware vectors in hybrid cloud models.</a>
+                    </h3>
+                    <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.5; margin-bottom: 15px;">
+                      Analyzing new persistence attacks targeting virtualized hypervisors and their mitigation methods.
+                    </p>
+                    <a href="blog-details.php" class="link-btn">
+                      Read Analysis <i class="far fa-long-arrow-right ms-2"></i>
+                    </a>
+                  </div>
                 </div>
-                <h3 class="box-title">
-                  <a href="index.htmlblog-details.php"
-                    >A comprehensive analysis of emerging threats and trends.</a
-                  >
-                </h3>
-                <a
-                  href="index.htmlblog-details.php"
-                  class="link-btn style-gradient"
-                  >Read More<i class="far fa-long-arrow-right ms-2"></i
-                ></a>
-              </div>
+                
+                <!-- Card 3 -->
+                <div class="blog-card mini-blog-card text-start">
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <a href="blog.php" style="color: #f0a230 !important;">COMPLIANCE BRIEF</a>
+                      <span class="meta-date">// June 12, 2025</span>
+                    </div>
+                    <h3 class="box-title" style="font-size: 1.15rem !important; margin-bottom: 12px !important;">
+                      <a href="blog-details.php">Navigating global data residency protocols & GovCloud deployment compliance.</a>
+                    </h3>
+                    <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.5; margin-bottom: 15px;">
+                      A step-by-step roadmap to achieving SOC 2 Type II and HIPAA compliance audits for distributed APIs.
+                    </p>
+                    <a href="blog-details.php" class="link-btn">
+                      Read Analysis <i class="far fa-long-arrow-right ms-2"></i>
+                    </a>
+                  </div>
+                </div>
+                
+            </div>
+          </div>
+        </div>
+        
+        <div class="row mt-40">
+          <div class="col-12 text-center">
+            <div class="sec-btn">
+              <a href="blog.php" class="ot-btn">
+                View More <i class="far fa-long-arrow-right ms-2"></i>
+              </a>
             </div>
           </div>
         </div>
