@@ -315,6 +315,62 @@
                         <a href="services-managed-security.php" class="services-action-btn">View Spec <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="services-grid-card">
+                        <div class="services-card-icon"><i class="fas fa-crosshairs"></i></div>
+                        <h3 class="services-card-title">Advanced Threat Detection</h3>
+                        <p class="services-card-text">Proactively identify and respond to emerging threats, safeguarding your critical assets from potential harm.</p>
+                        <a href="advanced-threat-detection.php" class="services-action-btn">View Spec <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="services-grid-card">
+                        <div class="services-card-icon"><i class="fas fa-lock"></i></div>
+                        <h3 class="services-card-title">Robust Data Protection</h3>
+                        <p class="services-card-text">Safeguard your sensitive data with robust encryption, secure access controls, and data loss prevention measures.</p>
+                        <a href="robust-data-protection.php" class="services-action-btn">View Spec <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="services-grid-card">
+                        <div class="services-card-icon"><i class="fas fa-desktop"></i></div>
+                        <h3 class="services-card-title">Security Monitoring</h3>
+                        <p class="services-card-text">Our team of security experts monitors your environment around the clock, detecting and responding to threats in real-time.</p>
+                        <a href="security-monitoring.php" class="services-action-btn">View Spec <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="services-grid-card">
+                        <div class="services-card-icon"><i class="fas fa-key"></i></div>
+                        <h3 class="services-card-title">Access Broker Security</h3>
+                        <p class="services-card-text">Control external identity vectors, IAM verification, and privileged access management (PAM) to stop credential harvesting.</p>
+                        <a href="services-access-broker.php" class="services-action-btn">View Spec <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="services-grid-card">
+                        <div class="services-card-icon"><i class="fas fa-cloud"></i></div>
+                        <h3 class="services-card-title">Cloud Posture Control</h3>
+                        <p class="services-card-text">Assess multi-cloud infrastructure configurations. Enforce CI/CD pipeline integrity and cloud container vulnerability checks.</p>
+                        <a href="services-cloud-posture.php" class="services-action-btn">View Spec <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="services-grid-card">
+                        <div class="services-card-icon"><i class="fas fa-laptop-medical"></i></div>
+                        <h3 class="services-card-title">Endpoint Response</h3>
+                        <p class="services-card-text">EDR deployments targeting malware execution, memory manipulation, and ransomware behaviors directly at the device edge.</p>
+                        <a href="services-endpoint-response.php" class="services-action-btn">View Spec <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="services-grid-card">
+                        <div class="services-card-icon"><i class="fas fa-server"></i></div>
+                        <h3 class="services-card-title">Workload Protection</h3>
+                        <p class="services-card-text">Securing serverless functions, Kubernetes clusters, and hypervisors against internal lateral movement and container breakouts.</p>
+                        <a href="services-workload-protection.php" class="services-action-btn">View Spec <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

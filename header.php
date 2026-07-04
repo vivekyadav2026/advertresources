@@ -138,6 +138,166 @@
               padding-left: 25px !important;
           }
       }
+
+      /* ==========================================================================
+         MOBILE NATIVE APP-LIKE EXPERIENCE OVERRIDES
+         ========================================================================== */
+      @media (max-width: 767px) {
+          /* 1. Reset Body for App Feel */
+          body {
+              overscroll-behavior-y: none !important;
+              -webkit-tap-highlight-color: transparent !important;
+              -webkit-touch-callout: none !important;
+              /* Prevent horizontal scroll on mobile */
+              overflow-x: hidden !important;
+              width: 100vw !important;
+              /* Pad bottom so the bottom nav doesn't cover content */
+              padding-bottom: 70px !important;
+          }
+
+          /* 2. Fluid Typography for Mobile (App Scaling) */
+          h1, .h1 { font-size: clamp(2rem, 8vw, 2.5rem) !important; line-height: 1.2 !important; }
+          h2, .h2 { font-size: clamp(1.75rem, 6vw, 2.1rem) !important; line-height: 1.2 !important; }
+          h3, .h3 { font-size: clamp(1.5rem, 5vw, 1.8rem) !important; line-height: 1.3 !important; }
+          p, .sec-text { font-size: 1rem !important; line-height: 1.5 !important; }
+
+          /* 3. Increase Touch Targets for Accessibility (Min 44px) */
+          .ot-btn, .btn, button, .main-menu a, .footer-menu a, .sub-menu a, .app-bottom-nav a {
+              min-height: 44px !important;
+              display: flex !important;
+              align-items: center !important;
+              justify-content: center !important;
+          }
+
+          /* Keep normal inline links as is, but block-level links get touch targets */
+          a.ot-btn {
+              display: inline-flex !important;
+          }
+
+          /* 4. Remove excessive margins/paddings */
+          .space, .space-top, .space-bottom {
+              padding-top: 60px !important;
+              padding-bottom: 60px !important;
+          }
+          
+          .container {
+              padding-left: 20px !important;
+              padding-right: 20px !important;
+          }
+
+          /* 5. Hide elements not needed on Mobile App View */
+          .popup-search-box { display: none !important; }
+          
+          /* Force hide default footer margins if they interfere with app bar */
+          .footer-wrapper { margin-bottom: 0 !important; }
+          
+          /* 6. Homepage Banner & Section Tightening (App Feed Look) */
+          .ot-hero-wrapper, .hero-2, .hero-premium {
+              padding-top: 100px !important; /* give space for mobile header */
+              padding-bottom: 40px !important;
+              min-height: auto !important;
+              overflow-x: hidden !important; /* contain the wide canvas */
+              width: 100vw !important;
+          }
+          
+          /* Force the giant wave canvas to scale down and not break the viewport */
+          .waves canvas {
+              width: 100% !important;
+              height: auto !important;
+              object-fit: cover !important;
+              opacity: 0.5 !important;
+          }
+          
+          .hero-bg-line1 {
+              display: none !important; /* Disable wide background lines causing scroll */
+          }
+          
+          .hero-title, .hero-style2 h1 {
+              font-size: clamp(2.2rem, 8vw, 2.8rem) !important;
+              margin-bottom: 12px !important;
+              line-height: 1.1 !important;
+          }
+          
+          .hero-text, .hero-style2 p {
+              margin-bottom: 20px !important;
+              font-size: 0.95rem !important;
+          }
+          
+          /* Button stacking & refinement on banner */
+          .btn-wrap {
+              flex-direction: column !important;
+              gap: 15px !important;
+              width: 100% !important;
+              padding: 0 20px !important;
+          }
+          
+          .btn-wrap a.ot-btn {
+              width: 100% !important;
+              justify-content: center !important;
+              border-radius: 12px !important;
+              background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
+              border: none !important;
+              box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3) !important;
+          }
+          
+          .btn-wrap a.video-btn-wrap {
+              width: 100% !important;
+              justify-content: center !important;
+              border-radius: 12px !important;
+              background: rgba(255, 255, 255, 0.05) !important;
+              border: 1px solid rgba(255, 255, 255, 0.1) !important;
+              color: #ffffff !important;
+              padding: 12px 20px !important;
+              margin: 0 !important;
+              backdrop-filter: blur(5px) !important;
+          }
+          
+          .btn-wrap a.video-btn-wrap:hover {
+              background: rgba(255, 255, 255, 0.1) !important;
+          }
+          
+          .btn-wrap a.video-btn-wrap .play-btn {
+              width: 32px !important;
+              height: 32px !important;
+              font-size: 0.8rem !important;
+              margin-right: 12px !important;
+              background: #fff !important;
+              color: #2563eb !important;
+              box-shadow: 0 0 15px rgba(255,255,255,0.3) !important;
+          }
+          
+          /* Hero Background Polish */
+          .hero-2 {
+              background: linear-gradient(135deg, #050B18 0%, #0a1128 100%) !important;
+              position: relative;
+          }
+          .hero-2::before {
+              content: '';
+              position: absolute;
+              top: 0; left: 0; right: 0; bottom: 0;
+              background: radial-gradient(circle at center, rgba(37,99,235,0.15) 0%, transparent 70%);
+              pointer-events: none;
+          }
+          
+          /* Feature Cards (App Card styling) */
+          .feature-area-1 {
+              padding-top: 20px !important;
+              margin-top: -20px !important;
+          }
+          
+          .feature-card {
+              padding: 25px 20px !important;
+              margin-bottom: 5px !important;
+              border-radius: 20px !important;
+              background: rgba(15, 23, 42, 0.7) !important;
+              backdrop-filter: blur(10px) !important;
+          }
+          
+          /* Tighten standard rows to reduce scrolling gaps */
+          .row.gy-30, .row.gy-4, .row.gy-40 {
+              --bs-gutter-y: 15px !important;
+          }
+      }
     </style>
   </head>
   <body>

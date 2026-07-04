@@ -162,7 +162,7 @@
                       Ready to elevate your protection with tailored cloud security solutions?
                     </h2>
                     <p class="footer-contact-text">
-                      For over two decades, Advert Resource Ltd has been at the forefront of cybersecurity, adapting to the ever-evolving threat landscape. Our seasoned professionals have a deep understanding of the latest attack vectors.
+                      Advert Resource Ltd is an elite cybersecurity startup operating at the forefront of digital defense, adapting to the ever-evolving threat landscape. Our seasoned professionals have a deep understanding of the latest attack vectors.
                     </p>
                   </div>
                   
@@ -262,8 +262,7 @@
                     /></a>
                   </div>
                   <p class="about-text">
-                    Since 1999, Advert Resource Ltd has been a trusted leader in
-                    cybersecurity, protecting digital assets with.
+                    Advert Resource Ltd is an innovative cybersecurity startup securing digital landscapes with next-generation zero-trust technology.
                   </p>
                   <div class="ot-social">
                     <a href="https://www.facebook.com/"
@@ -864,6 +863,108 @@
         new CyberBackground();
     });
     </script>
+
+    <!-- ============================================ -->
+    <!-- MOBILE APP BOTTOM NAVIGATION BAR -->
+    <!-- ============================================ -->
+    <style>
+    .app-bottom-nav {
+        display: none; /* Hidden by default on desktop */
+    }
+
+    @media (max-width: 767px) {
+        .app-bottom-nav {
+            display: flex;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 9999;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+            padding-bottom: env(safe-area-inset-bottom, 0px); /* For iOS rounded corners */
+        }
+
+        .app-bottom-nav .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            color: #94a3b8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .app-bottom-nav .nav-item i {
+            font-size: 1.25rem;
+            margin-bottom: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .app-bottom-nav .nav-item span {
+            font-size: 0.65rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* Active State */
+        .app-bottom-nav .nav-item.active {
+            color: #E0009B;
+        }
+        
+        .app-bottom-nav .nav-item.active i {
+            transform: translateY(-2px);
+            text-shadow: 0 0 10px rgba(224, 0, 155, 0.6);
+        }
+
+        .app-bottom-nav .nav-item.active::before {
+            content: '';
+            position: absolute;
+            top: -15px; /* Adjust to sit at the top border of the nav bar */
+            width: 20px;
+            height: 3px;
+            background: #E0009B;
+            border-radius: 5px;
+            box-shadow: 0 0 10px #E0009B;
+        }
+    }
+    </style>
+
+    <?php
+        // Determine active page for bottom nav
+        $current_page = basename($_SERVER['PHP_SELF']);
+    ?>
+    <nav class="app-bottom-nav">
+        <a href="index.php" class="nav-item <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="services.php" class="nav-item <?php echo (strpos($current_page, 'service') !== false) ? 'active' : ''; ?>">
+            <i class="fas fa-shield"></i>
+            <span>Services</span>
+        </a>
+        <a href="gallery.php" class="nav-item <?php echo ($current_page == 'gallery.php') ? 'active' : ''; ?>">
+            <i class="fas fa-images"></i>
+            <span>Gallery</span>
+        </a>
+        <a href="blog.php" class="nav-item <?php echo ($current_page == 'blog.php' || $current_page == 'blog-details.php') ? 'active' : ''; ?>">
+            <i class="fas fa-file-alt"></i>
+            <span>Blog</span>
+        </a>
+        <a href="contact-us.php" class="nav-item <?php echo ($current_page == 'contact-us.php') ? 'active' : ''; ?>">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
   </body>
 </html>
 

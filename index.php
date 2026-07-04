@@ -69,8 +69,8 @@
                   animation-fill-mode: both;
                 "
               >
-                Since 1999, Advert Resource Ltd has safeguarded digital landscapes. Our cloud
-                security solutions protect your data and applications from
+                Advert Resource Ltd is an innovative cybersecurity startup securing digital landscapes. Our next-generation cloud
+                security solutions protect your data and applications from emerging zero-day
                 threats. Fortify your future with Advert Resource Ltd.
               </p>
               <div
@@ -283,9 +283,8 @@
                   "
                 >
                   Advert Resource Ltd is a pioneering cybersecurity firm dedicated to
-                  safeguarding your digital assets. With over two decades of
-                  experience, we've been at the forefront of innovation,
-                  providing comprehensive.
+                  safeguarding your digital assets. With bleeding-edge next-generation technology,
+                  we've been at the forefront of innovation, providing comprehensive network protection..
                 </p>
               </div>
               <div
@@ -1438,7 +1437,7 @@
                 Meet the Elite Cyber Command
               </h2>
               <p class="team-desc-text">
-                Our operations are led by ex-intelligence agents, security researchers, and certified network defense commanders with decades of active warfare containment experience.
+                Our operations are led by elite security researchers, modern penetration testers, and certified network defense commanders with bleeding-edge active warfare containment experience.
               </p>
               
               <!-- Telemetry diagnostic panel -->
@@ -1759,7 +1758,7 @@
                 A Global Network of Cloud Security
               </h2>
               <p class="sec-text">
-                Advert Resource Ltd is a pioneering cybersecurity firm dedicated to safeguarding your digital assets. With over two decades of experience, we've been at the forefront of innovation, providing comprehensive network protection.
+                Advert Resource Ltd is an innovative cybersecurity firm dedicated to safeguarding your digital assets. Operating at the cutting-edge of network defense, we provide modern, comprehensive protection.
               </p>
             </div>
           </div>
@@ -2364,15 +2363,15 @@
             <div class="why-counter-card">
               <div class="why-card-icon" style="color: #60a5fa;"><i class="fas fa-layer-group"></i></div>
               <div>
-                <h2 class="box-number"><span class="counter-number">5</span>k+</h2>
-                <span class="box-text" style="color: #60a5fa;">Projects Completed</span>
+                <h2 class="box-number"><span class="counter-number">100</span>%</h2>
+                <span class="box-text" style="color: #60a5fa;">Active Defense Architecture</span>
               </div>
             </div>
             <div class="why-counter-card">
               <div class="why-card-icon" style="color: #E0009B;"><i class="fas fa-globe"></i></div>
               <div>
-                <h2 class="box-number"><span class="counter-number">150</span>k+</h2>
-                <span class="box-text" style="color: #E0009B;">Customers Globally</span>
+                <h2 class="box-number"><span class="counter-number">1</span>st</h2>
+                <span class="box-text" style="color: #E0009B;">Zero-Day Protection</span>
               </div>
             </div>
           </div>
@@ -2426,15 +2425,15 @@
             <div class="why-counter-card">
               <div class="why-card-icon" style="color: #f0a230;"><i class="fas fa-users-gear"></i></div>
               <div>
-                <h2 class="box-number"><span class="counter-number">95</span>%</h2>
-                <span class="box-text" style="color: #f0a230;">Retention Rate</span>
+                <h2 class="box-number"><span class="counter-number">24</span>/7</h2>
+                <span class="box-text" style="color: #f0a230;">Threat Hunting</span>
               </div>
             </div>
             <div class="why-counter-card">
               <div class="why-card-icon" style="color: #8f54ff;"><i class="fas fa-award"></i></div>
               <div>
-                <h2 class="box-number"><span class="counter-number">25</span>+</h2>
-                <span class="box-text" style="color: #8f54ff;">Years Experience</span>
+                <h2 class="box-number"><span class="counter-number">3.0</span></h2>
+                <span class="box-text" style="color: #8f54ff;">Next-Gen AI SOC</span>
               </div>
             </div>
           </div>
