@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Managed Security (SOC) | Advert Resource Ltd</title>
+    <title>Digital Forensics & IR | Advert Resource Ltd</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -17,21 +17,21 @@
             
             <nav>
                 <ul class="nav-links">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Platform</a></li>
+                    <li class="nav-item"><a href="index.php" class="nav-link">Platform</a></li>
                     <li class="nav-item active">
-                        <a href="services.html" class="nav-link">Capabilities <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <a href="services.php" class="nav-link">Capabilities <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
                         <div class="dropdown-menu">
-                            <a href="services-application-security.html" class="dropdown-item">Application Security</a>
-                            <a href="services-network-security.html" class="dropdown-item">Network Security</a>
-                            <a href="services-compliance-and-data-privacy.html" class="dropdown-item">Compliance & Privacy</a>
-                            <a href="services-red-team.html" class="dropdown-item">Red Team Assessment</a>
-                            <a href="services-digital-forensics.html" class="dropdown-item">Digital Forensics</a>
-                            <a href="services-managed-security.html" class="dropdown-item">Managed Security (SOC)</a>
+                            <a href="services-application-security.php" class="dropdown-item">Application Security</a>
+                            <a href="services-network-security.php" class="dropdown-item">Network Security</a>
+                            <a href="services-compliance-and-data-privacy.php" class="dropdown-item">Compliance & Privacy</a>
+                            <a href="services-red-team.php" class="dropdown-item">Red Team Assessment</a>
+                            <a href="services-digital-forensics.php" class="dropdown-item">Digital Forensics</a>
+                            <a href="services-managed-security.php" class="dropdown-item">Managed Security (SOC)</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a href="about-us.html" class="nav-link">Company</a></li>
-                    <li class="nav-item"><a href="gallery.html" class="nav-link">Telemetry</a></li>
-                    <li class="nav-item"><a href="contact-us.html" class="nav-btn">Engage Team</a></li>
+                    <li class="nav-item"><a href="about-us.php" class="nav-link">Company</a></li>
+                    <li class="nav-item"><a href="gallery.php" class="nav-link">Telemetry</a></li>
+                    <li class="nav-item"><a href="contact-us.php" class="nav-btn">Engage Team</a></li>
                 </ul>
                 <button class="menu-toggle" aria-label="Toggle Navigation">
                     <span></span><span></span><span></span>
@@ -43,9 +43,9 @@
     <main>
         <section class="page-header" style="background: var(--bg-surface);">
             <div class="container">
-                <p style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">CAPABILITY // 06</p>
-                <h1 class="page-title reveal">Managed Security (SOC)</h1>
-                <p class="page-desc reveal" style="transition-delay: 0.1s;">24/7/365 continuous monitoring, log aggregation, and automated triage governed by elite security analysts.</p>
+                <p style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">CAPABILITY // 05</p>
+                <h1 class="page-title reveal">Digital Forensics & IR</h1>
+                <p class="page-desc reveal" style="transition-delay: 0.1s;">Rapid response to active breaches. Chain-of-custody data recovery, malware reverse engineering, and threat eviction.</p>
             </div>
         </section>
 
@@ -53,10 +53,10 @@
             <div class="container">
                 <div class="service-detail-layout reveal">
                     <div class="service-content">
-                        <h2>Continuous Threat Hunting</h2>
-                        <p>Cyber adversaries do not operate on a 9-to-5 schedule; neither should your defenses. Advert Resource Ltd provides a fully managed Security Operations Center (SOC-as-a-Service) out of our London headquarters, granting you enterprise-tier threat hunting without the capital expenditure of an internal team.</p>
+                        <h2>Incident Response & Recovery</h2>
+                        <p>When a perimeter is compromised, every second dictates the scale of the financial and reputational damage. Our Incident Response (IR) team deploys immediately to contain active breaches, halt data exfiltration, and systematically evict the threat actor from your network.</p>
                         
-                        <p>We ingest telemetry across your entire tech stack—cloud environments, endpoints, network traffic, and identity providers—correlating data points to identify anomalous behavior patterns indicative of a breach.</p>
+                        <p>Post-containment, our digital forensics experts perform deep chain-of-custody analysis to identify the root cause, reverse-engineer proprietary malware, and provide legally admissible evidence for regulatory bodies or litigation.</p>
 
                         <div class="content-box">
                             <h3>Deployment Scope</h3>
@@ -64,22 +64,22 @@
                                 <li>
                                     <i class="fa-solid fa-check"></i>
                                     <div>
-                                        <strong style="color: var(--text-primary);">24/7 SIEM Monitoring</strong><br>
-                                        Log aggregation and real-time correlation to detect stealthy lateral movement.
+                                        <strong style="color: var(--text-primary);">Emergency Incident Response</strong><br>
+                                        Immediate deployment to contain ransomware, APTs, and insider threats.
                                     </div>
                                 </li>
                                 <li>
                                     <i class="fa-solid fa-check"></i>
                                     <div>
-                                        <strong style="color: var(--text-primary);">Endpoint Detection & Response (EDR)</strong><br>
-                                        Active monitoring of every host to block malicious file execution and isolate compromised devices.
+                                        <strong style="color: var(--text-primary);">Root Cause Forensics</strong><br>
+                                        Timeline reconstruction and memory analysis to determine exactly how the breach occurred.
                                     </div>
                                 </li>
                                 <li>
                                     <i class="fa-solid fa-check"></i>
                                     <div>
-                                        <strong style="color: var(--text-primary);">Automated Playbooks (SOAR)</strong><br>
-                                        Immediate, machine-speed execution of containment scripts upon threat verification.
+                                        <strong style="color: var(--text-primary);">Malware Reverse Engineering</strong><br>
+                                        Decompiling zero-day payloads to understand their capabilities and generate custom IOCs (Indicators of Compromise).
                                     </div>
                                 </li>
                             </ul>
@@ -89,11 +89,11 @@
                     <div>
                         <div style="border: 1px solid var(--border-color); background: var(--bg-surface); padding: 2rem;">
                             <h3 style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1.5rem;">ENGAGE THIS CAPABILITY</h3>
-                            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Speak with an deployment architect to integrate your infrastructure with our SOC.</p>
-                            <a href="contact-us.html" class="btn-primary" style="width: 100%; justify-content: center;">Deploy Capability <i class="fa-solid fa-arrow-right"></i></a>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">If you are experiencing an active breach, engage emergency protocols.</p>
+                            <a href="contact-us.php" class="btn-primary" style="width: 100%; justify-content: center; background: var(--accent-alert); border-color: var(--accent-alert);">Declare Incident <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                         <div style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
-                            <a href="services.html" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary);"><i class="fa-solid fa-arrow-left"></i> Return to Capabilities</a>
+                            <a href="services.php" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary);"><i class="fa-solid fa-arrow-left"></i> Return to Capabilities</a>
                         </div>
                     </div>
                 </div>
@@ -117,25 +117,25 @@
                 <div>
                     <div class="footer-col-title">PLATFORM</div>
                     <ul class="footer-links">
-                        <li><a href="index.html">Overview</a></li>
-                        <li><a href="services.html">Architecture</a></li>
-                        <li><a href="gallery.html">Telemetry</a></li>
+                        <li><a href="index.php">Overview</a></li>
+                        <li><a href="services.php">Architecture</a></li>
+                        <li><a href="gallery.php">Telemetry</a></li>
                     </ul>
                 </div>
                 <div>
                     <div class="footer-col-title">CAPABILITIES</div>
                     <ul class="footer-links">
-                        <li><a href="services-application-security.html">App Security</a></li>
-                        <li><a href="services-network-security.html">Net Security</a></li>
-                        <li><a href="services-red-team.html">Red Team</a></li>
-                        <li><a href="services-managed-security.html">SOC Ops</a></li>
+                        <li><a href="services-application-security.php">App Security</a></li>
+                        <li><a href="services-network-security.php">Net Security</a></li>
+                        <li><a href="services-red-team.php">Red Team</a></li>
+                        <li><a href="services-managed-security.php">SOC Ops</a></li>
                     </ul>
                 </div>
                 <div>
                     <div class="footer-col-title">COMPANY</div>
                     <ul class="footer-links">
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="contact-us.html">Engage</a></li>
+                        <li><a href="about-us.php">About Us</a></li>
+                        <li><a href="contact-us.php">Engage</a></li>
                     </ul>
                 </div>
             </div>
@@ -152,3 +152,4 @@
     <script src="app.js"></script>
 </body>
 </html>
+

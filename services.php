@@ -18,21 +18,21 @@
             
             <nav>
                 <ul class="nav-links">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Platform</a></li>
+                    <li class="nav-item"><a href="index.php" class="nav-link">Platform</a></li>
                     <li class="nav-item active">
-                        <a href="services.html" class="nav-link">Capabilities <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <a href="services.php" class="nav-link">Capabilities <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
                         <div class="dropdown-menu">
-                            <a href="services-application-security.html" class="dropdown-item">Application Security</a>
-                            <a href="services-network-security.html" class="dropdown-item">Network Security</a>
-                            <a href="services-compliance-and-data-privacy.html" class="dropdown-item">Compliance & Privacy</a>
-                            <a href="services-red-team.html" class="dropdown-item">Red Team Assessment</a>
-                            <a href="services-digital-forensics.html" class="dropdown-item">Digital Forensics</a>
-                            <a href="services-managed-security.html" class="dropdown-item">Managed Security (SOC)</a>
+                            <a href="services-application-security.php" class="dropdown-item">Application Security</a>
+                            <a href="services-network-security.php" class="dropdown-item">Network Security</a>
+                            <a href="services-compliance-and-data-privacy.php" class="dropdown-item">Compliance & Privacy</a>
+                            <a href="services-red-team.php" class="dropdown-item">Red Team Assessment</a>
+                            <a href="services-digital-forensics.php" class="dropdown-item">Digital Forensics</a>
+                            <a href="services-managed-security.php" class="dropdown-item">Managed Security (SOC)</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a href="about-us.html" class="nav-link">Company</a></li>
-                    <li class="nav-item"><a href="gallery.html" class="nav-link">Telemetry</a></li>
-                    <li class="nav-item"><a href="contact-us.html" class="nav-btn">Engage Team</a></li>
+                    <li class="nav-item"><a href="about-us.php" class="nav-link">Company</a></li>
+                    <li class="nav-item"><a href="gallery.php" class="nav-link">Telemetry</a></li>
+                    <li class="nav-item"><a href="contact-us.php" class="nav-btn">Engage Team</a></li>
                 </ul>
                 <button class="menu-toggle" aria-label="Toggle Navigation">
                     <span></span><span></span><span></span>
@@ -58,7 +58,7 @@
                         <div style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.75rem; margin-bottom: 1rem;">CAPABILITY // 01</div>
                         <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">Application Security</h2>
                         <p style="color: var(--text-secondary); margin-bottom: 2rem;">Secure code reviews, SAST/DAST, and architecture analysis to harden infrastructure against injection, XSS, and logic flaws.</p>
-                        <a href="services-application-security.html" class="btn-secondary">View Spec <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                        <a href="services-application-security.php" class="btn-secondary">View Spec <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
                     </div>
 
                     <!-- Capability 2 -->
@@ -66,7 +66,7 @@
                         <div style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.75rem; margin-bottom: 1rem;">CAPABILITY // 02</div>
                         <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">Network Security</h2>
                         <p style="color: var(--text-secondary); margin-bottom: 2rem;">Perimeter defense, zero-trust segmentation, and deep packet inspection designed to halt lateral movement.</p>
-                        <a href="services-network-security.html" class="btn-secondary">View Spec <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                        <a href="services-network-security.php" class="btn-secondary">View Spec <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
                     </div>
 
                     <!-- Capability 3 -->
@@ -74,7 +74,7 @@
                         <div style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.75rem; margin-bottom: 1rem;">CAPABILITY // 03</div>
                         <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">Red Team Assessment</h2>
                         <p style="color: var(--text-secondary); margin-bottom: 2rem;">Simulated advanced persistent threat (APT) attacks to comprehensively test detection and response capabilities.</p>
-                        <a href="services-red-team.html" class="btn-secondary">View Spec <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                        <a href="services-red-team.php" class="btn-secondary">View Spec <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
                     </div>
 
                     <!-- Capability 4 -->
@@ -82,7 +82,7 @@
                         <div style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.75rem; margin-bottom: 1rem;">CAPABILITY // 04</div>
                         <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">Compliance & Data Privacy</h2>
                         <p style="color: var(--text-secondary); margin-bottom: 2rem;">Audit and engineering for ISO 27001, GDPR, and NIST CSF. Ensuring legal resilience and data sovereignty.</p>
-                        <a href="services-compliance-and-data-privacy.html" class="btn-secondary">View Spec <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                        <a href="services-compliance-and-data-privacy.php" class="btn-secondary">View Spec <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
                     </div>
 
                     <!-- Capability 5 -->
@@ -90,7 +90,7 @@
                         <div style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.75rem; margin-bottom: 1rem;">CAPABILITY // 05</div>
                         <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">Digital Forensics & IR</h2>
                         <p style="color: var(--text-secondary); margin-bottom: 2rem;">Rapid response to active breaches. Chain-of-custody data recovery, malware reverse engineering, and threat eviction.</p>
-                        <a href="services-digital-forensics.html" class="btn-secondary">View Spec <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                        <a href="services-digital-forensics.php" class="btn-secondary">View Spec <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
                     </div>
 
                     <!-- Capability 6 -->
@@ -98,7 +98,7 @@
                         <div style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.75rem; margin-bottom: 1rem;">CAPABILITY // 06</div>
                         <h2 style="font-size: 1.75rem; margin-bottom: 1rem;">Managed Security (SOC)</h2>
                         <p style="color: var(--text-secondary); margin-bottom: 2rem;">24/7/365 continuous monitoring, log aggregation, and automated triage governed by elite security analysts.</p>
-                        <a href="services-managed-security.html" class="btn-secondary">View Spec <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                        <a href="services-managed-security.php" class="btn-secondary">View Spec <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
                     </div>
 
                 </div>
@@ -122,25 +122,25 @@
                 <div>
                     <div class="footer-col-title">PLATFORM</div>
                     <ul class="footer-links">
-                        <li><a href="index.html">Overview</a></li>
-                        <li><a href="services.html">Architecture</a></li>
-                        <li><a href="gallery.html">Telemetry</a></li>
+                        <li><a href="index.php">Overview</a></li>
+                        <li><a href="services.php">Architecture</a></li>
+                        <li><a href="gallery.php">Telemetry</a></li>
                     </ul>
                 </div>
                 <div>
                     <div class="footer-col-title">CAPABILITIES</div>
                     <ul class="footer-links">
-                        <li><a href="services-application-security.html">App Security</a></li>
-                        <li><a href="services-network-security.html">Net Security</a></li>
-                        <li><a href="services-red-team.html">Red Team</a></li>
-                        <li><a href="services-managed-security.html">SOC Ops</a></li>
+                        <li><a href="services-application-security.php">App Security</a></li>
+                        <li><a href="services-network-security.php">Net Security</a></li>
+                        <li><a href="services-red-team.php">Red Team</a></li>
+                        <li><a href="services-managed-security.php">SOC Ops</a></li>
                     </ul>
                 </div>
                 <div>
                     <div class="footer-col-title">COMPANY</div>
                     <ul class="footer-links">
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="contact-us.html">Engage</a></li>
+                        <li><a href="about-us.php">About Us</a></li>
+                        <li><a href="contact-us.php">Engage</a></li>
                     </ul>
                 </div>
             </div>
@@ -157,3 +157,4 @@
     <script src="app.js"></script>
 </body>
 </html>
+

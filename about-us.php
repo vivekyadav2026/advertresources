@@ -18,21 +18,21 @@
             
             <nav>
                 <ul class="nav-links">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Platform</a></li>
+                    <li class="nav-item"><a href="index.php" class="nav-link">Platform</a></li>
                     <li class="nav-item">
-                        <a href="services.html" class="nav-link">Capabilities <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <a href="services.php" class="nav-link">Capabilities <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
                         <div class="dropdown-menu">
-                            <a href="services-application-security.html" class="dropdown-item">Application Security</a>
-                            <a href="services-network-security.html" class="dropdown-item">Network Security</a>
-                            <a href="services-compliance-and-data-privacy.html" class="dropdown-item">Compliance & Privacy</a>
-                            <a href="services-red-team.html" class="dropdown-item">Red Team Assessment</a>
-                            <a href="services-digital-forensics.html" class="dropdown-item">Digital Forensics</a>
-                            <a href="services-managed-security.html" class="dropdown-item">Managed Security (SOC)</a>
+                            <a href="services-application-security.php" class="dropdown-item">Application Security</a>
+                            <a href="services-network-security.php" class="dropdown-item">Network Security</a>
+                            <a href="services-compliance-and-data-privacy.php" class="dropdown-item">Compliance & Privacy</a>
+                            <a href="services-red-team.php" class="dropdown-item">Red Team Assessment</a>
+                            <a href="services-digital-forensics.php" class="dropdown-item">Digital Forensics</a>
+                            <a href="services-managed-security.php" class="dropdown-item">Managed Security (SOC)</a>
                         </div>
                     </li>
-                    <li class="nav-item active"><a href="about-us.html" class="nav-link">Company</a></li>
-                    <li class="nav-item"><a href="gallery.html" class="nav-link">Telemetry</a></li>
-                    <li class="nav-item"><a href="contact-us.html" class="nav-btn">Engage Team</a></li>
+                    <li class="nav-item active"><a href="about-us.php" class="nav-link">Company</a></li>
+                    <li class="nav-item"><a href="gallery.php" class="nav-link">Telemetry</a></li>
+                    <li class="nav-item"><a href="contact-us.php" class="nav-btn">Engage Team</a></li>
                 </ul>
                 <button class="menu-toggle" aria-label="Toggle Navigation">
                     <span></span><span></span><span></span>
@@ -88,7 +88,7 @@
                                 <div style="font-family: var(--font-mono); color: var(--accent-data);">24/7 Active SOC</div>
                             </div>
                             
-                            <a href="contact-us.html" class="btn-primary" style="width: 100%; justify-content: center;">Contact Command <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="contact-us.php" class="btn-primary" style="width: 100%; justify-content: center;">Contact Command <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -132,25 +132,25 @@
                 <div>
                     <div class="footer-col-title">PLATFORM</div>
                     <ul class="footer-links">
-                        <li><a href="index.html">Overview</a></li>
-                        <li><a href="services.html">Architecture</a></li>
-                        <li><a href="gallery.html">Telemetry</a></li>
+                        <li><a href="index.php">Overview</a></li>
+                        <li><a href="services.php">Architecture</a></li>
+                        <li><a href="gallery.php">Telemetry</a></li>
                     </ul>
                 </div>
                 <div>
                     <div class="footer-col-title">CAPABILITIES</div>
                     <ul class="footer-links">
-                        <li><a href="services-application-security.html">App Security</a></li>
-                        <li><a href="services-network-security.html">Net Security</a></li>
-                        <li><a href="services-red-team.html">Red Team</a></li>
-                        <li><a href="services-managed-security.html">SOC Ops</a></li>
+                        <li><a href="services-application-security.php">App Security</a></li>
+                        <li><a href="services-network-security.php">Net Security</a></li>
+                        <li><a href="services-red-team.php">Red Team</a></li>
+                        <li><a href="services-managed-security.php">SOC Ops</a></li>
                     </ul>
                 </div>
                 <div>
                     <div class="footer-col-title">COMPANY</div>
                     <ul class="footer-links">
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="contact-us.html">Engage</a></li>
+                        <li><a href="about-us.php">About Us</a></li>
+                        <li><a href="contact-us.php">Engage</a></li>
                     </ul>
                 </div>
             </div>
@@ -167,3 +167,4 @@
     <script src="app.js"></script>
 </body>
 </html>
+
