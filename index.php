@@ -69,9 +69,9 @@
                   animation-fill-mode: both;
                 "
               >
-                Since 1999, Secur has safeguarded digital landscapes. Our cloud
+                Since 1999, Advert Resource Ltd has safeguarded digital landscapes. Our cloud
                 security solutions protect your data and applications from
-                threats. Fortify your future with Secur.
+                threats. Fortify your future with Advert Resource Ltd.
               </p>
               <div
                 class="btn-wrap justify-content-center"
@@ -264,7 +264,7 @@
                     animation-fill-mode: both;
                   "
                 >
-                  Secur is a pioneering cybersecurity firm dedicated to
+                  Advert Resource Ltd is a pioneering cybersecurity firm dedicated to
                   safeguarding your digital assets. With over two decades of
                   experience, we've been at the forefront of innovation,
                   providing comprehensive.
@@ -1244,7 +1244,7 @@
                   animation-fill-mode: both;
                 "
               >
-                Secur is a pioneering cybersecurity firm dedicated to
+                Advert Resource Ltd is a pioneering cybersecurity firm dedicated to
                 safeguarding your digital assets. With over two decades of
                 experience, we've been at the forefront of innovation, providing
                 comprehensive.
@@ -1611,7 +1611,7 @@
                   animation-fill-mode: both;
                 "
               >
-                Secur is a pioneering cybersecurity firm dedicated to
+                Advert Resource Ltd is a pioneering cybersecurity firm dedicated to
                 safeguarding your digital assets. With over two decades of
                 experience.
               </p>
@@ -1774,7 +1774,7 @@
                   <span class="box-subtitle">UX Designer</span>
                   <div class="testi-card-content">
                     <p class="box-text">
-                      "Before partnering with Secur, we were constantly worried
+                      "Before partnering with Advert Resource Ltd, we were constantly worried
                       about potential data breaches. With their robust data loss
                       prevention solution, Their team stays ahead of the latest
                       threats.we have significantly reduced our risk and can now
@@ -1807,7 +1807,7 @@
                   <span class="box-subtitle">UX Designer</span>
                   <div class="testi-card-content">
                     <p class="box-text">
-                      "The Secur team is incredibly responsive and always
+                      "The Advert Resource Ltd team is incredibly responsive and always
                       willing to go the extra mile to address our concerns.
                       Their customer support is top-notch, response plan, we
                       were able to mitigateand we are confident in their ability
@@ -1873,7 +1873,7 @@
                   <span class="box-subtitle">UX Designer</span>
                   <div class="testi-card-content">
                     <p class="box-text">
-                      "Before partnering with Secur, we were constantly worried
+                      "Before partnering with Advert Resource Ltd, we were constantly worried
                       about potential data breaches. With their robust data loss
                       prevention solution, Their team stays ahead of the latest
                       threats.we have significantly reduced our risk and can now
@@ -1906,7 +1906,7 @@
                   <span class="box-subtitle">UX Designer</span>
                   <div class="testi-card-content">
                     <p class="box-text">
-                      "The Secur team is incredibly responsive and always
+                      "The Advert Resource Ltd team is incredibly responsive and always
                       willing to go the extra mile to address our concerns.
                       Their customer support is top-notch, response plan, we
                       were able to mitigateand we are confident in their ability

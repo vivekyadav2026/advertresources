@@ -74,7 +74,7 @@
                         animation-fill-mode: both;
                       "
                     >
-                      For over two decades, Secur has been at the forefront of
+                      For over two decades, Advert Resource Ltd has been at the forefront of
                       cybersecurity, adapting to the ever-evolving threat
                       landscape. Our seasoned professionals have a deep
                       understanding of the latest attack vectors.
@@ -101,9 +101,9 @@
                         <div class="media-body">
                           <h4 class="box-title">Email</h4>
                           <p class="box-text">
-                            <a href="mailto:Enfo@secur.com">Enfo@secur.com,</a
-                            ><a href="mailto:Enfo@secur2.com"
-                              >Enfo@secur2.com</a
+                            <a href="mailto:info@advertresources.com">info@advertresources.com,</a
+                            ><a href="mailto:contact-us@advertresources.com"
+                              >contact-us@advertresources.com</a
                             >
                           </p>
                         </div>
@@ -238,11 +238,11 @@
                 <div class="ot-widget-about">
                   <div class="about-logo">
                     <a href="index.php"
-                      ><img src="./index/logo.svg" alt="Secur"
+                      ><img src="./index/logo.svg" alt="Advert Resource Ltd" style="max-height: 50px; margin-bottom: 20px;"
                     /></a>
                   </div>
                   <p class="about-text">
-                    Since 1999, Secur has been a trusted leader in
+                    Since 1999, Advert Resource Ltd has been a trusted leader in
                     cybersecurity, protecting digital assets with.
                   </p>
                   <div class="ot-social">
@@ -305,7 +305,7 @@
                 <h3 class="widget_title">Quick Link</h3>
                 <div class="menu-all-pages-container">
                   <ul class="menu">
-                    <li><a href="about-us.php">About Secur</a></li>
+                    <li><a href="about-us.php">About Advert Resource Ltd</a></li>
                     <li><a href="services.php">Our Services</a></li>
                     <li><a href="pricing.php">Pricing Plan</a></li>
                     <li><a href="project.php">Our Projects</a></li>
@@ -337,7 +337,7 @@
                     <div class="media-body">
                       <h3 class="box-title">Location</h3>
                       <p class="box-text">
-                        932 Dogwood Road,Chapel Hill,North Carolina
+                        London, United Kingdom
                       </p>
                     </div>
                   </div>
@@ -384,7 +384,7 @@
             >
               <p class="copyright-text">
                 <i class="fal fa-copyright"></i> Copyright 2025
-                <a href="index.php">Secur</a>. All Rights Reserved.
+                <a href="index.php">Advert Resource Ltd</a>. All Rights Reserved.
               </p>
             </div>
             <div class="col-md-auto">

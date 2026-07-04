@@ -5,16 +5,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>
-      Secur - Cyber Security Services Agency HTML Template - Home Two
+      Advert Resource Ltd - Cyber Security Services Agency HTML Template - Home Two
     </title>
-    <meta name="author" content="Secur" />
+    <meta name="author" content="Advert Resource Ltd" />
     <meta
       name="description"
-      content="Secur - Cyber Security Services Agency HTML Template"
+      content="Advert Resource Ltd - Cyber Security Services Agency HTML Template"
     />
     <meta
       name="keywords"
-      content="Secur - Cyber Security Services Agency HTML Template"
+      content="Advert Resource Ltd - Cyber Security Services Agency HTML Template"
     />
     <meta name="robots" content="INDEX,FOLLOW" />
     <meta
@@ -109,53 +109,24 @@
       <div class="ot-menu-area text-center">
         <button class="ot-menu-toggle"><i class="fal fa-times"></i></button>
         <div class="mobile-logo">
-          <a href="index.php"><img src="./index/logo.svg" alt="Secur" /></a>
+          <a href="index.php"><img src="./index/logo.svg" alt="Advert Resource Ltd" style="max-height: 40px;" /></a>
         </div>
         <div class="ot-mobile-menu">
           <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="about-us.php">About us</a></li>
             <li class="menu-item-has-children ot-item-has-children">
-              <a href="index.php">Home<span class="ot-mean-expand"></span></a>
-            </li>
-            <li class="menu-item-has-children ot-item-has-children">
-              <a href="index.php#"
-                >About<span class="ot-mean-expand"></span
-              ></a>
-            </li>
-            <li class="menu-item-has-children ot-item-has-children">
-              <a href="index.php#"
-                >Services<span class="ot-mean-expand"></span
-              ></a>
+              <a href="services.php">Services<span class="ot-mean-expand"></span></a>
               <ul class="sub-menu ot-submenu" style="display: none">
-                <li><a href="services.php">Service</a></li>
-                <li>
-                  <a href="index.htmlservice-details.php">Service Details</a>
-                </li>
+                <li><a href="services-application-security.php">Application Security</a></li>
+                <li><a href="services-network-security.php">Network Security</a></li>
+                <li><a href="services-compliance-and-data-privacy.php">Compliance & Privacy</a></li>
+                <li><a href="services-red-team.php">Red Team Assessment</a></li>
+                <li><a href="services-digital-forensics.php">Digital Forensics</a></li>
+                <li><a href="services-managed-security.php">Managed Security (SOC)</a></li>
               </ul>
             </li>
-            <li class="menu-item-has-children ot-item-has-children">
-              <a href="index.php#"
-                >Pages<span class="ot-mean-expand"></span
-              ></a>
-              <ul class="sub-menu ot-submenu" style="display: none">
-                <li><a href="team.php">Team</a></li>
-                <li><a href="index.htmlteam-details.php">Team Details</a></li>
-                <li><a href="project.php">Portfolio</a></li>
-                <li>
-                  <a href="index.htmlproject-details.php">Portfolio Details</a>
-                </li>
-                <li><a href="pricing.php">Pricing</a></li>
-                <li><a href="index.htmltestimonial.php">Testimonial</a></li>
-                <li><a href="index.htmlfaq.php">Faq Page</a></li>
-                <li><a href="index.htmlerror.php">Error Page</a></li>
-              </ul>
-            </li>
-            <li class="menu-item-has-children ot-item-has-children">
-              <a href="index.php#">Blog<span class="ot-mean-expand"></span></a>
-              <ul class="sub-menu ot-submenu" style="display: none">
-                <li><a href="index.htmlblog.php">Blog</a></li>
-                <li><a href="index.htmlblog-details.php">Blog Details</a></li>
-              </ul>
-            </li>
+            <li><a href="gallery.php">Telemetry</a></li>
             <li><a href="contact-us.php">Contact Us</a></li>
           </ul>
         </div>
@@ -179,7 +150,7 @@
           <div class="ot-widget-about">
             <div class="about-logo">
               <a href="index.php"
-                ><img src="./index/logo.svg" alt="Secur"
+                ><img src="./index/logo.svg" alt="Advert Resource Ltd" style="max-height: 45px;"
               /></a>
             </div>
             <p class="about-text">
@@ -223,7 +194,7 @@
               <div class="media-body">
                 <h3 class="box-title">Location</h3>
                 <p class="box-text">
-                  932 Dogwood Road,Chapel Hill,North Carolina
+                  London, United Kingdom
                 </p>
               </div>
             </div>
@@ -239,11 +210,11 @@
               <div class="box-icon"><i class="far fa-envelope"></i></div>
               <div class="media-body">
                 <h3 class="box-title">Email</h3>
-                <a class="box-link" href="mailto:enfo@secur2.com"
-                  >Enfo@secur.com,</a
+                <a class="box-link" href="mailto:info@advertresources.com"
+                  >info@advertresources.com,</a
                 >
-                <a class="box-link" href="mailto:enfo@secur2.com"
-                  >Enfo@secur2.com</a
+                <a class="box-link" href="mailto:contact-us@advertresources.com"
+                  >contact-us@advertresources.com</a
                 >
               </div>
             </div>
@@ -284,7 +255,7 @@
                 <ul>
                   <li>
                     <i class="far fa-home"></i>Welcome to
-                    <a href="index.php">Secur.</a> Need Help?
+                    <a href="index.php">Advert Resource Ltd.</a> Need Help?
                     <a class="line-btn" href="contact-us.php">Get in Touch</a>
                   </li>
                 </ul>
@@ -296,7 +267,7 @@
                   <li>
                     <i class="fal fa-map-marker-alt"></i
                     ><a target="_blank" href="https://www.google.com/maps/"
-                      >932 Dogwood Road,Chapel Hill,North Carolina</a
+                      >London, United Kingdom</a
                     >
                   </li>
                   <li>
@@ -305,7 +276,7 @@
                   </li>
                   <li>
                     <i class="fal fa-envelope"></i>
-                    <a href="mailto:Enfo@secur.com">Enfo@secur.com</a>
+                    <a href="mailto:info@advertresources.com">info@advertresources.com</a>
                   </li>
                 </ul>
               </div>
@@ -320,60 +291,27 @@
               <div class="col-auto">
                 <div class="header-logo">
                   <a href="index.php"
-                    ><img src="./index/logo.svg" alt="Secur"
+                    ><img src="./index/logo.svg" alt="Advert Resource Ltd" style="max-height: 50px;"
                   /></a>
                 </div>
               </div>
               <div class="col-auto">
                 <nav class="main-menu d-none d-lg-inline-block">
                   <ul>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="about-us.php">About us</a></li>
                     <li class="menu-item-has-children">
-                      <a href="index.php">Home</a>
-                    </li>
-                    <li class="menu-item-has-children">
-                      <a href="index.php#">About</a>
-                    </li>
-                    <li class="menu-item-has-children">
-                      <a href="index.php#">Services</a>
+                      <a href="services.php">Services</a>
                       <ul class="sub-menu">
-                        <li><a href="services.php">Service</a></li>
-                        <li>
-                          <a href="index.htmlservice-details.php"
-                            >Service Details</a
-                          >
-                        </li>
+                        <li><a href="services-application-security.php">Application Security</a></li>
+                        <li><a href="services-network-security.php">Network Security</a></li>
+                        <li><a href="services-compliance-and-data-privacy.php">Compliance & Privacy</a></li>
+                        <li><a href="services-red-team.php">Red Team Assessment</a></li>
+                        <li><a href="services-digital-forensics.php">Digital Forensics</a></li>
+                        <li><a href="services-managed-security.php">Managed Security (SOC)</a></li>
                       </ul>
                     </li>
-                    <li class="menu-item-has-children">
-                      <a href="index.php#">Pages</a>
-                      <ul class="sub-menu">
-                        <li><a href="team.php">Team</a></li>
-                        <li>
-                          <a href="index.htmlteam-details.php">Team Details</a>
-                        </li>
-                        <li><a href="project.php">Portfolio</a></li>
-                        <li>
-                          <a href="index.htmlproject-details.php"
-                            >Portfolio Details</a
-                          >
-                        </li>
-                        <li><a href="pricing.php">Pricing</a></li>
-                        <li>
-                          <a href="index.htmltestimonial.php">Testimonial</a>
-                        </li>
-                        <li><a href="index.htmlfaq.php">Faq Page</a></li>
-                        <li><a href="index.htmlerror.php">Error Page</a></li>
-                      </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                      <a href="index.php#">Blog</a>
-                      <ul class="sub-menu">
-                        <li><a href="index.htmlblog.php">Blog</a></li>
-                        <li>
-                          <a href="index.htmlblog-details.php">Blog Details</a>
-                        </li>
-                      </ul>
-                    </li>
+                    <li><a href="gallery.php">Telemetry</a></li>
                     <li><a href="contact-us.php">Contact Us</a></li>
                   </ul>
                 </nav>
@@ -426,3 +364,4 @@
         </div>
       </div>
     </header>
+

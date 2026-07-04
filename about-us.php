@@ -1,78 +1,103 @@
 <?php include 'header.php'; ?>
-<div class="space">
 
-        <section class="page-header" style="background: var(--bg-surface);">
-            <div class="container">
-                <h1 class="page-title reveal">Corporate Identity</h1>
-                <p class="page-desc reveal" style="transition-delay: 0.1s;">Based in London, Advert Resource Ltd architects military-grade cybersecurity perimeters for global enterprises.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <!-- Editorial Split -->
-                <div class="service-detail-layout reveal">
-                    <div class="service-content">
-                        <h2>The Paradigm of Absolute Defense</h2>
-                        <p>In an era defined by sophisticated advanced persistent threats (APTs) and state-sponsored cyber espionage, legacy security perimeters are obsolete. Advert Resource Ltd was founded in London to engineer zero-trust architecture that operates on the assumption of constant breach.</p>
-                        
-                        <p>Our methodology shifts defensive paradigms from reactive patching to proactive neutralization. By combining deep packet inspection, heuristics, and dedicated Red Team modeling, we dismantle threats before they execute payload.</p>
-
-                        <div class="content-box">
-                            <h3 style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem; letter-spacing: 0.05em;">OUR DIRECTIVE</h3>
-                            <p style="font-size: 1.25rem; font-family: var(--font-heading); color: var(--text-primary); margin-bottom: 0;">"To engineer digital resilience so robust that cyber operations become a strategic advantage rather than a critical liability."</p>
-                        </div>
-
-                        <h2>Leadership & Operations</h2>
-                        <p>Our operations are spearheaded by veterans of elite intelligence units, supported by a 24/7 Security Operations Center (SOC) that monitors global telemetry. We do not rely on automated tools alone; human intelligence and tactical foresight drive our incident response protocols.</p>
-                    </div>
-
-                    <div>
-                        <!-- Sidebar Info -->
-                        <div style="border: 1px solid var(--border-color); background: var(--bg-surface); padding: 2rem;">
-                            <h3 style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1.5rem;">COMPANY DATA</h3>
-                            
-                            <div style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-                                <div style="font-size: 0.85rem; color: var(--text-secondary);">HEADQUARTERS</div>
-                                <div style="font-family: var(--font-mono); color: var(--text-primary);">London, United Kingdom</div>
-                            </div>
-                            
-                            <div style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-                                <div style="font-size: 0.85rem; color: var(--text-secondary);">FOUNDATION</div>
-                                <div style="font-family: var(--font-mono); color: var(--text-primary);">Advert Resource Ltd</div>
-                            </div>
-
-                            <div style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-                                <div style="font-size: 0.85rem; color: var(--text-secondary);">OPERATIONAL STATUS</div>
-                                <div style="font-family: var(--font-mono); color: var(--accent-data);">24/7 Active SOC</div>
-                            </div>
-                            
-                            <a href="contact-us.php" class="btn-primary" style="width: 100%; justify-content: center;">Contact Command <i class="fa-solid fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats Data Strip -->
-        <section class="section" style="padding-top: 0;">
-            <div class="container">
-                <div class="data-strip reveal">
-                    <div class="data-item">
-                        <div class="data-num">0.00%</div>
-                        <div class="data-label">CRITICAL DATA BREACH RATE</div>
-                    </div>
-                    <div class="data-item">
-                        <div class="data-num">50+</div>
-                        <div class="data-label">GLOBAL ENTERPRISE CLIENTS</div>
-                    </div>
-                    <div class="data-item">
-                        <div class="data-num">ISO 27001</div>
-                        <div class="data-label">CERTIFIED OPERATIONS</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
+<div class="ot-hero-wrapper hero-2" style="padding: 100px 0 50px;">
+  <div class="container">
+    <div class="title-area text-center mb-0">
+      <span class="sub-title style2">Company Dossier</span>
+      <h1 class="sec-title text-white">Our Corporate Identity</h1>
+      <p class="sec-text text-white">Based in London, Advert Resource Ltd architects military-grade cybersecurity perimeters for global enterprises.</p>
+    </div>
+  </div>
 </div>
+
+<div class="about-sec2 position-relative overflow-hidden space shape-mockup-wrap" id="about-sec">
+  <div class="shape-mockup bg-gradient-shape1" style="inset: auto 0px 0px auto"></div>
+  <div class="container">
+    <div class="row gy-40">
+      <div class="col-xl-6">
+        <div class="img-box2">
+          <div class="img1">
+            <div class="img-box2-shape1"></div>
+            <img src="./index/about2-1.png" alt="About" />
+          </div>
+          <div class="about-experience-wrap jump">
+            <div class="box-icon">
+              <img src="./index/about-icon2-1.svg" alt="icon" />
+            </div>
+            <div class="about-counter-wrap">Trusted By 50+ Global Enterprises</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div class="about-wrap2">
+          <div class="title-area mb-25">
+            <span class="sub-title style2">Our Directive</span>
+            <h2 class="sec-title">
+              The Paradigm of Absolute Defense
+            </h2>
+            <p class="sec-text">
+              In an era defined by sophisticated advanced persistent threats (APTs) and state-sponsored cyber espionage, legacy security perimeters are obsolete. Advert Resource Ltd was founded in London to engineer zero-trust architecture that operates on the assumption of constant breach.
+            </p>
+            <p class="sec-text">
+              Our methodology shifts defensive paradigms from reactive patching to proactive neutralization. By combining deep packet inspection, heuristics, and dedicated Red Team modeling, we dismantle threats before they execute payload.
+            </p>
+          </div>
+          <div class="check-list style-grid">
+            <ul>
+              <li><i class="fas fa-check-circle"></i> 24/7 Active SOC</li>
+              <li><i class="fas fa-check-circle"></i> ISO 27001 Certified</li>
+              <li><i class="fas fa-check-circle"></i> Zero-Trust Architecture</li>
+              <li><i class="fas fa-check-circle"></i> Red Team Modeling</li>
+            </ul>
+          </div>
+          <div class="btn-wrap mt-35">
+            <a href="contact-us.php" class="ot-btn">Contact Command<i class="far fa-long-arrow-right ms-2"></i></a>
+            <div class="about-profile">
+              <div class="avater">
+                <img src="./index/about-profile1-1.png" alt="avater" />
+              </div>
+              <div class="media-body">
+                <h5 class="about-profile-name">Advert Resource Ltd</h5>
+                <p class="desig">London, United Kingdom</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="feature-area-1 position-relative z-index-common space-bottom">
+  <div class="container">
+    <div class="title-area text-center">
+      <span class="sub-title style2">Operational Metrics</span>
+      <h2 class="sec-title">Tactical Data</h2>
+    </div>
+    <div class="row gy-30">
+      <div class="col-lg-4 col-md-6">
+        <div class="feature-card shadow-sm h-100 text-center">
+          <div class="box-icon m-auto mb-4"><i class="fas fa-shield-check fa-3x" style="color: #069845;"></i></div>
+          <h3 class="box-title" style="font-size: 3rem;">0.00%</h3>
+          <p class="box-text">Critical Data Breach Rate</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="feature-card shadow-sm h-100 text-center">
+          <div class="box-icon m-auto mb-4"><i class="fas fa-building fa-3x" style="color: #069845;"></i></div>
+          <h3 class="box-title" style="font-size: 3rem;">50+</h3>
+          <p class="box-text">Global Enterprise Clients</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="feature-card shadow-sm h-100 text-center">
+          <div class="box-icon m-auto mb-4"><i class="fas fa-certificate fa-3x" style="color: #069845;"></i></div>
+          <h3 class="box-title" style="font-size: 3rem;">ISO 27001</h3>
+          <p class="box-text">Certified Operations</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <?php include 'footer.php'; ?>
