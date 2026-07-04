@@ -193,7 +193,7 @@
           
           /* 6. Homepage Banner & Section Tightening (App Feed Look) */
           .ot-hero-wrapper, .hero-2, .hero-premium {
-              padding-top: 100px !important; /* give space for mobile header */
+              /* padding-top: 100px !important; give space for mobile header */
               padding-bottom: 40px !important;
               min-height: auto !important;
               overflow-x: hidden !important; /* contain the wide canvas */
