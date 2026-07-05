@@ -1,4 +1,36 @@
-<?php include 'header.php'; ?>
+<?php 
+$form_sent = isset($_GET['msg']) && $_GET['msg'] === 'sent';
+include 'header.php'; 
+?>
+<?php if ($form_sent): ?>
+<style>
+.footer-toast {
+    position: fixed; top: 80px; right: 20px; z-index: 99999;
+    background: rgba(16,185,129,0.15);
+    border: 1px solid rgba(16,185,129,0.4);
+    border-radius: 14px;
+    padding: 18px 28px;
+    display: flex; align-items: center; gap: 14px;
+    color: #10b981; font-weight: 700; font-size: 0.95rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    animation: toastIn 0.4s ease;
+    max-width: 360px;
+}
+@keyframes toastIn {
+    from { transform: translateX(120%); opacity: 0; }
+    to   { transform: translateX(0);    opacity: 1; }
+}
+.footer-toast i { font-size: 1.4rem; }
+</style>
+<div class="footer-toast" id="successToast">
+    <i class="fas fa-check-circle"></i>
+    <span>Message sent! We'll get back to you soon.</span>
+    <button onclick="document.getElementById('successToast').remove()" style="background:none;border:none;color:#10b981;font-size:1.2rem;cursor:pointer;margin-left:auto;"><i class="fas fa-times"></i></button>
+</div>
+<script>setTimeout(()=>{ const t=document.getElementById('successToast'); if(t) t.style.animation='toastIn 0.4s ease reverse'; setTimeout(()=>{ if(t) t.remove(); },400); }, 5000);</script>
+<?php endif; ?>
+
     <div class="ot-hero-wrapper hero-2" id="hero2">
       <div class="waves">
         <canvas
@@ -90,13 +122,8 @@
                 <a href="contact-us.php" class="ot-btn"
                   >Learn More <i class="far fa-long-arrow-right ms-2"></i
                 ></a>
-                <a
-                  href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
-                  class="video-btn-wrap popup-video"
-                  ><span class="play-btn"><i class="fas fa-play"></i></span>
-                  Watch Video</a
-                >
               </div>
+
             </div>
           </div>
         </div>
@@ -1203,443 +1230,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- Scoped Premium Team Style Overrides -->
-    <style>
-    #team-sec {
-        background-color: #000916 !important;
-        position: relative;
-        overflow: hidden;
-        padding: 100px 0 !important;
-    }
-    #team-sec::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background-image: 
-            linear-gradient(rgba(37, 99, 235, 0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
-        background-size: 60px 60px;
-        z-index: 0;
-        pointer-events: none;
-    }
-    #team-sec .container {
-        position: relative;
-        z-index: 1;
-    }
-    .team-title-label {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 6px 16px;
-        background: rgba(224, 0, 155, 0.1);
-        border: 1px solid rgba(224, 0, 155, 0.3);
-        border-radius: 30px;
-        color: #fff;
-        font-size: 0.8rem;
-        font-weight: 600;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-        box-shadow: 0 0 15px rgba(224, 0, 155, 0.15);
-    }
-    .team-pulse-dot {
-        width: 8px;
-        height: 8px;
-        background-color: #069845;
-        border-radius: 50%;
-        display: inline-block;
-        box-shadow: 0 0 10px #069845;
-        animation: activePulse 1.5s infinite;
-    }
-    .team-desc-text {
-        font-size: 1.02rem;
-        line-height: 1.65;
-        color: #94a3b8;
-        margin-top: 15px;
-        margin-bottom: 30px;
-    }
-    
-    /* Telemetry Widget below left column text */
-    .team-telemetry-widget {
-        background: rgba(15, 23, 42, 0.55);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 14px;
-        padding: 20px;
-        text-align: left;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-    .team-telemetry-widget .widget-hdr {
-        font-family: "Space Grotesk", monospace;
-        font-size: 0.75rem;
-        color: #60a5fa;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        margin-bottom: 12px;
-        display: block;
-    }
-    .team-telemetry-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 8px;
-        font-family: "Space Grotesk", monospace;
-        font-size: 0.8rem;
-    }
-    .team-telemetry-grid .grid-item {
-        color: #cbd5e1;
-        display: flex;
-        justify-content: space-between;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
-        padding-bottom: 6px;
-    }
-    .team-telemetry-grid .grid-item:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-    }
-    .team-telemetry-grid .grid-val {
-        font-weight: 700;
-    }
-    
-    /* Team Card modern overrides */
-    .team-card2 {
-        background: rgba(15, 23, 42, 0.5) !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        border-radius: 16px !important;
-        overflow: hidden !important;
-        padding: 0 !important;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-        position: relative;
-    }
-    .team-card2::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        padding: 1px;
-        background: linear-gradient(135deg, rgba(60, 114, 252, 0.2), rgba(224, 0, 155, 0.2));
-        -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        pointer-events: none;
-        z-index: 2;
-    }
-    .team-card2:hover {
-        transform: translateY(-8px) !important;
-        border-color: transparent !important;
-        box-shadow: 0 20px 45px rgba(224, 0, 155, 0.15) !important;
-    }
-    .team-card2 .box-img {
-        overflow: hidden !important;
-        position: relative !important;
-        margin: 0 !important;
-        transform: none !important;
-        aspect-ratio: 1/1.2 !important;
-        background: #020813;
-    }
-    /* Add a subtle dark blue overlay to blend the photo */
-    .team-card2 .box-img::after {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: linear-gradient(180deg, transparent 60%, rgba(0, 9, 22, 0.9) 100%);
-        z-index: 1;
-    }
-    .team-card2 .box-img img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
-        filter: grayscale(20%) contrast(105%);
-    }
-    .team-card2:hover .box-img img {
-        transform: scale(1.04) !important;
-        filter: grayscale(0%) contrast(105%);
-    }
-    .team-card2 .box-content {
-        padding: 25px 20px !important;
-        background: transparent !important;
-        text-align: center !important;
-        position: relative;
-        z-index: 2;
-    }
-    .team-card2 .box-title {
-        font-size: 1.3rem !important;
-        font-weight: 800 !important;
-        margin-bottom: 6px !important;
-        letter-spacing: -0.5px;
-    }
-    .team-card2 .box-title a {
-        color: #ffffff !important;
-        text-decoration: none !important;
-        transition: color 0.3s ease !important;
-    }
-    .team-card2 .box-title a:hover {
-        color: #E0009B !important;
-    }
-    .team-card2 .box-desig {
-        font-size: 0.8rem !important;
-        font-weight: 700 !important;
-        letter-spacing: 1.5px !important;
-        text-transform: uppercase !important;
-        color: #60a5fa !important;
-        display: inline-block !important;
-        margin-bottom: 18px !important;
-    }
-    
-    /* Social items: only show clean LinkedIn style */
-    .team-card2 .ot-social {
-        justify-content: center !important;
-        gap: 12px !important;
-        display: flex !important;
-    }
-    .team-card2 .ot-social a {
-        padding: 6px 16px !important;
-        border-radius: 30px !important;
-        background: rgba(255, 255, 255, 0.03) !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        color: #cbd5e1 !important;
-        font-size: 0.75rem !important;
-        font-family: "Space Grotesk", monospace;
-        font-weight: 600 !important;
-        text-decoration: none !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        gap: 6px !important;
-        transition: all 0.3s ease !important;
-    }
-    .team-card2 .ot-social a:hover {
-        background: linear-gradient(135deg, #3C72FC 0%, #E0009B 100%) !important;
-        border-color: transparent !important;
-        color: #ffffff !important;
-        transform: translateY(-2px) !important;
-        box-shadow: 0 5px 15px rgba(224, 0, 155, 0.3) !important;
-    }
-    </style>
-
-    <section
-      class="bg-top-center team-sec2"
-      id="team-sec"
-    >
-      <div class="container">
-        <div class="row gy-40">
-          <div class="col-xl-4 col-lg-5">
-            <div class="title-area">
-              <span class="team-title-label">
-                <span class="team-pulse-dot"></span>
-                CORE OPERATIVES // SECURE
-              </span>
-              <h2
-                class="sec-title text-white"
-                style="font-size: clamp(2rem, 4vw, 2.5rem); line-height: 1.2; font-weight: 800;"
-              >
-                Meet the Elite Cyber Command
-              </h2>
-              <p class="team-desc-text">
-                Our operations are led by elite security researchers, modern penetration testers, and certified network defense commanders with bleeding-edge active warfare containment experience.
-              </p>
-              
-              <!-- Telemetry diagnostic panel -->
-              <div class="team-telemetry-widget">
-                  <span class="widget-hdr">> DIAGNOSTIC_OVERVIEW</span>
-                  <div class="team-telemetry-grid">
-                      <div class="grid-item"><span>SOC OPERATIVES:</span> <span class="grid-val text-success">ALL ACTIVE</span></div>
-                      <div class="grid-item"><span>CERTIFICATIONS:</span> <span class="grid-val" style="color: #60a5fa;">CREST / CISSP</span></div>
-                      <div class="grid-item"><span>RESPONSE WINDOW:</span> <span class="grid-val" style="color: #E0009B;">SUB-30 MINS</span></div>
-                  </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-8 col-lg-7">
-            <div class="slider-area">
-              <div
-                class="swiper ot-slider team-slider2 swiper-initialized swiper-horizontal swiper-backface-hidden"
-                data-cue="slideInUp"
-                id="teamSlider2"
-                data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"600":{"slidesPerView":"2"},"768":{"slidesPerView":"3"}}}'
-                data-show="true"
-                style="
-                  animation-name: slideInUp;
-                  animation-duration: 900ms;
-                  animation-timing-function: ease;
-                  animation-delay: 0ms;
-                  animation-direction: normal;
-                  animation-fill-mode: both;
-                "
-              >
-                <div
-                  class="swiper-wrapper"
-                  id="swiper-wrapper-a455668e10a8f38d3"
-                  aria-live="off"
-                  style="
-                    transition-duration: 0ms;
-                    transform: translate3d(-1100px, 0px, 0px);
-                    transition-delay: 0ms;
-                  "
-                >
-                  <!-- Slide 1 -->
-                  <div
-                    class="swiper-slide"
-                    role="group"
-                    aria-label="4 / 6"
-                    data-swiper-slide-index="3"
-                    style="width: 336.667px; margin-right: 30px"
-                  >
-                    <div class="ot-team team-card2">
-                      <div class="box-img">
-                        <img src="./index/team_2_1.jpg" alt="Team" />
-                      </div>
-                      <div class="box-content">
-                        <h3 class="box-title">
-                          <a href="javascript:void(0)">Michael Johnson</a>
-                        </h3>
-                        <span class="box-desig">Principal Security Architect</span>
-                        <div class="ot-social style3">
-                          <a target="_blank" href="https://linkedin.com/">
-                            <i class="fab fa-linkedin-in"></i> SECURE PROFILE
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Slide 2 -->
-                  <div
-                    class="swiper-slide"
-                    role="group"
-                    aria-label="5 / 6"
-                    data-swiper-slide-index="4"
-                    style="width: 336.667px; margin-right: 30px"
-                  >
-                    <div class="ot-team team-card2">
-                      <div class="box-img">
-                        <img src="./index/team_2_2.jpg" alt="Team" />
-                      </div>
-                      <div class="box-content">
-                        <h3 class="box-title">
-                          <a href="javascript:void(0)">Sarah Rahman</a>
-                        </h3>
-                        <span class="box-desig">Director of Incident Response</span>
-                        <div class="ot-social style3">
-                          <a target="_blank" href="https://linkedin.com/">
-                            <i class="fab fa-linkedin-in"></i> SECURE PROFILE
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Slide 3 -->
-                  <div
-                    class="swiper-slide swiper-slide-prev"
-                    role="group"
-                    aria-label="6 / 6"
-                    data-swiper-slide-index="5"
-                    style="width: 336.667px; margin-right: 30px"
-                  >
-                    <div class="ot-team team-card2">
-                      <div class="box-img">
-                        <img src="./index/team_2_3.jpg" alt="Team" />
-                      </div>
-                      <div class="box-content">
-                        <h3 class="box-title">
-                          <a href="javascript:void(0)">Justin Kingdony</a>
-                        </h3>
-                        <span class="box-desig">Lead Red Team Operative</span>
-                        <div class="ot-social style3">
-                          <a target="_blank" href="https://linkedin.com/">
-                            <i class="fab fa-linkedin-in"></i> SECURE PROFILE
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Slide 4 -->
-                  <div
-                    class="swiper-slide swiper-slide-active"
-                    role="group"
-                    aria-label="1 / 6"
-                    data-swiper-slide-index="0"
-                    style="width: 336.667px; margin-right: 30px"
-                  >
-                    <div class="ot-team team-card2">
-                      <div class="box-img">
-                        <img src="./index/team_2_1.jpg" alt="Team" />
-                      </div>
-                      <div class="box-content">
-                        <h3 class="box-title">
-                          <a href="javascript:void(0)">Michael Johnson</a>
-                        </h3>
-                        <span class="box-desig">Principal Security Architect</span>
-                        <div class="ot-social style3">
-                          <a target="_blank" href="https://linkedin.com/">
-                            <i class="fab fa-linkedin-in"></i> SECURE PROFILE
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Slide 5 -->
-                  <div
-                    class="swiper-slide swiper-slide-next"
-                    role="group"
-                    aria-label="2 / 6"
-                    data-swiper-slide-index="1"
-                    style="width: 336.667px; margin-right: 30px"
-                  >
-                    <div class="ot-team team-card2">
-                      <div class="box-img">
-                        <img src="./index/team_2_2.jpg" alt="Team" />
-                      </div>
-                      <div class="box-content">
-                        <h3 class="box-title">
-                          <a href="javascript:void(0)">Sarah Rahman</a>
-                        </h3>
-                        <span class="box-desig">Director of Incident Response</span>
-                        <div class="ot-social style3">
-                          <a target="_blank" href="https://linkedin.com/">
-                            <i class="fab fa-linkedin-in"></i> SECURE PROFILE
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- Slide 6 -->
-                  <div
-                    class="swiper-slide"
-                    role="group"
-                    aria-label="3 / 6"
-                    data-swiper-slide-index="2"
-                    style="width: 336.667px; margin-right: 30px"
-                  >
-                    <div class="ot-team team-card2">
-                      <div class="box-img">
-                        <img src="./index/team_2_3.jpg" alt="Team" />
-                      </div>
-                      <div class="box-content">
-                        <h3 class="box-title">
-                          <a href="javascript:void(0)">Justin Kingdony</a>
-                        </h3>
-                        <span class="box-desig">Lead Red Team Operative</span>
-                        <div class="ot-social style3">
-                          <a target="_blank" href="https://linkedin.com/">
-                            <i class="fab fa-linkedin-in"></i> SECURE PROFILE
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <span
-                  class="swiper-notification"
-                  aria-live="assertive"
-                  aria-atomic="true"
-                ></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- Scoped Style Overrides for Global Network Section -->
     <style>
     #global-network-sec {
@@ -1861,368 +1451,259 @@
     </section>
 
     <!-- ============================================ -->
-    <!-- LIVE CYBER WARFARE TELEMETRY SECTION -->
+    <!-- HOW WE WORK - PROCESS SECTION -->
     <!-- ============================================ -->
     <style>
-    #cyber-telemetry-sec {
-        background-color: #050B18;
+    #process-sec {
+        background: linear-gradient(180deg, #050B18 0%, #000916 100%);
         padding: 100px 0;
         position: relative;
         overflow: hidden;
-        border-top: 1px solid rgba(255, 255, 255, 0.05);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        z-index: 2;
+        border-top: 1px solid rgba(255,255,255,0.05);
+        border-bottom: 1px solid rgba(255,255,255,0.05);
     }
-    
-    .console-box {
-        background: rgba(3, 8, 20, 0.95);
-        border: 1px solid rgba(37, 99, 235, 0.3);
-        border-radius: 12px;
-        box-shadow: 0 0 25px rgba(37, 99, 235, 0.15), inset 0 0 15px rgba(0, 0, 0, 0.8);
-        overflow: hidden;
-        font-family: 'Space Grotesk', monospace;
-        height: 420px;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .console-header {
-        background: rgba(15, 23, 42, 0.9);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 12px 18px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    
-    .console-dots {
-        display: flex;
-        gap: 6px;
-    }
-    
-    .console-dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-    }
-    .console-dot.red { background-color: #ef4444; }
-    .console-dot.yellow { background-color: #eab308; }
-    .console-dot.green { background-color: #22c55e; }
-    
-    .console-title {
-        font-size: 0.8rem;
-        color: #94a3b8;
-        letter-spacing: 1px;
-    }
-    
-    .console-body {
-        padding: 20px;
-        flex-grow: 1;
-        overflow-y: auto;
-        font-size: 0.85rem;
-        line-height: 1.6;
-        color: #10b981; /* Matrix green */
-    }
-    
-    .console-body::-webkit-scrollbar {
-        width: 5px;
-    }
-    .console-body::-webkit-scrollbar-thumb {
-        background: rgba(37, 99, 235, 0.3);
-        border-radius: 10px;
-    }
-    
-    .console-line {
-        margin-bottom: 8px;
-        opacity: 0;
-        animation: consoleFadeIn 0.3s forwards;
-    }
-    
-    @keyframes consoleFadeIn {
-        to { opacity: 1; }
-    }
-    
-    .tag-danger { color: #f43f5e; font-weight: bold; }
-    .tag-warning { color: #f59e0b; font-weight: bold; }
-    .tag-success { color: #10b981; font-weight: bold; }
-    .tag-info { color: #3b82f6; font-weight: bold; }
-    
-    /* Radar Tracking Box */
-    .radar-box {
-        background: rgba(15, 23, 42, 0.55);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 20px;
-        padding: 30px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-        backdrop-filter: blur(12px);
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    
-    .radar-container {
-        position: relative;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        border: 2px solid rgba(224, 0, 155, 0.2);
-        margin: 0 auto 25px;
-        background: radial-gradient(circle, rgba(224, 0, 155, 0.05) 0%, transparent 70%);
-        overflow: hidden;
-    }
-    
-    .radar-grid {
+    #process-sec::before {
+        content: '';
         position: absolute;
         inset: 0;
+        background-image:
+            linear-gradient(rgba(37,99,235,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(37,99,235,0.04) 1px, transparent 1px);
+        background-size: 55px 55px;
+        pointer-events: none;
+    }
+    /* Glow orbs */
+    .process-orb {
+        position: absolute;
         border-radius: 50%;
+        filter: blur(130px);
+        pointer-events: none;
+        z-index: 0;
     }
-    .radar-grid::before {
-        content: '';
-        position: absolute;
-        inset: 20px;
-        border: 1px dashed rgba(224, 0, 155, 0.15);
-        border-radius: 50%;
-    }
-    .radar-grid::after {
-        content: '';
-        position: absolute;
-        inset: 50px;
-        border: 1px dashed rgba(224, 0, 155, 0.15);
-        border-radius: 50%;
-    }
-    
-    .radar-crosshair-x {
-        position: absolute;
-        top: 50%; left: 0; right: 0;
-        height: 1px;
-        background: rgba(224, 0, 155, 0.15);
-    }
-    .radar-crosshair-y {
-        position: absolute;
-        left: 50%; top: 0; bottom: 0;
-        width: 1px;
-        background: rgba(224, 0, 155, 0.15);
-    }
-    
-    .radar-sweep {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: conic-gradient(from 0deg, rgba(224, 0, 155, 0.3) 0deg, transparent 90deg, transparent 360deg);
-        border-radius: 50%;
-        animation: radarSweepAnim 4s linear infinite;
-        transform-origin: 50% 50%;
-    }
-    
-    @keyframes radarSweepAnim {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-    
-    /* Pulsing Threat Targets on Radar */
-    .threat-dot {
-        position: absolute;
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: #f43f5e;
-        box-shadow: 0 0 10px #f43f5e;
-        opacity: 0;
-    }
-    
-    .threat-dot.d1 { top: 30%; left: 40%; animation: threatPulse 3s infinite 0.5s; }
-    .threat-dot.d2 { top: 60%; left: 70%; animation: threatPulse 3s infinite 1.2s; }
-    .threat-dot.d3 { top: 20%; left: 80%; animation: threatPulse 3s infinite 2.1s; }
-    .threat-dot.d4 { top: 75%; left: 25%; animation: threatPulse 3s infinite 2.8s; }
-    
-    @keyframes threatPulse {
-        0% { opacity: 0; transform: scale(0.5); }
-        40% { opacity: 1; transform: scale(1); }
-        70% { opacity: 0.2; }
-        100% { opacity: 0; }
-    }
-    
-    .threat-metrics {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-    }
-    
-    .threat-metric-item {
-        background: rgba(5, 11, 24, 0.6);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: 10px;
-        padding: 15px;
-    }
-    
-    .threat-metric-item h4 {
-        font-size: 0.8rem;
-        color: #94a3b8;
-        text-transform: uppercase;
-        margin-bottom: 5px;
-        letter-spacing: 0.5px;
-    }
-    .threat-metric-item p {
-        font-family: 'Space Grotesk', monospace;
-        font-size: 1.15rem;
+    .process-orb-blue { background: rgba(37,99,235,0.18); width: 500px; height: 500px; top: -100px; left: -100px; }
+    .process-orb-pink { background: rgba(224,0,155,0.12); width: 400px; height: 400px; bottom: -50px; right: -80px; }
+    #process-sec .container { position: relative; z-index: 2; }
+    /* Badge */
+    .process-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 18px;
+        background: rgba(37,99,235,0.1);
+        border: 1px solid rgba(37,99,235,0.3);
+        border-radius: 30px;
+        color: #60a5fa;
+        font-size: 0.78rem;
         font-weight: 700;
-        color: #ffffff;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+    }
+    /* Step Cards */
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin-top: 60px;
+        position: relative;
+    }
+    /* Connector line between cards */
+    .process-grid::before {
+        content: '';
+        position: absolute;
+        top: 52px;
+        left: calc(12.5% + 12px);
+        right: calc(12.5% + 12px);
+        height: 2px;
+        background: linear-gradient(90deg, #3C72FC, #E0009B);
+        z-index: 0;
+        opacity: 0.4;
+    }
+    .process-card {
+        background: rgba(15,23,42,0.6);
+        border: 1px solid rgba(255,255,255,0.07);
+        border-radius: 20px;
+        padding: 36px 24px 30px;
+        text-align: center;
+        position: relative;
+        transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+        backdrop-filter: blur(10px);
+        z-index: 1;
+    }
+    .process-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        padding: 1px;
+        background: linear-gradient(135deg, rgba(60,114,252,0.15), rgba(224,0,155,0.1));
+        -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    .process-card:hover { transform: translateY(-10px); border-color: rgba(60,114,252,0.25); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+    .process-card:hover::before { opacity: 1; }
+    .process-step-num {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Space Grotesk', monospace;
+        font-size: 1.3rem;
+        font-weight: 800;
+        margin: 0 auto 24px;
+        position: relative;
+        z-index: 1;
+    }
+    .step-num-1 { background: rgba(37,99,235,0.15); border: 2px solid rgba(37,99,235,0.4); color: #60a5fa; box-shadow: 0 0 20px rgba(37,99,235,0.2); }
+    .step-num-2 { background: rgba(124,58,237,0.15); border: 2px solid rgba(124,58,237,0.4); color: #a78bfa; box-shadow: 0 0 20px rgba(124,58,237,0.2); }
+    .step-num-3 { background: rgba(224,0,155,0.12); border: 2px solid rgba(224,0,155,0.4); color: #e879b2; box-shadow: 0 0 20px rgba(224,0,155,0.2); }
+    .step-num-4 { background: rgba(16,185,129,0.12); border: 2px solid rgba(16,185,129,0.4); color: #10b981; box-shadow: 0 0 20px rgba(16,185,129,0.2); }
+    .process-icon {
+        font-size: 2rem;
+        margin-bottom: 18px;
+        display: block;
+    }
+    .step-icon-1 { color: #60a5fa; }
+    .step-icon-2 { color: #a78bfa; }
+    .step-icon-3 { color: #e879b2; }
+    .step-icon-4 { color: #10b981; }
+    .process-card h4 {
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 12px;
+        letter-spacing: -0.3px;
+    }
+    .process-card p {
+        font-size: 0.88rem;
+        line-height: 1.65;
+        color: #94a3b8;
         margin: 0;
+    }
+    .process-card .step-tag {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 3px 10px;
+        border-radius: 20px;
+        margin-bottom: 14px;
+    }
+    .tag-1 { background: rgba(37,99,235,0.1); color: #60a5fa; }
+    .tag-2 { background: rgba(124,58,237,0.1); color: #a78bfa; }
+    .tag-3 { background: rgba(224,0,155,0.1); color: #e879b2; }
+    .tag-4 { background: rgba(16,185,129,0.1); color: #10b981; }
+    /* Stats row */
+    .process-stats {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        flex-wrap: wrap;
+        margin-top: 70px;
+        padding-top: 50px;
+        border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .process-stat { text-align: center; }
+    .process-stat-num {
+        font-family: 'Space Grotesk', monospace;
+        font-size: 2.8rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #fff 40%, #E0009B 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+        margin-bottom: 8px;
+    }
+    .process-stat-label { font-size: 0.8rem; color: #64748b; letter-spacing: 1.5px; text-transform: uppercase; }
+    @media (max-width: 991px) {
+        .process-grid { grid-template-columns: repeat(2, 1fr); }
+        .process-grid::before { display: none; }
+    }
+    @media (max-width: 575px) {
+        .process-grid { grid-template-columns: 1fr; }
+        .process-stats { gap: 30px; }
     }
     </style>
 
-    <section id="cyber-telemetry-sec">
-      <div class="container">
-        <div class="row justify-content-center align-items-center mb-50">
-          <div class="col-xl-10 text-center">
-            <span class="sub-title style2" style="color: #E0009B; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700;">[ LIVE CYBER COMM SECURITY CONTROL ]</span>
-            <h2 class="sec-title text-white mt-2" style="font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 800;">Real-Time Intrusion Telemetry</h2>
-            <p class="sec-text mx-auto" style="max-width: 600px;">
-                Visualizing threat vector interceptions, payload containment audits, and compliance shielding live from our automated SOC operations console.
-            </p>
-          </div>
-        </div>
-        
-        <div class="row gy-4 align-items-stretch">
-            <!-- Left Console Screen -->
-            <div class="col-lg-7">
-                <div class="console-box">
-                    <div class="console-header">
-                        <div class="console-dots">
-                            <span class="console-dot red"></span>
-                            <span class="console-dot yellow"></span>
-                            <span class="console-dot green"></span>
-                        </div>
-                        <span class="console-title"><i class="fas fa-terminal"></i> security-threats-monitor.log</span>
-                        <span style="font-size: 0.75rem; color: #10b981; animation: pulse 1s infinite;"><i class="fas fa-circle"></i> SIMULATOR ACTIVE</span>
-                    </div>
-                    <div class="console-body" id="threatConsole">
-                        <div class="console-line"><span class="tag-info">[SYSTEM]</span> Command telemetry daemon connection handshake established.</div>
-                        <div class="console-line"><span class="tag-info">[SYSTEM]</span> Mapping active zero-trust perimeter nodes...</div>
-                        <div class="console-line"><span class="tag-success">[SHIELD]</span> Firewall routing protocols fully established on all compliance ports.</div>
-                    </div>
-                </div>
+    <section id="process-sec">
+        <div class="process-orb process-orb-blue"></div>
+        <div class="process-orb process-orb-pink"></div>
+        <div class="container">
+            <!-- Header -->
+            <div class="text-center mb-2">
+                <span class="process-badge"><i class="fas fa-shield-halved me-1"></i> Our Methodology</span>
+                <h2 class="sec-title text-white mt-2" style="font-size:clamp(2rem,4vw,2.8rem); font-weight:800; line-height:1.2;">
+                    How We Secure<br><span style="background:linear-gradient(135deg,#3C72FC,#E0009B); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Your Business</span>
+                </h2>
+                <p style="font-size:1rem; color:#94a3b8; max-width:580px; margin:16px auto 0; line-height:1.7;">
+                    A proven 4-phase security framework — from threat assessment to continuous monitoring — designed to eliminate vulnerabilities before adversaries exploit them.
+                </p>
             </div>
-            
-            <!-- Right Radar Metrics -->
-            <div class="col-lg-5">
-                <div class="radar-box">
-                    <div class="text-center">
-                        <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8; display: block; margin-bottom: 15px;">Target Vector Radar Sweep</span>
-                        <div class="radar-container">
-                            <div class="radar-grid"></div>
-                            <div class="radar-crosshair-x"></div>
-                            <div class="radar-crosshair-y"></div>
-                            <div class="radar-sweep"></div>
-                            <!-- threat node indicators -->
-                            <div class="threat-dot d1"></div>
-                            <div class="threat-dot d2"></div>
-                            <div class="threat-dot d3"></div>
-                            <div class="threat-dot d4"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="threat-metrics">
-                        <div class="threat-metric-item">
-                            <h4>Attacks Intercepted</h4>
-                            <p id="totalAttacksCount" style="color: #E0009B;">5,219,842</p>
-                        </div>
-                        <div class="threat-metric-item">
-                            <h4>Threat Level</h4>
-                            <p style="color: #ef4444;"><i class="fas fa-warning"></i> ELEVATED</p>
-                        </div>
-                        <div class="threat-metric-item">
-                            <h4>Shield Efficiency</h4>
-                            <p style="color: #10b981;">99.998%</p>
-                        </div>
-                        <div class="threat-metric-item">
-                            <h4>Honeypot Decoys</h4>
-                            <p id="honeypotsDecoysCount" style="color: #60a5fa;">142 ACTIVE</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
-    </section>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const consoleBody = document.getElementById('threatConsole');
-        const totalAttacksNode = document.getElementById('totalAttacksCount');
-        const decoysNode = document.getElementById('honeypotsDecoysCount');
-        
-        if (consoleBody && totalAttacksNode && decoysNode) {
-            let attackCounter = 5219842;
-            let decoyCounter = 142;
-            
-            // Threat logs template arrays
-            const tags = [
-                '<span class="tag-danger">[BLOCKED]</span>', 
-                '<span class="tag-warning">[INTERCEPTED]</span>', 
-                '<span class="tag-success">[SECURED]</span>', 
-                '<span class="tag-danger">[IP_BANNED]</span>', 
-                '<span class="tag-info">[HONEYPOT]</span>'
-            ];
-            
-            const threats = [
-                'SSH Bruteforce attempt on Port 22 from ',
-                'SQL Injection attack payload routed on root directory from ',
-                'Cross-Site Scripting (XSS) exploit attempt detected from ',
-                'DDoS UDP Packet Flood volumetric surge mitigated from ',
-                'Detonated malicious ransomware zip payload in sandbox from ',
-                'Anomalous memory extraction packet sniff detected from ',
-                'Suspicious API endpoint sweep bypass query from ',
-                'LDAP Directory traversal lateral command attempt from '
-            ];
-            
-            const statusDetails = [
-                ' - payload blocked and isolated.',
-                ' - host routing to internal honeypot.',
-                ' - threat signature validated & blacklisted.',
-                ' - IP blocked via software-defined edge firewalls.',
-                ' - security keys revoked and isolated.'
-            ];
-            
-            // Random IP Generator
-            function getRandomIP() {
-                return `${Math.floor(Math.random() * 200) + 10}.${Math.floor(Math.random() * 250)}.${Math.floor(Math.random() * 250)}.${Math.floor(Math.random() * 254) + 1}`;
-            }
-            
-            // Dynamic Threat Log Generator
-            function generateThreatLog() {
-                const randomTag = tags[Math.floor(Math.random() * tags.length)];
-                const randomThreat = threats[Math.floor(Math.random() * threats.length)];
-                const ip = getRandomIP();
-                const details = statusDetails[Math.floor(Math.random() * statusDetails.length)];
-                
-                const time = new Date().toLocaleTimeString();
-                const logLine = `<div class="console-line">[${time}] ${randomTag} ${randomThreat}<strong>${ip}</strong>${details}</div>`;
-                
-                consoleBody.insertAdjacentHTML('beforeend', logLine);
-                
-                // Auto scroll console to bottom
-                consoleBody.scrollTop = consoleBody.scrollHeight;
-                
-                // Prune old console lines to keep RAM clean
-                if (consoleBody.children.length > 50) {
-                    consoleBody.removeChild(consoleBody.firstChild);
-                }
-                
-                // Increment UI stats counters
-                attackCounter += Math.floor(Math.random() * 3) + 1;
-                totalAttacksNode.innerText = attackCounter.toLocaleString();
-                
-                if (Math.random() > 0.85) {
-                    decoyCounter += 1;
-                    decoysNode.innerText = `${decoyCounter} ACTIVE`;
-                }
-            }
-            
-            // Run simulator
-            setInterval(generateThreatLog, 1200);
-        }
-    });
+            <!-- Process Steps -->
+            <div class="process-grid">
+                <!-- Step 1 -->
+                <div class="process-card">
+                    <div class="process-step-num step-num-1">01</div>
+                    <span class="step-tag tag-1">Discovery</span>
+                    <i class="fas fa-magnifying-glass-chart process-icon step-icon-1"></i>
+                    <h4>Threat Assessment &amp; Audit</h4>
+                    <p>We begin with a comprehensive audit of your existing infrastructure — identifying attack surfaces, misconfigurations, and vulnerabilities across all endpoints, cloud assets, and networks.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="process-card">
+                    <div class="process-step-num step-num-2">02</div>
+                    <span class="step-tag tag-2">Strategy</span>
+                    <i class="fas fa-chess-knight process-icon step-icon-2"></i>
+                    <h4>Custom Security Blueprint</h4>
+                    <p>Our architects design a tailored zero-trust security strategy — including firewall rules, access policies, encryption protocols, and incident response playbooks specific to your risk profile.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="process-card">
+                    <div class="process-step-num step-num-3">03</div>
+                    <span class="step-tag tag-3">Deploy</span>
+                    <i class="fas fa-rocket process-icon step-icon-3"></i>
+                    <h4>Implementation &amp; Hardening</h4>
+                    <p>Our red team operatives deploy defenses, harden systems, run controlled penetration tests, and validate every layer of security with real-world adversarial simulation techniques.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="process-card">
+                    <div class="process-step-num step-num-4">04</div>
+                    <span class="step-tag tag-4">Monitor</span>
+                    <i class="fas fa-radar process-icon step-icon-4"></i>
+                    <h4>24/7 Continuous Monitoring</h4>
+                    <p>Post-deployment, our SOC analysts provide round-the-clock threat hunting, anomaly detection, and real-time incident response — ensuring your defenses evolve faster than emerging threats.</p>
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="process-stats">
+                <div class="process-stat">
+                    <div class="process-stat-num">500+</div>
+                    <div class="process-stat-label">Clients Protected</div>
+                </div>
+                <div class="process-stat">
+                    <div class="process-stat-num">99.8%</div>
+                    <div class="process-stat-label">Threat Neutralization Rate</div>
+                </div>
+                <div class="process-stat">
+                    <div class="process-stat-num">&lt;15min</div>
+                    <div class="process-stat-label">Avg. Response Time</div>
+                </div>
+                <div class="process-stat">
+                    <div class="process-stat-num">24/7</div>
+                    <div class="process-stat-label">SOC Coverage</div>
+                </div>
+            </div>
+        </div>
+    </section>
     </script>
     <!-- Scoped Premium Why Choose Us Style Overrides -->
     <style>
@@ -2971,496 +2452,4 @@
         display: inline-flex !important;
     }
     
-    /* Scoped Style Overrides for Blog Section */
-    #blog-sec {
-        background-color: #000916 !important;
-        position: relative;
-    }
-    #blog-sec::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-image: 
-            linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
-        background-size: 60px 60px;
-        pointer-events: none;
-    }
-    #blog-sec .sec-btn .ot-btn {
-                  </div>
-                  <div
-                    class="star-rating"
-                    role="img"
-                    aria-label="Rated 5.00 out of 5"
-                  >
-                    <span
-                      >Rated <strong class="rating">5.00</strong> out of 5 based
-                      on <span class="rating">1</span> customer rating</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <div
-                class="swiper-slide swiper-slide-active"
-                role="group"
-                aria-label="4 / 6"
-                style="width: 370px; margin-right: 30px"
-              >
-                <div class="testi-card style2">
-                  <div class="box-thumb">
-                    <img src="./index/1-4.png" alt="img" />
-                  </div>
-                  <h3 class="box-title">Pinakee Aveter</h3>
-                  <span class="box-subtitle">UX Designer</span>
-                  <div class="testi-card-content">
-                    <p class="box-text">
-                      "We were struggling to manage our growing cloud
-                      infrastructure and protect our sensitive data. Securs
-                      expert team provided us with a comprehensive security
-                      solution that not only met our needs but exceeded our
-                      expectations. Their proactive detection."
-                    </p>
-                  </div>
-                  <div
-                    class="star-rating"
-                    role="img"
-                    aria-label="Rated 5.00 out of 5"
-                  >
-                    <span
-                      >Rated <strong class="rating">5.00</strong> out of 5 based
-                      on <span class="rating">1</span> customer rating</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <div
-                class="swiper-slide swiper-slide-next"
-                role="group"
-                aria-label="5 / 6"
-                style="width: 370px; margin-right: 30px"
-              >
-                <div class="testi-card style2">
-                  <div class="box-thumb">
-                    <img src="./index/1-5.png" alt="img" />
-                  </div>
-                  <h3 class="box-title">Arif Rahman</h3>
-                  <span class="box-subtitle">UX Designer</span>
-                  <div class="testi-card-content">
-                    <p class="box-text">
-                      "Before partnering with Advert Resource Ltd, we were constantly worried
-                      about potential data breaches. With their robust data loss
-                      prevention solution, Their team stays ahead of the latest
-                      threats.we have significantly reduced our risk and can now
-                      focus on business."
-                    </p>
-                  </div>
-                  <div
-                    class="star-rating"
-                    role="img"
-                    aria-label="Rated 5.00 out of 5"
-                  >
-                    <span
-                      >Rated <strong class="rating">5.00</strong> out of 5 based
-                      on <span class="rating">1</span> customer rating</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <div
-                class="swiper-slide"
-                role="group"
-                aria-label="6 / 6"
-                style="width: 370px; margin-right: 30px"
-              >
-                <div class="testi-card style2">
-                  <div class="box-thumb">
-                    <img src="./index/1-6.png" alt="img" />
-                  </div>
-                  <h3 class="box-title">Emily Chowhan</h3>
-                  <span class="box-subtitle">UX Designer</span>
-                  <div class="testi-card-content">
-                    <p class="box-text">
-                      "The Advert Resource Ltd team is incredibly responsive and always
-                      willing to go the extra mile to address our concerns.
-                      Their customer support is top-notch, response plan, we
-                      were able to mitigateand we are confident in their ability
-                      to protect our cloud environment."
-                    </p>
-                  </div>
-                  <div
-                    class="star-rating"
-                    role="img"
-                    aria-label="Rated 5.00 out of 5"
-                  >
-                    <span
-                      >Rated <strong class="rating">5.00</strong> out of 5 based
-                      on <span class="rating">1</span> customer rating</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="slider-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"
-            >
-              <span
-                class="swiper-pagination-bullet"
-                aria-label="Go to Slide 1"
-                tabindex="0"
-              ></span
-              ><span
-                class="swiper-pagination-bullet"
-                aria-label="Go to Slide 2"
-                tabindex="0"
-              ></span
-              ><span
-                class="swiper-pagination-bullet"
-                aria-label="Go to Slide 3"
-                tabindex="0"
-              ></span
-              ><span
-                class="swiper-pagination-bullet swiper-pagination-bullet-active"
-                aria-label="Go to Slide 4"
-                tabindex="0"
-                aria-current="true"
-              ></span>
-            </div>
-            <span
-              class="swiper-notification"
-              aria-live="assertive"
-              aria-atomic="true"
-            ></span
-            ><span
-              class="swiper-notification"
-              aria-live="assertive"
-              aria-atomic="true"
-            ></span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Tighten Layout Spacing & Title Alignment: Global Overrides -->
-    <style>
-    .space, .space-top, .space-bottom, 
-    #service-sec, #team-sec, #global-network-sec, 
-    .premium-why-sec, .premium-cta-sec, #blog-sec {
-        padding-top: 50px !important;
-        padding-bottom: 50px !important;
-    }
-    
-    /* Unified Title Area Alignment & Styling (Centered) */
-    .title-area {
-        text-align: center !important;
-        position: relative !important;
-        margin-bottom: 45px !important;
-        padding-left: 0 !important;
-        border-left: none !important;
-    }
-    .title-area.text-center, .title-area.text-xl-start, .title-area.text-center.mb-40 {
-        text-align: center !important;
-    }
-    .title-area .sub-title {
-        margin-left: auto !important;
-        margin-right: auto !important;
-        display: inline-flex !important;
-    }
-    /* Centered bottom gradient accent bar */
-    .title-area::after {
-        content: '';
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 3px;
-        background: linear-gradient(90deg, #3C72FC, #E0009B);
-        border-radius: 2px;
-    }
-    
-    /* Scoped Style Overrides for Blog Section */
-    #blog-sec {
-        background-color: #000916 !important;
-        position: relative;
-    }
-    #blog-sec::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background-image: 
-            linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
-        background-size: 60px 60px;
-        pointer-events: none;
-    }
-    #blog-sec .sec-btn .ot-btn {
-        -webkit-background-clip: border-box !important;
-        -webkit-text-fill-color: #ffffff !important;
-        color: #ffffff !important;
-        background: linear-gradient(135deg, #3C72FC 0%, #E0009B 100%) !important;
-        border: none !important;
-        border-radius: 30px !important;
-        padding: 12px 28px !important;
-        font-size: 0.9rem !important;
-        min-height: auto !important;
-        box-shadow: 0 5px 15px rgba(60, 114, 252, 0.2) !important;
-        transition: all 0.3s ease !important;
-        display: inline-flex !important;
-        align-items: center;
-    }
-    #blog-sec .sec-btn .ot-btn:hover {
-        transform: translateY(-2px) !important;
-        box-shadow: 0 8px 20px rgba(224, 0, 155, 0.4) !important;
-        color: #ffffff !important;
-    }
-    .blog-card {
-        background: rgba(15, 23, 42, 0.5) !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        border-radius: 20px !important;
-        overflow: hidden !important;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-    .blog-card:hover {
-        transform: translateY(-8px) !important;
-        border-color: rgba(224, 0, 155, 0.3) !important;
-        box-shadow: 0 20px 40px rgba(224, 0, 155, 0.15) !important;
-    }
-    .blog-card .blog-img {
-        overflow: hidden !important;
-        position: relative !important;
-        aspect-ratio: 16/9 !important;
-        background: #020813;
-    }
-    .blog-card .blog-img img {
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important;
-        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
-    }
-    .blog-card:hover .blog-img img {
-        transform: scale(1.05) !important;
-    }
-    .blog-card .blog-content {
-        padding: 30px !important;
-        background: transparent !important;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .blog-card .blog-meta {
-        margin-bottom: 15px !important;
-        display: flex !important;
-        align-items: center !important;
-        gap: 10px !important;
-        font-family: "Space Grotesk", monospace;
-        font-size: 0.8rem !important;
-    }
-    .blog-card .blog-meta a {
-        color: #60a5fa !important;
-        text-transform: uppercase !important;
-        letter-spacing: 1px !important;
-        font-weight: 700 !important;
-        text-decoration: none !important;
-    }
-    .blog-card .blog-meta .meta-date {
-        color: #94a3b8 !important;
-    }
-    .blog-card .box-title {
-        font-size: 1.35rem !important;
-        font-weight: 800 !important;
-        line-height: 1.35 !important;
-        margin-bottom: 25px !important;
-        letter-spacing: -0.5px;
-    }
-    .blog-card .box-title a {
-        color: #ffffff !important;
-        text-decoration: none !important;
-        transition: color 0.3s ease !important;
-    }
-    .blog-card .box-title a:hover {
-        color: #E0009B !important;
-    }
-    .blog-card .link-btn {
-        font-family: "Space Grotesk", monospace;
-        font-size: 0.85rem !important;
-        font-weight: 700 !important;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        color: #ffffff !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        gap: 8px !important;
-        margin-top: auto !important;
-        text-decoration: none !important;
-        transition: all 0.3s ease !important;
-    }
-    .blog-card .link-btn i {
-        transition: transform 0.3s ease !important;
-    }
-    .blog-card:hover .link-btn {
-        color: #E0009B !important;
-    }
-    .blog-card:hover .link-btn i {
-        transform: translateX(5px) !important;
-    }
-    
-    .featured-badge {
-        position: absolute;
-        top: 15px;
-        left: 15px;
-        background: linear-gradient(135deg, #3C72FC 0%, #E0009B 100%);
-        color: #fff;
-        padding: 5px 12px;
-        border-radius: 4px;
-        font-family: "Space Grotesk", monospace;
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-        z-index: 2;
-    }
-    
-    .terminal-diag-panel {
-        background: rgba(2, 8, 19, 0.6);
-        border: 1px solid rgba(255,255,255,0.06);
-        border-radius: 8px;
-        padding: 12px 16px;
-        margin-bottom: 20px;
-        font-family: "Space Grotesk", monospace;
-        font-size: 0.75rem;
-        text-align: left;
-    }
-    .terminal-diag-panel .term-hdr {
-        color: #60a5fa;
-        display: block;
-        margin-bottom: 6px;
-        font-weight: 700;
-    }
-    .terminal-diag-panel .term-grid {
-        display: flex;
-        gap: 20px;
-        color: #94a3b8;
-    }
-    
-    .mini-blog-card .blog-content {
-        padding: 24px !important;
-    }
-    </style>
-
-    <section class="overflow-hidden shape-mockup-wrap" id="blog-sec">
-      <div
-        class="shape-mockup bg-gradient-shape1 blog-bg-gradient1"
-        style="inset: auto 0px 20% auto"
-      ></div>
-      <div class="container">
-        <div class="row justify-content-center align-items-center mb-50">
-          <div class="col-xl-8 text-center">
-            <div class="title-area mb-0 text-center">
-              <span class="sub-title style2">New &amp; Blog</span>
-              <h2
-                class="sec-title text-white"
-                style="font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 800;"
-              >
-                Latest News and Insights
-              </h2>
-            </div>
-          </div>
-        </div>
-        
-        <div class="row gy-40">
-          <!-- Left Column: Featured Threat Intel Bulletin -->
-          <div class="col-lg-7">
-            <div class="blog-card featured-blog-card">
-              <div class="blog-img">
-                <img src="./index/blog_2_1.jpg" alt="blog image" />
-                <div class="featured-badge">FEATURED RESEARCH</div>
-              </div>
-              <div class="blog-content">
-                <div class="blog-meta">
-                  <a href="blog.php">THREAT INTEL</a>
-                  <span class="meta-date">// December 26, 2025</span>
-                </div>
-                <h3 class="box-title">
-                  <a href="blog-details.php"
-                    >A strategic alliance to enhance cloud security offerings</a
-                  >
-                </h3>
-                <p class="featured-summary text-start" style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;">
-                  Our joint partnership deployment integrates real-time malware scrubbing directly into AWS and Azure workloads, delivering low-latency security scanning for global enterprises.
-                </p>
-                <div class="terminal-diag-panel">
-                  <span class="term-hdr">> BRIEF_STATUS</span>
-                  <div class="term-grid">
-                      <span>AUDIT: <span class="text-success">VERIFIED</span></span>
-                      <span>THREAT: <span style="color: #60a5fa;">MINIMAL</span></span>
-                      <span>RESILIENCY: <span style="color: #E0009B;">100%</span></span>
-                  </div>
-                </div>
-                <a href="blog-details.php" class="link-btn mt-3">
-                  Read Full Report <i class="far fa-long-arrow-right ms-2"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Right Column: Secondary Bulletin Bulletins Stack -->
-          <div class="col-lg-5">
-            <div class="d-flex flex-column gap-24" style="height: 100%;">
-                
-                <!-- Card 2 -->
-                <div class="blog-card mini-blog-card text-start">
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <a href="blog.php" style="color: #E0009B !important;">CLOUD RESILIENCE</a>
-                      <span class="meta-date">// March 05, 2025</span>
-                    </div>
-                    <h3 class="box-title" style="font-size: 1.15rem !important; margin-bottom: 12px !important;">
-                      <a href="blog-details.php">A comprehensive analysis of emerging ransomware vectors in hybrid cloud models.</a>
-                    </h3>
-                    <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.5; margin-bottom: 15px;">
-                      Analyzing new persistence attacks targeting virtualized hypervisors and their mitigation methods.
-                    </p>
-                    <a href="blog-details.php" class="link-btn">
-                      Read Analysis <i class="far fa-long-arrow-right ms-2"></i>
-                    </a>
-                  </div>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="blog-card mini-blog-card text-start">
-                  <div class="blog-content">
-                    <div class="blog-meta">
-                      <a href="blog.php" style="color: #f0a230 !important;">COMPLIANCE BRIEF</a>
-                      <span class="meta-date">// June 12, 2025</span>
-                    </div>
-                    <h3 class="box-title" style="font-size: 1.15rem !important; margin-bottom: 12px !important;">
-                      <a href="blog-details.php">Navigating global data residency protocols & GovCloud deployment compliance.</a>
-                    </h3>
-                    <p style="color: #94a3b8; font-size: 0.88rem; line-height: 1.5; margin-bottom: 15px;">
-                      A step-by-step roadmap to achieving SOC 2 Type II and HIPAA compliance audits for distributed APIs.
-                    </p>
-                    <a href="blog-details.php" class="link-btn">
-                      Read Analysis <i class="far fa-long-arrow-right ms-2"></i>
-                    </a>
-                  </div>
-                </div>
-                
-            </div>
-          </div>
-        </div>
-        
-        <div class="row mt-40">
-          <div class="col-12 text-center">
-            <div class="sec-btn">
-              <a href="blog.php" class="ot-btn">
-                View More <i class="far fa-long-arrow-right ms-2"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 <?php include 'footer.php'; ?>

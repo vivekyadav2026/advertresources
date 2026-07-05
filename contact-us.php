@@ -5,28 +5,34 @@ $success_msg = "";
 $error_msg = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['name'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $company = $_POST['company'] ?? '';
-    $phone = $_POST['phone'] ?? '';
-    $country = $_POST['country'] ?? '';
-    $service = $_POST['service'] ?? '';
-    $budget = $_POST['budget'] ?? '';
-    $message = $_POST['message'] ?? '';
+    $name    = trim($_POST['name'] ?? '');
+    $email   = trim($_POST['email'] ?? '');
+    $company = trim($_POST['company'] ?? '');
+    $phone   = trim($_POST['phone'] ?? '');
+    $country = trim($_POST['country'] ?? '');
+    $service = trim($_POST['service'] ?? '');
+    $budget  = trim($_POST['budget'] ?? '');
+    $message = trim($_POST['message'] ?? '');
+    $is_footer = isset($_POST['footer_contact']);
     
     if (!empty($name) && !empty($email) && !empty($message)) {
         try {
             $stmt = $db->prepare("INSERT INTO enquiries (name, email, company, phone, country, service, budget, message) VALUES (:name, :email, :company, :phone, :country, :service, :budget, :message)");
             $stmt->execute([
-                ':name' => $name,
-                ':email' => $email,
+                ':name'    => $name,
+                ':email'   => $email,
                 ':company' => $company,
-                ':phone' => $phone,
+                ':phone'   => $phone,
                 ':country' => $country,
                 ':service' => $service,
-                ':budget' => $budget,
+                ':budget'  => $budget,
                 ':message' => $message
             ]);
+            // If submitted from footer, redirect back to homepage
+            if ($is_footer) {
+                header("Location: index.php?msg=sent#contact-sec");
+                exit;
+            }
             $success_msg = "Secure transmission initiated. Incident Response command center has received your request.";
         } catch (Exception $e) {
             $error_msg = "Transmission failure. Please try again. Info: " . $e->getMessage();
@@ -540,13 +546,6 @@ include 'header.php';
                             </div>
                             <div class="premium-contact-card">
                                 <div class="card-icon-wrap">
-                                    <i class="fas fa-phone-volume"></i>
-                                </div>
-                                <h5>Phone Number</h5>
-                                <a href="tel:<?php echo preg_replace('/[^0-9+]/', '', getSetting('phone1', '+165-5577-8749')); ?>"><?php echo htmlspecialchars(getSetting('phone1', '+165-5577-8749')); ?></a>
-                            </div>
-                            <div class="premium-contact-card">
-                                <div class="card-icon-wrap">
                                     <i class="fas fa-clock"></i>
                                 </div>
                                 <h5>Working Hours</h5>
@@ -585,7 +584,7 @@ include 'header.php';
                                     <input type="email" name="email" id="email" placeholder=" " required>
                                     <label for="email">Business Email</label>
                                 </div>
-                                <div class="col-md-6 form-floating-custom">
+                                 <div class="col-md-6 form-floating-custom">
                                     <i class="far fa-building input-icon"></i>
                                     <input type="text" name="company" id="company" placeholder=" " required>
                                     <label for="company">Company Name</label>
@@ -651,32 +650,8 @@ include 'header.php';
         </div>
     </section>
 
-    <!-- MAP SECTION -->
-    <section class="map-section">
-        <div class="container position-relative z-index-common">
-            <div class="row gy-4">
-                <div class="col-lg-5 fade-up delay-100">
-                    <div class="map-card">
-                        <h2 class="mb-4">Global Command Center</h2>
-                        <p class="sidebar-text mb-4">Our London headquarters houses our primary Tier IV data infrastructure and elite intelligence analysts.</p>
-                        
-                        <h4 class="text-white mb-2">Address</h4>
-                        <p class="sidebar-text mb-4">123 Cyber Avenue, Silicon Roundabout<br>London, EC1V 9XX<br>United Kingdom</p>
-                        
-                        <h4 class="text-white mb-2">Visitor Access</h4>
-                        <p class="sidebar-text mb-4">Strictly by appointment only. Secure underground parking available for authorized client vehicles.</p>
-                        
-                        <h4 class="text-white mb-2">Meeting Availability</h4>
-                        <p class="sidebar-text">In-person consultations require 48 hours notice and pre-clearance.</p>
-                    </div>
-                </div>
-                <div class="col-lg-7 fade-up delay-200">
-                    <!-- Google Map Embed with CSS filters applied via premium-contact.css -->
-                    <iframe class="map-embed w-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158858.18237072596!2d-0.10159865000000001!3d51.52864165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sus!4v1690000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
+
+
 
     <!-- FAQ SECTION -->
     <section class="faq-section">

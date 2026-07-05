@@ -44,6 +44,20 @@ try {
         date_created DATETIME DEFAULT CURRENT_TIMESTAMP
     )");
     
+    // Create Careers Table
+    $db->exec("CREATE TABLE IF NOT EXISTS careers (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        department TEXT,
+        location TEXT,
+        type TEXT DEFAULT 'Full-Time',
+        experience TEXT,
+        description TEXT,
+        requirements TEXT,
+        is_active INTEGER DEFAULT 1,
+        date_created DATETIME DEFAULT CURRENT_TIMESTAMP
+    )");
+    
     // Seed default settings if not exists
     $defaultSettings = [
         'address' => 'London, United Kingdom',

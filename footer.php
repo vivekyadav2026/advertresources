@@ -195,32 +195,36 @@
                 <!-- Right side (Form) -->
                 <div class="col-lg-6">
                   <div class="footer-glass-form">
-                    <form action="index.htmlmail.php" method="POST" class="input-label ajax-contact">
+                    <form action="contact-us.php" method="POST" class="input-label">
+                      <input type="hidden" name="footer_contact" value="1">
                       <div class="row">
                         <div class="form-group col-sm-6">
-                          <input type="text" class="form-control" placeholder="Name" name="name" id="name" required="" />
+                          <input type="text" class="form-control" placeholder="Name" name="name" id="footer_name" required="" />
                           <i class="far fa-user"></i>
                         </div>
                         <div class="form-group col-sm-6">
-                          <input type="email" class="form-control" placeholder="Email" name="email" id="email" required="" />
+                          <input type="email" class="form-control" placeholder="Email" name="email" id="footer_email" required="" />
                           <i class="far fa-envelope"></i>
                         </div>
+
                         <div class="form-group col-sm-6">
-                          <input type="number" class="form-control" placeholder="Number" name="number" id="number" required="" />
-                          <i class="far fa-phone"></i>
+                          <input type="text" class="form-control" placeholder="Company" name="company" id="footer_company" />
+                          <i class="far fa-building"></i>
                         </div>
                         <div class="form-group col-sm-6">
-                          <select name="subject" id="subject" class="form-select">
+                          <select name="service" id="footer_subject" class="form-select">
                             <option value="" disabled="disabled" selected="selected" hidden="">Service</option>
                             <option value="Security Consulting">Security Consulting</option>
                             <option value="Security Training">Security Training</option>
                             <option value="Data Security">Data Security</option>
                             <option value="Security Assessment">Security Assessment</option>
+                            <option value="Managed Security">Managed Security</option>
+                            <option value="Penetration Testing">Penetration Testing</option>
                           </select>
                           <i class="far fa-angle-down"></i>
                         </div>
                         <div class="form-group col-12">
-                          <textarea name="message" id="message" cols="30" placeholder="Write Message" rows="3" class="form-control" required=""></textarea>
+                          <textarea name="message" id="footer_message" cols="30" placeholder="Write Message" rows="3" class="form-control" required=""></textarea>
                         </div>
                         <div class="form-btn col-12 mt-10">
                           <button class="ot-btn w-100" style="min-height: 48px;">
@@ -229,7 +233,6 @@
                           </button>
                         </div>
                       </div>
-                      <p class="form-messages mb-0 mt-3"></p>
                     </form>
                   </div>
                 </div>
@@ -264,20 +267,7 @@
                   <p class="about-text">
                     Advert Resource Ltd is an innovative cybersecurity startup securing digital landscapes with next-generation zero-trust technology.
                   </p>
-                  <div class="ot-social">
-                    <a href="https://www.facebook.com/"
-                      ><i class="fab fa-facebook-f"></i
-                    ></a>
-                    <a href="https://www.twitter.com/"
-                      ><i class="fab fa-twitter"></i
-                    ></a>
-                    <a href="https://www.linkedin.com/"
-                      ><i class="fab fa-linkedin-in"></i
-                    ></a>
-                    <a href="https://www.youtube.com/"
-                      ><i class="fab fa-youtube"></i
-                    ></a>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -360,18 +350,7 @@
                       </p>
                     </div>
                   </div>
-                  <div class="info-box">
-                    <div class="box-icon"><i class="far fa-phone"></i></div>
-                    <div class="media-body">
-                      <h3 class="box-title">Phone</h3>
-                      <a class="box-link" href="tel:<?php echo preg_replace('/[^0-9+]/', '', getSetting('phone1', '+165-5577-8749')); ?>"
-                        ><?php echo htmlspecialchars(getSetting('phone1', '+165-5577-8749')); ?>,</a
-                      >
-                      <a class="box-link" href="tel:<?php echo preg_replace('/[^0-9+]/', '', getSetting('phone2', '+165-3564-7488')); ?>"
-                        ><?php echo htmlspecialchars(getSetting('phone2', '+165-3564-7488')); ?></a
-                      >
-                    </div>
-                  </div>
+
                   <div class="info-box">
                     <div class="box-icon"><i class="far fa-clock"></i></div>
                     <div class="media-body">
@@ -666,35 +645,35 @@
             
             this.time += 0.5;
             
-            // Update Mouse Trail Elasticity
-            if (this.mouse.active && this.trail.length > 0) {
-                this.trail[this.trail.length - 1].x = this.mouse.x;
-                this.trail[this.trail.length - 1].y = this.mouse.y;
-            }
-            
-            // Elastic Glide trailing points
-            for (let i = this.trail.length - 2; i >= 0; i--) {
-                const p = this.trail[i];
-                const next = this.trail[i + 1];
-                p.x += (next.x - p.x) * 0.32;
-                p.y += (next.y - p.y) * 0.32;
-            }
-            
-            // Fade out trail when mouse is inactive
-            if (!this.mouse.active && this.trail.length > 0) {
-                this.trail.shift();
-            }
-            
             // Render Background Elements
             this.drawWaves(this.bgCtx);
             this.updateNodes(this.bgCtx);
             this.drawConnections(this.bgCtx);
             this.updatePackets(this.bgCtx);
             
-            // Render Foreground Elements
-            this.drawMouseTrail(this.fgCtx);
+            // Draw single big cursor circle on foreground
+            if (this.mouse.active) {
+                this.drawCursorCircle(this.fgCtx);
+            }
             
             requestAnimationFrame(() => this.animate());
+        }
+        
+        drawCursorCircle(ctx) {
+            const x = this.mouse.x;
+            const y = this.mouse.y;
+            const r = 18;
+            
+            // Single glowing circle
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, Math.PI * 2);
+            ctx.strokeStyle = 'rgba(60, 114, 252, 0.8)';
+            ctx.lineWidth = 2;
+            ctx.shadowBlur = 18;
+            ctx.shadowColor = '#3C72FC';
+            ctx.stroke();
+            
+            ctx.shadowBlur = 0;
         }
         
         drawWaves(ctx) {
@@ -808,55 +787,7 @@
             ctx.shadowBlur = 0;
         }
         
-        drawMouseTrail(ctx) {
-            if (this.trail.length < 1) return;
-            
-            ctx.shadowBlur = 10;
-            
-            // Draw trail of fading circles directly on the path (no snake movement)
-            for (let i = 0; i < this.trail.length; i++) {
-                const p = this.trail[i];
-                
-                // Calculate sizing and opacity factors
-                const ratio = i / this.trail.length;
-                const radius = ratio * 13.0 + 3.0; // Grows from 3.0px (tail) to 16.0px (head)
-                const opacity = ratio * 0.7;
-                
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
-                if (ratio > 0.5) {
-                    ctx.strokeStyle = `rgba(224, 0, 155, ${opacity})`; // Pink
-                    ctx.shadowColor = '#E0009B';
-                } else {
-                    ctx.strokeStyle = `rgba(60, 114, 252, ${opacity})`; // Blue
-                    ctx.shadowColor = '#3C72FC';
-                }
-                ctx.lineWidth = 1.4;
-                ctx.stroke();
-            }
-            
-            // Draw double circles (concentric tracking rings) at the cursor position
-            const head = this.trail[this.trail.length - 1];
-            
-            // 1. Inner Circle Ring
-            ctx.shadowBlur = 8;
-            ctx.shadowColor = '#E0009B';
-            ctx.strokeStyle = 'rgba(224, 0, 155, 0.9)';
-            ctx.lineWidth = 1.5;
-            ctx.beginPath();
-            ctx.arc(head.x, head.y, 7, 0, Math.PI * 2);
-            ctx.stroke();
-            
-            // 2. Outer Circle Ring
-            ctx.shadowColor = '#3C72FC';
-            ctx.strokeStyle = 'rgba(60, 114, 252, 0.85)';
-            ctx.lineWidth = 1.2;
-            ctx.beginPath();
-            ctx.arc(head.x, head.y, 18, 0, Math.PI * 2);
-            ctx.stroke();
-            
-            ctx.shadowBlur = 0;
-        }
+        // Mouse trail functionality removed
     }
 
     document.addEventListener('DOMContentLoaded', () => {

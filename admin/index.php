@@ -112,82 +112,77 @@ if (isset($_GET['delete_enquiry'])) {
     }
 }
 
-// 4. Process Delete Blog
-if (isset($_GET['delete_blog'])) {
-    $id = intval($_GET['delete_blog']);
+// 4. Process Add/Edit Career Job
+if (isset($_POST['save_career'])) {
+    $career_id   = intval($_POST['career_id'] ?? 0);
+    $title       = trim($_POST['career_title'] ?? '');
+    $department  = trim($_POST['department'] ?? '');
+    $location    = trim($_POST['location'] ?? '');
+    $type        = trim($_POST['job_type'] ?? 'Full-Time');
+    $experience  = trim($_POST['experience'] ?? '');
+    $description = trim($_POST['description'] ?? '');
+    $requirements = trim($_POST['requirements'] ?? '');
+    $is_active   = isset($_POST['is_active']) ? 1 : 0;
+
+    if (!empty($title)) {
+        try {
+            if ($career_id > 0) {
+                $stmt = $db->prepare("UPDATE careers SET title=:title, department=:dept, location=:loc, type=:type, experience=:exp, description=:desc, requirements=:req, is_active=:active WHERE id=:id");
+                $stmt->execute([':title'=>$title,':dept'=>$department,':loc'=>$location,':type'=>$type,':exp'=>$experience,':desc'=>$description,':req'=>$requirements,':active'=>$is_active,':id'=>$career_id]);
+                $success = "Job listing updated successfully.";
+            } else {
+                $stmt = $db->prepare("INSERT INTO careers (title, department, location, type, experience, description, requirements, is_active) VALUES (:title,:dept,:loc,:type,:exp,:desc,:req,:active)");
+                $stmt->execute([':title'=>$title,':dept'=>$department,':loc'=>$location,':type'=>$type,':exp'=>$experience,':desc'=>$description,':req'=>$requirements,':active'=>$is_active]);
+                $success = "New job listing published.";
+            }
+        } catch (Exception $e) {
+            $error = "Save failed: " . $e->getMessage();
+        }
+    } else {
+        $error = "Job title is required.";
+    }
+}
+
+// 5. Process Delete Career
+if (isset($_GET['delete_career'])) {
+    $id = intval($_GET['delete_career']);
     try {
-        $stmt = $db->prepare("DELETE FROM blogs WHERE id = :id");
+        $stmt = $db->prepare("DELETE FROM careers WHERE id = :id");
         $stmt->execute([':id' => $id]);
-        $success = "Intelligence brief removed from index.";
+        $success = "Job listing removed.";
     } catch (Exception $e) {
         $error = "Delete failed: " . $e->getMessage();
     }
 }
 
-// 5. Process Gallery Addition Form
-if (isset($_POST['save_gallery'])) {
-    $title = $_POST['title'] ?? '';
-    $label = $_POST['label'] ?? '';
-    $image_url = $_POST['image_url'] ?? '';
-    
-    // Process image file upload if exists
-    if (isset($_FILES['image_file']) && $_FILES['image_file']['error'] === UPLOAD_ERR_OK) {
-        $file_tmp = $_FILES['image_file']['tmp_name'];
-        $file_name = $_FILES['image_file']['name'];
-        $upload_dir = '../uploads/';
-        
-        if (!file_exists($upload_dir)) {
-            mkdir($upload_dir, 0777, true);
-        }
-        
-        $dest_path = $upload_dir . time() . '_' . $file_name;
-        if (move_uploaded_file($file_tmp, $dest_path)) {
-            $image_url = 'uploads/' . time() . '_' . $file_name; // Relative path
-        }
-    }
-    
-    if (empty($image_url)) {
-        $image_url = 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800'; // Default placeholder
-    }
-    
-    if (!empty($title)) {
-        try {
-            $stmt = $db->prepare("INSERT INTO gallery (title, label, image) VALUES (:title, :label, :image)");
-            $stmt->execute([
-                ':title' => $title,
-                ':label' => $label,
-                ':image' => $image_url
-            ]);
-            $success = "New gallery diagram indexed successfully.";
-        } catch (Exception $e) {
-            $error = "Gallery entry save failed: " . $e->getMessage();
-        }
-    } else {
-        $error = "Diagram title is required.";
-    }
-}
-
-// 6. Process Delete Gallery Item
-if (isset($_GET['delete_gallery'])) {
-    $id = intval($_GET['delete_gallery']);
+// 6. Process Delete Application
+if (isset($_GET['delete_application'])) {
+    $id = intval($_GET['delete_application']);
     try {
-        $stmt = $db->prepare("DELETE FROM gallery WHERE id = :id");
+        $db->exec("CREATE TABLE IF NOT EXISTS career_applications (id INTEGER PRIMARY KEY AUTOINCREMENT, job_id INTEGER, name TEXT, email TEXT, phone TEXT, cover_message TEXT, applied_at DATETIME DEFAULT CURRENT_TIMESTAMP)");
+        $stmt = $db->prepare("DELETE FROM career_applications WHERE id = :id");
         $stmt->execute([':id' => $id]);
-        $success = "Gallery diagram purged from database.";
+        $success = "Application removed.";
     } catch (Exception $e) {
-        $error = "Purge failed: " . $e->getMessage();
+        $error = "Delete failed: " . $e->getMessage();
     }
 }
 
 // Fetch all database records
 try {
     $enquiries = $db->query("SELECT * FROM enquiries ORDER BY created_at DESC")->fetchAll(PDO::FETCH_ASSOC);
-    $blogs = $db->query("SELECT * FROM blogs ORDER BY date_created DESC")->fetchAll(PDO::FETCH_ASSOC);
-    $gallery = $db->query("SELECT * FROM gallery ORDER BY date_created DESC")->fetchAll(PDO::FETCH_ASSOC);
+    $careers   = $db->query("SELECT * FROM careers ORDER BY date_created DESC")->fetchAll(PDO::FETCH_ASSOC);
+    $db->exec("CREATE TABLE IF NOT EXISTS career_applications (id INTEGER PRIMARY KEY AUTOINCREMENT, job_id INTEGER, name TEXT, email TEXT, phone TEXT, cover_message TEXT, applied_at DATETIME DEFAULT CURRENT_TIMESTAMP)");
+    $applications = $db->query("SELECT ca.*, c.title as job_title FROM career_applications ca LEFT JOIN careers c ON ca.job_id = c.id ORDER BY ca.applied_at DESC")->fetchAll(PDO::FETCH_ASSOC);
+    $edit_career = null;
+    if (isset($_GET['edit_career'])) {
+        $eid = intval($_GET['edit_career']);
+        $stmt = $db->prepare("SELECT * FROM careers WHERE id = :id");
+        $stmt->execute([':id' => $eid]);
+        $edit_career = $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 } catch (Exception $e) {
-    $enquiries = [];
-    $blogs = [];
-    $gallery = [];
+    $enquiries = []; $careers = []; $applications = []; $edit_career = null;
 }
 ?>
 <!DOCTYPE html>
@@ -599,8 +594,7 @@ try {
         <ul class="nav-menu">
             <li><a class="nav-item active" onclick="switchTab('dashboard', this)"><i class="far fa-chart-network"></i> Dashboard</a></li>
             <li><a class="nav-item" onclick="switchTab('enquiries', this)"><i class="far fa-inbox-in"></i> Enquiries</a></li>
-            <li><a class="nav-item" onclick="switchTab('blogs', this)"><i class="far fa-newspaper"></i> Manage Blogs</a></li>
-            <li><a class="nav-item" onclick="switchTab('gallery', this)"><i class="far fa-images"></i> Manage Gallery</a></li>
+            <li><a class="nav-item" onclick="switchTab('careers', this)"><i class="far fa-briefcase"></i> Careers</a></li>
             <li><a class="nav-item" onclick="switchTab('settings', this)"><i class="far fa-cogs"></i> Contact Settings</a></li>
             <li><a href="logout.php" class="nav-item logout-btn"><i class="far fa-power-off"></i> Terminate Session</a></li>
         </ul>
@@ -778,8 +772,157 @@ try {
             </div>
         </div>
         
-        <!-- SECTION 3: MANAGE BLOGS -->
-        <div id="tab-blogs" class="tab-section">
+        <!-- SECTION 3: MANAGE CAREERS -->
+        <div id="tab-careers" class="tab-section">
+            <!-- Add / Edit Form -->
+            <div class="row gy-4 mb-4">
+                <div class="col-lg-5">
+                    <div class="glass-panel">
+                        <div class="panel-header">
+                            <h2 id="careerFormTitle"><?= $edit_career ? 'Edit Job Listing' : 'Post New Job' ?></h2>
+                        </div>
+                        <form action="" method="POST" id="careerForm">
+                            <input type="hidden" name="save_career" value="1">
+                            <input type="hidden" name="career_id" id="career_id" value="<?= $edit_career ? $edit_career['id'] : 0 ?>">
+
+                            <div class="form-group mb-3">
+                                <label>Job Title *</label>
+                                <input type="text" name="career_title" id="career_title" required placeholder="Senior Security Analyst" value="<?= $edit_career ? htmlspecialchars($edit_career['title']) : '' ?>">
+                            </div>
+                            <div class="form-row mb-3">
+                                <div class="form-group">
+                                    <label>Department</label>
+                                    <input type="text" name="department" id="career_dept" placeholder="SOC / Red Team / Engineering" value="<?= $edit_career ? htmlspecialchars($edit_career['department']) : '' ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label>Location</label>
+                                    <input type="text" name="location" id="career_loc" placeholder="London / Remote" value="<?= $edit_career ? htmlspecialchars($edit_career['location']) : '' ?>">
+                                </div>
+                            </div>
+                            <div class="form-row mb-3">
+                                <div class="form-group">
+                                    <label>Job Type</label>
+                                    <select name="job_type" id="career_type" style="width:100%; padding:10px 14px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#fff; font-size:0.9rem;">
+                                        <option value="Full-Time" <?= ($edit_career && $edit_career['type']=='Full-Time') ? 'selected' : '' ?>>Full-Time</option>
+                                        <option value="Part-Time" <?= ($edit_career && $edit_career['type']=='Part-Time') ? 'selected' : '' ?>>Part-Time</option>
+                                        <option value="Contract" <?= ($edit_career && $edit_career['type']=='Contract') ? 'selected' : '' ?>>Contract</option>
+                                        <option value="Remote" <?= ($edit_career && $edit_career['type']=='Remote') ? 'selected' : '' ?>>Remote</option>
+                                        <option value="Internship" <?= ($edit_career && $edit_career['type']=='Internship') ? 'selected' : '' ?>>Internship</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Experience Level</label>
+                                    <input type="text" name="experience" id="career_exp" placeholder="3+ Years / Senior / Mid" value="<?= $edit_career ? htmlspecialchars($edit_career['experience']) : '' ?>">
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Job Description *</label>
+                                <textarea name="description" id="career_desc" rows="4" placeholder="Describe the role, responsibilities and goals..."><?= $edit_career ? htmlspecialchars($edit_career['description']) : '' ?></textarea>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Requirements</label>
+                                <textarea name="requirements" id="career_req" rows="3" placeholder="Certifications, skills, qualifications..."><?= $edit_career ? htmlspecialchars($edit_career['requirements']) : '' ?></textarea>
+                            </div>
+                            <div class="form-group mb-4" style="display:flex; align-items:center; gap:12px;">
+                                <input type="checkbox" name="is_active" id="is_active" value="1" <?= (!$edit_career || $edit_career['is_active']) ? 'checked' : '' ?> style="width:18px;height:18px;accent-color:#3C72FC;">
+                                <label for="is_active" style="margin:0; font-size:0.85rem; color:#94a3b8;">Published (visible on careers page)</label>
+                            </div>
+                            <div style="display:flex; gap:10px;">
+                                <button type="submit" class="btn-action" id="careerSubmitBtn"><?= $edit_career ? 'UPDATE JOB <i class="far fa-shield-check"></i>' : 'PUBLISH JOB <i class="far fa-paper-plane"></i>' ?></button>
+                                <?php if ($edit_career): ?>
+                                <a href="?" class="btn-action" style="background:rgba(255,255,255,0.05); box-shadow:none;">CANCEL</a>
+                                <?php endif; ?>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Jobs List -->
+                <div class="col-lg-7">
+                    <div class="glass-panel">
+                        <div class="panel-header">
+                            <h2>Job Listings (<?= count($careers) ?>)</h2>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="cyber-table">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Department</th>
+                                        <th>Type</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php if (empty($careers)): ?>
+                                        <tr><td colspan="5" style="text-align:center;">No job listings yet. Post your first job!</td></tr>
+                                    <?php else: ?>
+                                        <?php foreach ($careers as $job): ?>
+                                        <tr>
+                                            <td style="font-weight:700; color:#fff;"><?= htmlspecialchars($job['title']) ?></td>
+                                            <td><?= htmlspecialchars($job['department'] ?: '-') ?></td>
+                                            <td><span class="badge-tag"><?= htmlspecialchars($job['type']) ?></span></td>
+                                            <td>
+                                                <?php if ($job['is_active']): ?>
+                                                    <span class="badge-tag" style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.3);color:#10b981;">Live</span>
+                                                <?php else: ?>
+                                                    <span class="badge-tag" style="background:rgba(239,68,68,0.1);border-color:rgba(239,68,68,0.3);color:#ef4444;">Draft</span>
+                                                <?php endif; ?>
+                                            </td>
+                                            <td>
+                                                <a href="?edit_career=<?= $job['id'] ?>" class="btn-view">Edit</a>
+                                                <a href="?delete_career=<?= $job['id'] ?>" class="btn-delete" onclick="return confirm('Delete this job listing?')">Delete</a>
+                                            </td>
+                                        </tr>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Applications Table -->
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h2>Job Applications (<?= count($applications) ?>)</h2>
+                </div>
+                <div class="table-responsive">
+                    <table class="cyber-table">
+                        <thead>
+                            <tr>
+                                <th>Applicant</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Applied For</th>
+                                <th>Date</th>
+                                <th>Message</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if (empty($applications)): ?>
+                                <tr><td colspan="7" style="text-align:center;">No applications received yet.</td></tr>
+                            <?php else: ?>
+                                <?php foreach ($applications as $app): ?>
+                                <tr>
+                                    <td style="font-weight:700;color:#fff;"><?= htmlspecialchars($app['name']) ?></td>
+                                    <td><?= htmlspecialchars($app['email']) ?></td>
+                                    <td><?= htmlspecialchars($app['phone'] ?: '-') ?></td>
+                                    <td><span class="badge-tag"><?= htmlspecialchars($app['job_title'] ?: 'Unknown') ?></span></td>
+                                    <td><?= date('M d, Y', strtotime($app['applied_at'])) ?></td>
+                                    <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="<?= htmlspecialchars($app['cover_message']) ?>"><?= htmlspecialchars(substr($app['cover_message'] ?: '-', 0, 60)) ?>...</td>
+                                    <td><a href="?delete_application=<?= $app['id'] ?>" class="btn-delete" onclick="return confirm('Remove this application?')">Delete</a></td>
+                                </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
             <div class="row gy-4">
                 <div class="col-lg-5">
                     <div class="glass-panel">

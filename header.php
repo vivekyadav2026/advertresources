@@ -329,8 +329,7 @@
                 <li><a href="services-workload-protection.php">Workload Protection</a></li>
               </ul>
             </li>
-            <li><a href="gallery.php">Gallery</a></li>
-            <li><a href="blog.php">Blog</a></li>
+            <li><a href="careers.php">Careers</a></li>
             <li><a href="contact-us.php">Contact Us</a></li>
           </ul>
         </div>
@@ -361,20 +360,7 @@
               An IT consultancy can help you assess your technology needs and
               develop a technology strategy that aligns with your business
             </p>
-            <div class="ot-social">
-              <a href="https://www.facebook.com/"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="https://www.twitter.com/"
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a href="https://www.linkedin.com/"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-              <a href="https://www.whatsapp.com/"
-                ><i class="fab fa-whatsapp"></i
-              ></a>
-            </div>
+
           </div>
         </div>
         <div
@@ -400,14 +386,6 @@
                 <p class="box-text">
                   <?php echo htmlspecialchars(getSetting('address', 'London, United Kingdom')); ?>
                 </p>
-              </div>
-            </div>
-            <div class="info-box">
-              <div class="box-icon"><i class="far fa-phone"></i></div>
-              <div class="media-body">
-                <h3 class="box-title">Phone</h3>
-                <a class="box-link" href="tel:<?php echo preg_replace('/[^0-9+]/', '', getSetting('phone1', '+165-5577-8749')); ?>"><?php echo htmlspecialchars(getSetting('phone1', '+165-5577-8749')); ?>,</a>
-                <a class="box-link" href="tel:<?php echo preg_replace('/[^0-9+]/', '', getSetting('phone2', '+165-3564-7488')); ?>"><?php echo htmlspecialchars(getSetting('phone2', '+165-3564-7488')); ?></a>
               </div>
             </div>
             <div class="info-box">
@@ -468,16 +446,7 @@
             <div class="col-auto d-none d-xl-block">
               <div class="header-links">
                 <ul>
-                  <li>
-                    <i class="fal fa-map-marker-alt"></i>
-                    <a target="_blank" href="https://www.google.com/maps/"
-                      ><?php echo htmlspecialchars(getSetting('address', 'London, United Kingdom')); ?></a
-                    >
-                  </li>
-                  <li>
-                    <i class="fal fa-phone"></i>
-                    <a href="tel:<?php echo preg_replace('/[^0-9+]/', '', getSetting('phone1', '+165-5577-8749')); ?>"><?php echo htmlspecialchars(getSetting('phone1', '+165-5577-8749')); ?></a>
-                  </li>
+
                   <li>
                     <i class="fal fa-envelope"></i>
                     <a href="mailto:<?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?>"><?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?></a>
@@ -522,8 +491,7 @@
                         <li><a href="services-workload-protection.php">Workload Protection</a></li>
                       </ul>
                     </li>
-                    <li><a href="gallery.php">Gallery</a></li>
-                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="careers.php">Careers</a></li>
                     <li><a href="contact-us.php">Contact Us</a></li>
                   </ul>
                 </nav>
