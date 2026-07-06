@@ -381,7 +381,7 @@
               "
             >
               <p class="copyright-text">
-                <i class="far fa-copyright"></i> Copyright 2025
+                <i class="far fa-copyright"></i> Copyright <?php echo date('Y'); ?>
                 <a href="index.php">Advert Resource Ltd</a>. All Rights Reserved.
               </p>
             </div>
