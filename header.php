@@ -332,15 +332,7 @@ $pageKeywords = isset($pageKeywords) ? $pageKeywords : "cyber security, network 
         </div>
       </div>
     </div>
-    <div class="popup-search-box d-none d-lg-block">
-      <button class="searchClose"><i class="fal fa-times"></i></button>
-      <div class="sidemenu-content">
-        <form action="index.php#">
-          <input type="text" placeholder="What are you looking for?" />
-          <button type="submit"><i class="fal fa-search"></i></button>
-        </form>
-      </div>
-    </div>
+
     <div class="sidemenu-wrapper sidemenu-info">
       <div class="sidemenu-content">
         <button class="closeButton sideMenuCls">
@@ -524,12 +516,7 @@ $pageKeywords = isset($pageKeywords) ? $pageKeywords : "cyber security, network 
                       </li>
                     </ul>
                   </div>
-                  <button
-                    type="button"
-                    class="icon-btn searchBoxToggler d-none d-lg-block"
-                  >
-                    <i class="far fa-search"></i>
-                  </button>
+
                   <button
                     type="button"
                     class="ot-menu-toggle d-block d-lg-none"
