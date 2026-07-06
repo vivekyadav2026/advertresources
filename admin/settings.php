@@ -42,17 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_settings'])) {
             <h2 style="font-size: 1.1rem; color: #3b82f6;"><i class="far fa-address-book"></i> Public Contact Details</h2>
         </div>
         
-        <div class="form-row mb-3">
-            <div class="form-group">
-                <label>Primary Phone Line</label>
-                <input type="text" name="phone1" value="<?= htmlspecialchars(getSetting('phone1')) ?>">
-            </div>
-            <div class="form-group">
-                <label>Secondary Phone Line</label>
-                <input type="text" name="phone2" value="<?= htmlspecialchars(getSetting('phone2')) ?>">
-            </div>
-        </div>
-        
+
         <div class="form-row mb-3">
             <div class="form-group">
                 <label>Primary Business Email</label>
