@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "Managed Security Services & SOC | Advert Resource Ltd";
+$pageDesc = "Continuous 24/7/365 operational surveillance and automated triage managed by expert security architects at our Security Operations Center.";
+$pageKeywords = "managed security services, MSSP, SOC, security operations center, operational surveillance";
+include 'header.php'; 
+?>
 
 <!-- Scoped Premium Styles for the Service Detail Page -->
 <style>

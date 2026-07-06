@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "Network Security & Perimeter Defense | Advert Resource Ltd";
+$pageDesc = "Deploy next-generation firewalls, secure web gateways, and micro-segmentation strategies to prevent lateral movement and contain breaches.";
+$pageKeywords = "network security, perimeter defense, micro-segmentation, next-gen firewall, zero trust network";
+include 'header.php'; 
+?>
 
 <!-- Scoped Premium Styles for the Service Detail Page -->
 <style>

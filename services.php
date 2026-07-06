@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "Our Cyber Security Services | Advert Resource Ltd";
+$pageDesc = "Explore Advert Resource Ltd's comprehensive cybersecurity services, including managed SOC, Red Team Pentesting, Digital Forensics, and Cloud Security Posture Management.";
+$pageKeywords = "cyber security services, managed SOC, Red Team, pentesting, digital forensics, cloud security, CSPM, CWPP";
+include 'header.php'; 
+?>
 
 <!-- Scoped Premium Styles for the Services Page -->
 <style>

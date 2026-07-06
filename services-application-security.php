@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "Application Security Assessment & Code Audits | Advert Resource Ltd";
+$pageDesc = "Audit source code repositories, secure active API endpoints, and mitigate runtime logic vulnerabilities with our Application Security Assessments.";
+$pageKeywords = "application security, code audit, API security, devsecops, vulnerability mitigation";
+include 'header.php'; 
+?>
 
 <!-- Scoped Premium Styles for the Service Detail Page -->
 <style>

@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "Cloud Security Posture Management (CSPM) | Advert Resource Ltd";
+$pageDesc = "Continuously assess your cloud environments for misconfigurations, vulnerabilities, and compliance drifts with Advert Resource Ltd's CSPM solutions.";
+$pageKeywords = "CSPM, Cloud Security Posture Management, cloud misconfiguration, AWS security, Azure security";
+include 'header.php'; 
+?>
 
 <!-- Scoped Premium Styles for the Service Detail Page -->
 <style>

@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "Cloud Access Security Broker (CASB) | Advert Resource Ltd";
+$pageDesc = "Enforce secure data sovereignty policies across SaaS infrastructure through real-time inspection with Advert Resource Ltd's CASB solutions.";
+$pageKeywords = "CASB, Cloud Access Security Broker, SaaS security, data sovereignty, cloud data loss prevention";
+include 'header.php'; 
+?>
 
 <!-- Scoped Premium Styles for the Service Detail Page -->
 <style>

@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "Red Team Operations & Pentesting | Advert Resource Ltd";
+$pageDesc = "Simulate adversary tactics, run automated compromise scripts, and test physical security perimeters with our expert Red Team operations.";
+$pageKeywords = "Red Team operations, penetration testing, ethical hacking, physical security testing, adversary simulation";
+include 'header.php'; 
+?>
 
 <!-- Scoped Premium Styles for the Service Detail Page -->
 <style>

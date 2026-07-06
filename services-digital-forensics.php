@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "Digital Forensics & Incident Response (DFIR) | Advert Resource Ltd";
+$pageDesc = "Contain active network incursions, rebuild data logs, and recover from cybersecurity incidents with Advert Resource Ltd's digital forensics experts.";
+$pageKeywords = "digital forensics, DFIR, incident response, ransomware containment, data recovery";
+include 'header.php'; 
+?>
 
 <!-- Scoped Premium Styles for the Service Detail Page -->
 <style>

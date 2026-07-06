@@ -1,5 +1,8 @@
 <?php 
 require_once 'db.php'; 
+$pageTitle = "Visual Gallery | Advert Resource Ltd Cyber Operations";
+$pageDesc = "A look into the structural topology and interfaces of Advert Resource Ltd's cybersecurity operations.";
+$pageKeywords = "cyber security gallery, SOC operations, security topology, network schema";
 include 'header.php'; 
 
 // Fetch all gallery items

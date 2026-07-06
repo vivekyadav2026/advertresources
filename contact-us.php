@@ -51,6 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+$pageTitle = "Contact Advert Resource Ltd | Incident Response & Consulting";
+$pageDesc = "Get in touch with Advert Resource Ltd. Our expert incident response and SOC teams are available 24/7 to secure your digital environment from emerging threats.";
+$pageKeywords = "contact cyber security, incident response team, cyber security consulting, Advert Resource Ltd contact";
 include 'header.php'; 
 ?>
 <!-- Include the custom premium CSS specifically for this page -->

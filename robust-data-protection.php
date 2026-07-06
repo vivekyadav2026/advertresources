@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "Robust Data Protection & DLP | Advert Resource Ltd";
+$pageDesc = "Safeguard your sensitive enterprise data with robust encryption, secure access controls, and comprehensive data loss prevention (DLP) measures by Advert Resource Ltd.";
+$pageKeywords = "data protection, DLP, data loss prevention, enterprise encryption, secure access control";
+include 'header.php'; 
+?>
 
 <!-- Scoped Premium Styles for the Service Detail Page -->
 <style>

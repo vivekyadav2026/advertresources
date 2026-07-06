@@ -1,22 +1,19 @@
-<?php require_once 'db.php'; ?>
+<?php require_once 'db.php'; 
+// Default SEO values if not set by the page
+$pageTitle = isset($pageTitle) ? $pageTitle : "Advert Resource Ltd | Elite Cyber Security Services";
+$pageDesc = isset($pageDesc) ? $pageDesc : "Advert Resource Ltd provides advanced threat detection, incident response, network security, and compliance solutions for high-risk digital environments.";
+$pageKeywords = isset($pageKeywords) ? $pageKeywords : "cyber security, network security, zero trust, advanced threat detection, SOC, penetration testing, compliance";
+?>
 <!doctype html>
 <!-- saved from url=(0033)index.html -->
 <html class="no-js" lang="zxx">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>
-      Advert Resource Ltd - Cyber Security Services Agency HTML Template - Home Two
-    </title>
+    <title><?php echo htmlspecialchars($pageTitle); ?></title>
     <meta name="author" content="Advert Resource Ltd" />
-    <meta
-      name="description"
-      content="Advert Resource Ltd - Cyber Security Services Agency HTML Template"
-    />
-    <meta
-      name="keywords"
-      content="Advert Resource Ltd - Cyber Security Services Agency HTML Template"
-    />
+    <meta name="description" content="<?php echo htmlspecialchars($pageDesc); ?>" />
+    <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords); ?>" />
     <meta name="robots" content="INDEX,FOLLOW" />
     <meta
       name="viewport"

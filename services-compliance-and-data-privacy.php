@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "Regulatory Compliance & Data Privacy | Advert Resource Ltd";
+$pageDesc = "Establish ISMS systems for ISO frameworks, model security standards for NIST, and enforce GDPR compliance seamlessly.";
+$pageKeywords = "regulatory compliance, data privacy, ISO framework, NIST framework, GDPR compliance";
+include 'header.php'; 
+?>
 
 <!-- Scoped Premium Styles for the Service Detail Page -->
 <style>

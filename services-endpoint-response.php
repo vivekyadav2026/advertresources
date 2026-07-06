@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "Endpoint Detection and Response (EDR) | Advert Resource Ltd";
+$pageDesc = "Detect, isolate, and evict advanced malware, ransomware, and fileless exploits targeting corporate endpoints with our next-gen EDR solutions.";
+$pageKeywords = "Endpoint Detection and Response, EDR, endpoint security, ransomware eviction, malware isolation";
+include 'header.php'; 
+?>
 
 <!-- Scoped Premium Styles for the Service Detail Page -->
 <style>

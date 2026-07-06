@@ -1,4 +1,7 @@
 <?php 
+$pageTitle = "Advert Resource Ltd | Cyber Security & Managed IT Services";
+$pageDesc = "Advert Resource Ltd provides elite cyber security consulting, advanced threat detection, managed SOC, and compliance architecture to protect high-risk digital assets.";
+$pageKeywords = "cyber security, managed IT services, SOC, zero trust, threat detection, Advert Resource Ltd, London cyber security";
 $form_sent = isset($_GET['msg']) && $_GET['msg'] === 'sent';
 include 'header.php'; 
 ?>
@@ -1230,6 +1233,7 @@ include 'header.php';
           </div>
         </div>
       </div>
+    </div>
     <!-- Scoped Style Overrides for Global Network Section -->
     <style>
     #global-network-sec {
@@ -1704,7 +1708,6 @@ include 'header.php';
             </div>
         </div>
     </section>
-    </script>
     <!-- Scoped Premium Why Choose Us Style Overrides -->
     <style>
     .premium-why-sec {
@@ -2451,5 +2454,6 @@ include 'header.php';
         margin-right: auto !important;
         display: inline-flex !important;
     }
-    
+    </style>
+
 <?php include 'footer.php'; ?>

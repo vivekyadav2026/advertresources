@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "About Advert Resource Ltd | Advanced Cyber Security Pioneers";
+$pageDesc = "Discover how Advert Resource Ltd secures the digital future with next-generation threat intelligence, Zero-Trust architectures, and expert security consulting.";
+$pageKeywords = "about Advert Resource Ltd, cyber security experts, zero trust architecture, threat intelligence, cloud security";
+include 'header.php'; 
+?>
 
 <!-- Scoped Premium Styles for the Redesigned About Us Page -->
 <style>

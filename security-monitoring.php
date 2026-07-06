@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "24/7 Security Monitoring & Operations | Advert Resource Ltd";
+$pageDesc = "Our elite team of security experts monitors your environment around the clock, detecting and responding to active cyber threats in real-time.";
+$pageKeywords = "24/7 security monitoring, SOC, security operations center, active threat response, cyber surveillance";
+include 'header.php'; 
+?>
 
 <!-- Scoped Premium Styles for the Service Detail Page -->
 <style>

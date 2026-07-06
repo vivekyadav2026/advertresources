@@ -1,5 +1,8 @@
 <?php 
 require_once 'db.php'; 
+$pageTitle = "Cyber Security Blog & Threat Intelligence | Advert Resource Ltd";
+$pageDesc = "Stay updated with the latest threat briefs, security playbooks, and architectural updates governed by Advert Resource Ltd's Incident Response command.";
+$pageKeywords = "cyber security blog, threat intelligence, security playbooks, incident response updates";
 include 'header.php'; 
 
 // Fetch all blogs

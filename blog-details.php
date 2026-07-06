@@ -21,6 +21,9 @@ if (!$blog) {
     exit;
 }
 
+$pageTitle = htmlspecialchars($blog['title']) . " | Threat Intelligence | Advert Resource Ltd";
+$pageDesc = "Read our latest cyber security insights on " . htmlspecialchars($blog['title']) . " by Advert Resource Ltd.";
+$pageKeywords = "cyber security blog, threat intelligence, security updates, Advert Resource Ltd";
 include 'header.php'; 
 ?>
 

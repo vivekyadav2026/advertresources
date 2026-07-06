@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "Cloud Workload Protection Platform (CWPP) | Advert Resource Ltd";
+$pageDesc = "Safeguard your cloud-based workloads, containers, and serverless architectures from advanced runtime threat vectors with Advert Resource Ltd.";
+$pageKeywords = "CWPP, cloud workload protection, container security, serverless security, cloud runtime protection";
+include 'header.php'; 
+?>
 
 <!-- Scoped Premium Styles for the Service Detail Page -->
 <style>

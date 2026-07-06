@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "Careers at Advert Resource Ltd | Join Our Elite Team";
+$pageDesc = "Join our elite team of security researchers, analysts, and engineers. Help protect digital infrastructure at a global scale with Advert Resource Ltd.";
+$pageKeywords = "cyber security careers, InfoSec jobs, security engineer, SOC analyst, Advert Resource Ltd careers";
+include 'header.php'; 
+?>
 
 <style>
 /* ========== Careers Page Styles ========== */
@@ -549,9 +554,14 @@ function filterJobs(dept, btn) {
 }
 
 <?php if ($apply_success): ?>
-// Auto-open modal to show success if form submitted
+// Show success message and clear form
 window.addEventListener('load', function() {
-    const hash = window.location.hash;
+    alert("Application submitted successfully! Our recruitment team will review it and contact you soon.");
+});
+<?php elseif ($apply_error): ?>
+// Reopen modal to show error
+window.addEventListener('load', function() {
+    document.getElementById('applyModal').classList.add('open');
 });
 <?php endif; ?>
 </script>

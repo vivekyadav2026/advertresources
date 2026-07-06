@@ -1,4 +1,9 @@
-<?php include 'header.php'; ?>
+<?php 
+$pageTitle = "Advanced Threat Detection & AI Heuristics | Advert Resource Ltd";
+$pageDesc = "Advert Resource Ltd's Advanced Threat Detection employs AI-powered heuristics to proactively identify and neutralize zero-day threats and lateral movement in real-time.";
+$pageKeywords = "advanced threat detection, AI threat modeling, heuristic analysis, zero-day threat prevention, NGAV";
+include 'header.php'; 
+?>
 
 <!-- Scoped Premium Styles for the Service Detail Page -->
 <style>
