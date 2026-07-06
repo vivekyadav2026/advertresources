@@ -11,19 +11,20 @@ if ($id === 0) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $title       = trim($_POST['career_title'] ?? '');
-    $department  = trim($_POST['department'] ?? '');
-    $location    = trim($_POST['location'] ?? '');
-    $type        = trim($_POST['job_type'] ?? 'Full-Time');
-    $experience  = trim($_POST['experience'] ?? '');
-    $description = trim($_POST['description'] ?? '');
+    $title        = trim($_POST['career_title'] ?? '');
+    $department   = trim($_POST['department'] ?? '');
+    $location     = trim($_POST['location'] ?? '');
+    $type         = trim($_POST['job_type'] ?? 'Full-Time');
+    $experience   = trim($_POST['experience'] ?? '');
+    $salary       = trim($_POST['salary'] ?? '');
+    $description  = trim($_POST['description'] ?? '');
     $requirements = trim($_POST['requirements'] ?? '');
-    $is_active   = isset($_POST['is_active']) ? 1 : 0;
+    $is_active    = isset($_POST['is_active']) ? 1 : 0;
 
     if (!empty($title)) {
         try {
-            $stmt = $db->prepare("UPDATE careers SET title=:title, department=:dept, location=:loc, type=:type, experience=:exp, description=:desc, requirements=:req, is_active=:active WHERE id=:id");
-            $stmt->execute([':title'=>$title,':dept'=>$department,':loc'=>$location,':type'=>$type,':exp'=>$experience,':desc'=>$description,':req'=>$requirements,':active'=>$is_active,':id'=>$id]);
+            $stmt = $db->prepare("UPDATE careers SET title=:title, department=:dept, location=:loc, type=:type, experience=:exp, salary=:salary, description=:desc, requirements=:req, is_active=:active WHERE id=:id");
+            $stmt->execute([':title'=>$title,':dept'=>$department,':loc'=>$location,':type'=>$type,':exp'=>$experience,':salary'=>$salary,':desc'=>$description,':req'=>$requirements,':active'=>$is_active,':id'=>$id]);
             $success = "Job listing updated successfully.";
         } catch (Exception $e) {
             $error = "Update failed: " . $e->getMessage();
@@ -94,6 +95,19 @@ try {
             <div class="form-group">
                 <label>Experience Level</label>
                 <input type="text" name="experience" value="<?= htmlspecialchars($job['experience']) ?>">
+            </div>
+        </div>
+        <div class="form-row mb-3">
+            <div class="form-group">
+                <label><i class="fas fa-sterling-sign" style="color:#22c55e; margin-right:5px;"></i>Salary Range</label>
+                <input type="text" name="salary" placeholder="e.g. £40,000 - £60,000 / year" value="<?= htmlspecialchars($job['salary'] ?? '') ?>">
+            </div>
+            <div class="form-group">
+                <label style="color:transparent;">.</label>
+                <div style="padding:12px 14px; background:rgba(34,197,94,0.05); border:1px dashed rgba(34,197,94,0.2); border-radius:8px; color:#64748b; font-size:0.82rem; line-height:1.5;">
+                    <i class="fas fa-info-circle" style="color:#22c55e; margin-right:5px;"></i>
+                    Enter a range like <strong style="color:#94a3b8;">£30k - £50k</strong> or <strong style="color:#94a3b8;">Competitive</strong>. This will be visible to applicants.
+                </div>
             </div>
         </div>
         <div class="form-group mb-3">

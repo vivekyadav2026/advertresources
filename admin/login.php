@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once '../db.php';
 
 $error = "";
 
@@ -9,16 +10,24 @@ if (isset($_SESSION['admin_logged_in']) && $_SESSION['admin_logged_in'] === true
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'] ?? '';
+    $username = trim($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
-    
-    // Default secure credentials
-    if ($username === 'admin' && $password === 'admin123') {
-        $_SESSION['admin_logged_in'] = true;
-        header("Location: index.php");
-        exit;
-    } else {
-        $error = "Access Denied: Invalid credentials.";
+
+    try {
+        $stmt = $db->prepare("SELECT password_hash FROM admin_credentials WHERE username = :user LIMIT 1");
+        $stmt->execute([':user' => $username]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($row && password_verify($password, $row['password_hash'])) {
+            $_SESSION['admin_logged_in'] = true;
+            $_SESSION['admin_username'] = $username;
+            header("Location: index.php");
+            exit;
+        } else {
+            $error = "Access Denied: Invalid credentials.";
+        }
+    } catch (Exception $e) {
+        $error = "System error. Please try again.";
     }
 }
 ?>

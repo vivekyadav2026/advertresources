@@ -52,11 +52,15 @@ try {
         location TEXT,
         type TEXT DEFAULT 'Full-Time',
         experience TEXT,
+        salary TEXT,
         description TEXT,
         requirements TEXT,
         is_active INTEGER DEFAULT 1,
         date_created DATETIME DEFAULT CURRENT_TIMESTAMP
     )");
+
+    // Add salary column if it doesn't exist (for existing databases)
+    try { $db->exec("ALTER TABLE careers ADD COLUMN salary TEXT"); } catch (Exception $e) { /* column already exists */ }
     
     // Seed default settings if not exists
     $defaultSettings = [
@@ -78,6 +82,23 @@ try {
         $stmt = $db->prepare("INSERT OR IGNORE INTO settings (key, value) VALUES (:key, :val)");
         $stmt->execute([':key' => $key, ':val' => $val]);
     }
+
+    // Create Admin Credentials Table
+    $db->exec("CREATE TABLE IF NOT EXISTS admin_credentials (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE NOT NULL,
+        password_hash TEXT NOT NULL,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )");
+
+    // Seed default admin (username: admin, password: admin123) — only if not exists
+    $adminExists = $db->query("SELECT COUNT(*) FROM admin_credentials")->fetchColumn();
+    if ($adminExists == 0) {
+        $defaultHash = password_hash('admin123', PASSWORD_BCRYPT);
+        $stmt = $db->prepare("INSERT INTO admin_credentials (username, password_hash) VALUES ('admin', :hash)");
+        $stmt->execute([':hash' => $defaultHash]);
+    }
+
     
     // Seed default gallery if table is empty
     $galleryCount = $db->query("SELECT COUNT(*) FROM gallery")->fetchColumn();

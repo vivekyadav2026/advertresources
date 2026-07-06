@@ -178,6 +178,7 @@ require_once __DIR__ . "/../../db.php";
             
             <div style="font-size:0.75rem; font-weight:700; color:#475569; margin: 15px 0 5px 15px; letter-spacing:1px; text-transform:uppercase;">System</div>
             <li><a href="settings.php" class="nav-item <?= basename($_SERVER['PHP_SELF']) == 'settings.php' ? 'active' : '' ?>"><i class="far fa-cogs"></i> Configuration</a></li>
+            <li><a href="change_password.php" class="nav-item <?= basename($_SERVER['PHP_SELF']) == 'change_password.php' ? 'active' : '' ?>"><i class="far fa-key"></i> Change Password</a></li>
             <li><a href="logout.php" class="nav-item logout-btn"><i class="far fa-power-off"></i> Terminate Session</a></li>
         </ul>
     </div>

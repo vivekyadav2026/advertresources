@@ -462,6 +462,11 @@ try {
                 <div id="jobs-list">
                     <?php foreach ($jobs as $job): ?>
                     <div class="job-card" data-dept="<?= htmlspecialchars($job['department']) ?>">
+                        <div class="job-details-data" style="display:none;" 
+                             data-desc="<?= htmlspecialchars($job['description'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
+                             data-reqs="<?= htmlspecialchars($job['requirements'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
+                             data-salary="<?= htmlspecialchars($job['salary'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
+                        </div>
                         <div class="job-card-top">
                             <h3 class="job-title"><?= htmlspecialchars($job['title']) ?></h3>
                             <div class="job-badges">
@@ -469,16 +474,22 @@ try {
                                 <?php if ($job['type']): ?><span class="job-badge badge-type"><?= htmlspecialchars($job['type']) ?></span><?php endif; ?>
                                 <?php if ($job['location']): ?><span class="job-badge badge-loc"><i class="fas fa-map-marker-alt" style="margin-right:4px;font-size:0.65rem;"></i><?= htmlspecialchars($job['location']) ?></span><?php endif; ?>
                                 <?php if ($job['experience']): ?><span class="job-badge badge-exp"><?= htmlspecialchars($job['experience']) ?></span><?php endif; ?>
+                                <?php if (!empty($job['salary'])): ?><span class="job-badge" style="background:rgba(34,197,94,0.12); color:#22c55e; border:1px solid rgba(34,197,94,0.25);"><i class="fas fa-money-bill-wave" style="margin-right:4px;font-size:0.65rem;"></i><?= htmlspecialchars($job['salary']) ?></span><?php endif; ?>
                             </div>
                         </div>
                         <?php if ($job['description']): ?>
                         <p class="job-desc"><?= nl2br(htmlspecialchars(substr($job['description'], 0, 280))) ?><?= strlen($job['description']) > 280 ? '...' : '' ?></p>
                         <?php endif; ?>
-                        <div class="job-card-footer">
+                        <div class="job-card-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
                             <span class="job-posted"><i class="fas fa-clock" style="margin-right:5px;"></i>Posted <?= date('d M Y', strtotime($job['date_created'])) ?></span>
-                            <button class="apply-btn" onclick="openModal(<?= $job['id'] ?>, '<?= htmlspecialchars($job['title'], ENT_QUOTES) ?>')">
-                                <i class="fas fa-paper-plane"></i> Apply Now
-                            </button>
+                            <div style="display: flex; gap: 10px;">
+                                <button class="apply-btn" style="background: rgba(255,255,255,0.06); box-shadow: none; border: 1px solid rgba(255,255,255,0.12);" onclick="showJobDetails(this, <?= $job['id'] ?>, '<?= htmlspecialchars($job['title'], ENT_QUOTES) ?>', '<?= htmlspecialchars($job['department'], ENT_QUOTES) ?>', '<?= htmlspecialchars($job['type'], ENT_QUOTES) ?>', '<?= htmlspecialchars($job['location'], ENT_QUOTES) ?>', '<?= htmlspecialchars($job['experience'], ENT_QUOTES) ?>')">
+                                    <i class="fas fa-eye"></i> View Details
+                                </button>
+                                <button class="apply-btn" onclick="openModal(<?= $job['id'] ?>, '<?= htmlspecialchars($job['title'], ENT_QUOTES) ?>')">
+                                    <i class="fas fa-paper-plane"></i> Apply Now
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <?php endforeach; ?>
@@ -532,6 +543,32 @@ try {
     </div>
 </div>
 
+<!-- Details Modal -->
+<div class="modal-overlay" id="detailsModal">
+    <div class="modal-box" style="max-width: 720px;">
+        <button class="modal-close" onclick="closeDetailsModal()"><i class="fas fa-times"></i></button>
+        <div class="modal-title" id="details-job-title" style="color: #fff; font-size: 1.8rem; font-weight: 800; font-family: 'Space Grotesk', sans-serif;"></div>
+        <div class="job-badges" id="details-job-badges" style="margin-top: 10px; margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 8px;"></div>
+        
+        <div style="max-height: 400px; overflow-y: auto; padding-right: 10px; text-align: left;">
+            <h4 style="color: #3c72fc; font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; font-family: 'Space Grotesk', sans-serif; display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-file-alt"></i> Job Description
+            </h4>
+            <div id="details-job-desc" style="color: #a9a9a9; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; white-space: pre-line; font-family: 'Kumbh Sans', sans-serif;"></div>
+            
+            <h4 style="color: #3c72fc; font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; font-family: 'Space Grotesk', sans-serif; display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-list-check"></i> Key Requirements
+            </h4>
+            <div id="details-job-reqs" style="color: #a9a9a9; font-size: 0.95rem; line-height: 1.6; white-space: pre-line; font-family: 'Kumbh Sans', sans-serif;"></div>
+        </div>
+        
+        <div style="margin-top: 30px; display: flex; justify-content: flex-end; gap: 12px;">
+            <button class="apply-btn" style="background: rgba(255,255,255,0.06); box-shadow: none; border: 1px solid rgba(255,255,255,0.12);" onclick="closeDetailsModal()">Close</button>
+            <button class="apply-btn" id="details-apply-btn">Apply Now <i class="fas fa-paper-plane" style="margin-left:8px;"></i></button>
+        </div>
+    </div>
+</div>
+
 <script>
 function openModal(jobId, jobTitle) {
     document.getElementById('modal-job-id').value = jobId;
@@ -546,6 +583,43 @@ function closeModal() {
 document.getElementById('applyModal').addEventListener('click', function(e) {
     if (e.target === this) closeModal();
 });
+
+function closeDetailsModal() {
+    document.getElementById('detailsModal').classList.remove('open');
+    document.body.style.overflow = '';
+}
+document.getElementById('detailsModal').addEventListener('click', function(e) {
+    if (e.target === this) closeDetailsModal();
+});
+
+function showJobDetails(btn, id, title, dept, type, loc, exp) {
+    const card = btn.closest('.job-card');
+    const dataEl = card.querySelector('.job-details-data');
+    const desc   = dataEl.dataset.desc   || 'No description provided.';
+    const reqs   = dataEl.dataset.reqs   || 'No specific requirements listed.';
+    const salary = dataEl.dataset.salary || '';
+
+    document.getElementById('details-job-title').textContent = title;
+    
+    let badgeHtml = '';
+    if (dept)   badgeHtml += `<span class="job-badge badge-dept" style="background: rgba(37,99,235,0.15); color: #60a5fa; border: 1px solid rgba(37,99,235,0.3); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">${dept}</span>`;
+    if (type)   badgeHtml += `<span class="job-badge badge-type" style="background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.3); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">${type}</span>`;
+    if (loc)    badgeHtml += `<span class="job-badge badge-loc" style="background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;"><i class="fas fa-map-marker-alt" style="margin-right:4px;"></i>${loc}</span>`;
+    if (exp)    badgeHtml += `<span class="job-badge badge-exp" style="background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;">${exp}</span>`;
+    if (salary) badgeHtml += `<span style="background: rgba(34,197,94,0.15); color: #22c55e; border: 1px solid rgba(34,197,94,0.3); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;"><i class="fas fa-money-bill-wave" style="margin-right:4px;"></i>${salary}</span>`;
+    
+    document.getElementById('details-job-badges').innerHTML = badgeHtml;
+    document.getElementById('details-job-desc').textContent = desc;
+    document.getElementById('details-job-reqs').textContent = reqs;
+
+    document.getElementById('details-apply-btn').onclick = function() {
+        closeDetailsModal();
+        openModal(id, title);
+    };
+
+    document.getElementById('detailsModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
 
 function filterJobs(dept, btn) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));

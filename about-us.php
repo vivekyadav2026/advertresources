@@ -754,7 +754,7 @@ include 'header.php';
     </section>
 
     <!-- 3. ADDED COMPANY STATS SECTION -->
-    <section class="space-bottom" style="padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05);">
+    <!-- <section class="space-bottom" style="padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05);">
         <div class="container">
             <div class="row gy-30 justify-content-center">
                 <div class="col-lg col-md-4 col-sm-6">
@@ -789,7 +789,7 @@ include 'header.php';
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- 4. WHY CHOOSE US FEATURE CARDS -->
     <section class="space" style="padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.05); background: rgba(15, 23, 42, 0.2);">
