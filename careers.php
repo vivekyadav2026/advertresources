@@ -354,10 +354,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_application'])
     $email    = trim($_POST['applicant_email'] ?? '');
     $phone    = trim($_POST['applicant_phone'] ?? '');
     $message  = trim($_POST['cover_message'] ?? '');
+    $cv_file  = '';
 
     if ($job_id && $name && $email) {
         try {
-            // Create applications table if not exists
+            // Ensure table has cv_file column
             $db->exec("CREATE TABLE IF NOT EXISTS career_applications (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 job_id INTEGER,
@@ -365,11 +366,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_application'])
                 email TEXT,
                 phone TEXT,
                 cover_message TEXT,
+                cv_file TEXT,
                 applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
             )");
-            $stmt = $db->prepare("INSERT INTO career_applications (job_id, name, email, phone, cover_message) VALUES (:job_id, :name, :email, :phone, :msg)");
-            $stmt->execute([':job_id' => $job_id, ':name' => $name, ':email' => $email, ':phone' => $phone, ':msg' => $message]);
-            $apply_success = true;
+            try { $db->exec("ALTER TABLE career_applications ADD COLUMN cv_file TEXT"); } catch (Exception $e) {}
+
+            // Handle CV upload
+            if (!empty($_FILES['cv_file']['name'])) {
+                $allowed     = ['pdf','doc','docx'];
+                $maxSize     = 5 * 1024 * 1024; // 5 MB
+                $origName    = $_FILES['cv_file']['name'];
+                $ext         = strtolower(pathinfo($origName, PATHINFO_EXTENSION));
+                $uploadError = $_FILES['cv_file']['error'];
+
+                if ($uploadError !== UPLOAD_ERR_OK) {
+                    $apply_error = 'File upload failed. Please try again.';
+                } elseif (!in_array($ext, $allowed)) {
+                    $apply_error = 'Only PDF, DOC, and DOCX files are allowed.';
+                } elseif ($_FILES['cv_file']['size'] > $maxSize) {
+                    $apply_error = 'File size must be under 5 MB.';
+                } else {
+                    $safeName = time() . '_' . preg_replace('/[^a-zA-Z0-9._-]/', '_', $origName);
+                    $uploadDir = __DIR__ . '/uploads/cvs/';
+                    if (!is_dir($uploadDir)) mkdir($uploadDir, 0755, true);
+                    if (move_uploaded_file($_FILES['cv_file']['tmp_name'], $uploadDir . $safeName)) {
+                        $cv_file = $safeName;
+                    } else {
+                        $apply_error = 'Could not save the uploaded file.';
+                    }
+                }
+            }
+
+            if (empty($apply_error)) {
+                $stmt = $db->prepare("INSERT INTO career_applications (job_id, name, email, phone, cover_message, cv_file) VALUES (:job_id, :name, :email, :phone, :msg, :cv)");
+                $stmt->execute([':job_id' => $job_id, ':name' => $name, ':email' => $email, ':phone' => $phone, ':msg' => $message, ':cv' => $cv_file]);
+                $apply_success = true;
+            }
         } catch (Exception $e) {
             $apply_error = 'Something went wrong. Please try again.';
         }
@@ -519,7 +551,7 @@ try {
         <div class="alert-error"><i class="fas fa-exclamation-circle"></i> <?= htmlspecialchars($apply_error) ?></div>
         <?php endif; ?>
 
-        <form method="POST" action="careers.php#open-roles">
+        <form method="POST" action="careers.php#open-roles" enctype="multipart/form-data">
             <input type="hidden" name="submit_application" value="1">
             <input type="hidden" name="job_id" id="modal-job-id" value="">
             <div class="form-group">
@@ -537,6 +569,14 @@ try {
             <div class="form-group">
                 <label class="form-label">Cover Message</label>
                 <textarea name="cover_message" class="form-control" rows="4" placeholder="Tell us about yourself and why you're a great fit..."></textarea>
+            </div>
+            <div class="form-group">
+                <label class="form-label"><i class="fas fa-file-upload" style="margin-right:6px; color:#3c72fc;"></i>Upload CV / Resume <span style="color:#94a3b8; font-weight:400; font-size:0.75rem;">(PDF, DOC, DOCX — max 5 MB)</span></label>
+                <label for="cv_file" id="cv-drop-zone" style="display:block; padding:24px; background:rgba(255,255,255,0.03); border:2px dashed rgba(59,130,246,0.3); border-radius:12px; text-align:center; cursor:pointer; transition:all 0.3s;">
+                    <i class="fas fa-cloud-upload-alt" style="font-size:2rem; color:#3c72fc; display:block; margin-bottom:10px;"></i>
+                    <span id="cv-filename" style="color:#94a3b8; font-size:0.9rem;">Click to browse or drag & drop your CV here</span>
+                </label>
+                <input type="file" name="cv_file" id="cv_file" accept=".pdf,.doc,.docx" style="display:none;" onchange="updateCVLabel(this)">
             </div>
             <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right:8px;"></i>Submit Application</button>
         </form>
@@ -582,6 +622,39 @@ function closeModal() {
 }
 document.getElementById('applyModal').addEventListener('click', function(e) {
     if (e.target === this) closeModal();
+});
+
+function updateCVLabel(input) {
+    const label    = document.getElementById('cv-filename');
+    const dropZone = document.getElementById('cv-drop-zone');
+    if (input.files && input.files[0]) {
+        const file = input.files[0];
+        const sizeMB = (file.size / (1024 * 1024)).toFixed(2);
+        label.innerHTML = '<i class="fas fa-file-check" style="color:#22c55e; margin-right:6px;"></i><strong style="color:#fff;">' + file.name + '</strong> <span style="color:#64748b;">(' + sizeMB + ' MB)</span>';
+        dropZone.style.borderColor = 'rgba(34,197,94,0.5)';
+        dropZone.style.background  = 'rgba(34,197,94,0.05)';
+    }
+}
+
+// Drag & drop styling
+document.addEventListener('DOMContentLoaded', function() {
+    const dz = document.getElementById('cv-drop-zone');
+    if (!dz) return;
+    dz.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        dz.style.borderColor = '#3c72fc';
+        dz.style.background  = 'rgba(60,114,252,0.07)';
+    });
+    dz.addEventListener('dragleave', function() {
+        dz.style.borderColor = 'rgba(59,130,246,0.3)';
+        dz.style.background  = 'rgba(255,255,255,0.03)';
+    });
+    dz.addEventListener('drop', function(e) {
+        e.preventDefault();
+        const fileInput = document.getElementById('cv_file');
+        fileInput.files = e.dataTransfer.files;
+        updateCVLabel(fileInput);
+    });
 });
 
 function closeDetailsModal() {
