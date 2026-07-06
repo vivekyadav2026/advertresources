@@ -1,8 +1,73 @@
-<?php 
-$pageTitle = "Careers at Advert Resource Ltd | Join Our Elite Team";
-$pageDesc = "Join our elite team of security researchers, analysts, and engineers. Help protect digital infrastructure at a global scale with Advert Resource Ltd.";
+<?php
+session_start();
+require_once 'db.php';
+
+// ── POST handler BEFORE any output (PRG pattern) ──
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_application'])) {
+    $job_id  = intval($_POST['job_id'] ?? 0);
+    $name    = trim($_POST['applicant_name'] ?? '');
+    $email   = trim($_POST['applicant_email'] ?? '');
+    $phone   = trim($_POST['applicant_phone'] ?? '');
+    $message = trim($_POST['cover_message'] ?? '');
+    $cv_file = '';
+    $err     = '';
+
+    if ($job_id && $name && $email) {
+        try {
+            $db->exec("CREATE TABLE IF NOT EXISTS career_applications (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                job_id INTEGER, name TEXT, email TEXT, phone TEXT,
+                cover_message TEXT, cv_file TEXT,
+                applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+            )");
+            try { $db->exec("ALTER TABLE career_applications ADD COLUMN cv_file TEXT"); } catch (Exception $e) {}
+
+            if (!empty($_FILES['cv_file']['name'])) {
+                $allowed  = ['pdf','doc','docx'];
+                $maxSize  = 5 * 1024 * 1024;
+                $origName = $_FILES['cv_file']['name'];
+                $ext      = strtolower(pathinfo($origName, PATHINFO_EXTENSION));
+                if ($_FILES['cv_file']['error'] !== UPLOAD_ERR_OK) {
+                    $err = 'File upload failed. Please try again.';
+                } elseif (!in_array($ext, $allowed)) {
+                    $err = 'Only PDF, DOC, and DOCX files are allowed.';
+                } elseif ($_FILES['cv_file']['size'] > $maxSize) {
+                    $err = 'File size must be under 5 MB.';
+                } else {
+                    $safeName  = time() . '_' . preg_replace('/[^a-zA-Z0-9._-]/', '_', $origName);
+                    $uploadDir = __DIR__ . '/uploads/cvs/';
+                    if (!is_dir($uploadDir)) mkdir($uploadDir, 0755, true);
+                    if (move_uploaded_file($_FILES['cv_file']['tmp_name'], $uploadDir . $safeName)) {
+                        $cv_file = $safeName;
+                    } else {
+                        $err = 'Could not save the uploaded file.';
+                    }
+                }
+            }
+
+            if (empty($err)) {
+                $stmt = $db->prepare("INSERT INTO career_applications (job_id, name, email, phone, cover_message, cv_file) VALUES (:job_id,:name,:email,:phone,:msg,:cv)");
+                $stmt->execute([':job_id'=>$job_id,':name'=>$name,':email'=>$email,':phone'=>$phone,':msg'=>$message,':cv'=>$cv_file]);
+                $_SESSION['apply_success'] = true;
+            } else {
+                $_SESSION['apply_error'] = $err;
+            }
+        } catch (Exception $e) {
+            $_SESSION['apply_error'] = 'Something went wrong. Please try again.';
+        }
+    } else {
+        $_SESSION['apply_error'] = 'Please fill in all required fields.';
+    }
+
+    // PRG: redirect before any HTML is sent
+    header('Location: careers.php#open-roles');
+    exit;
+}
+
+$pageTitle    = "Careers at Advert Resource Ltd | Join Our Elite Team";
+$pageDesc     = "Join our elite team of security researchers, analysts, and engineers. Help protect digital infrastructure at a global scale with Advert Resource Ltd.";
 $pageKeywords = "cyber security careers, InfoSec jobs, security engineer, SOC analyst, Advert Resource Ltd careers";
-include 'header.php'; 
+include 'header.php';
 ?>
 
 <style>
@@ -344,70 +409,17 @@ include 'header.php';
 </style>
 
 <?php
-// Handle application form submission
+// ── Read PRG flash messages set by the top-of-file POST handler ──
 $apply_success = false;
 $apply_error   = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_application'])) {
-    $job_id   = intval($_POST['job_id'] ?? 0);
-    $name     = trim($_POST['applicant_name'] ?? '');
-    $email    = trim($_POST['applicant_email'] ?? '');
-    $phone    = trim($_POST['applicant_phone'] ?? '');
-    $message  = trim($_POST['cover_message'] ?? '');
-    $cv_file  = '';
-
-    if ($job_id && $name && $email) {
-        try {
-            // Ensure table has cv_file column
-            $db->exec("CREATE TABLE IF NOT EXISTS career_applications (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                job_id INTEGER,
-                name TEXT,
-                email TEXT,
-                phone TEXT,
-                cover_message TEXT,
-                cv_file TEXT,
-                applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
-            )");
-            try { $db->exec("ALTER TABLE career_applications ADD COLUMN cv_file TEXT"); } catch (Exception $e) {}
-
-            // Handle CV upload
-            if (!empty($_FILES['cv_file']['name'])) {
-                $allowed     = ['pdf','doc','docx'];
-                $maxSize     = 5 * 1024 * 1024; // 5 MB
-                $origName    = $_FILES['cv_file']['name'];
-                $ext         = strtolower(pathinfo($origName, PATHINFO_EXTENSION));
-                $uploadError = $_FILES['cv_file']['error'];
-
-                if ($uploadError !== UPLOAD_ERR_OK) {
-                    $apply_error = 'File upload failed. Please try again.';
-                } elseif (!in_array($ext, $allowed)) {
-                    $apply_error = 'Only PDF, DOC, and DOCX files are allowed.';
-                } elseif ($_FILES['cv_file']['size'] > $maxSize) {
-                    $apply_error = 'File size must be under 5 MB.';
-                } else {
-                    $safeName = time() . '_' . preg_replace('/[^a-zA-Z0-9._-]/', '_', $origName);
-                    $uploadDir = __DIR__ . '/uploads/cvs/';
-                    if (!is_dir($uploadDir)) mkdir($uploadDir, 0755, true);
-                    if (move_uploaded_file($_FILES['cv_file']['tmp_name'], $uploadDir . $safeName)) {
-                        $cv_file = $safeName;
-                    } else {
-                        $apply_error = 'Could not save the uploaded file.';
-                    }
-                }
-            }
-
-            if (empty($apply_error)) {
-                $stmt = $db->prepare("INSERT INTO career_applications (job_id, name, email, phone, cover_message, cv_file) VALUES (:job_id, :name, :email, :phone, :msg, :cv)");
-                $stmt->execute([':job_id' => $job_id, ':name' => $name, ':email' => $email, ':phone' => $phone, ':msg' => $message, ':cv' => $cv_file]);
-                $apply_success = true;
-            }
-        } catch (Exception $e) {
-            $apply_error = 'Something went wrong. Please try again.';
-        }
-    } else {
-        $apply_error = 'Please fill in all required fields.';
-    }
+if (!empty($_SESSION['apply_success'])) {
+    $apply_success = true;
+    unset($_SESSION['apply_success']);
+}
+if (!empty($_SESSION['apply_error'])) {
+    $apply_error = $_SESSION['apply_error'];
+    unset($_SESSION['apply_error']);
 }
 
 // Fetch active jobs
