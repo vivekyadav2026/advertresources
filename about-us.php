@@ -738,9 +738,9 @@ include 'header.php';
                         <div class="btn-wrap mt-35 d-flex align-items-center gap-4 flex-wrap">
                             <a href="contact-us.php" class="btn-premium-grad">Contact Command <i class="far fa-long-arrow-right ms-2"></i></a>
                             <div class="about-profile d-flex align-items-center gap-3">
-                                <div class="avater" style="width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: 1px solid rgba(255,255,255,0.2);">
+                                <!-- <div class="avater" style="width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: 1px solid rgba(255,255,255,0.2);">
                                     <img src="./index/about-profile1-1.png" alt="avatar" class="w-100 h-100" />
-                                </div>
+                                </div> -->
                                 <div class="media-body">
                                     <h6 class="about-profile-name text-white m-0" style="font-size: 0.95rem; font-weight: 700;">Advert Resource Ltd</h6>
                                     <p class="desig m-0" style="font-size: 0.75rem; color: #a9a9a9;">London, United Kingdom</p>
@@ -765,8 +765,8 @@ include 'header.php';
                 </div>
                 <div class="col-lg col-md-4 col-sm-6">
                     <div class="stat-glow-card">
-                        <div class="stat-num">500+</div>
-                        <div class="stat-label" style="font-size: 0.85rem; letter-spacing: 1px; color: #a9a9a9;">Enterprise Clients</div>
+                        <div class="stat-num">100%</div>
+                        <div class="stat-label" style="font-size: 0.85rem; letter-spacing: 1px; color: #a9a9a9;">Client Satisfaction</div>
                     </div>
                 </div>
                 <div class="col-lg col-md-4 col-sm-6">
@@ -913,7 +913,7 @@ include 'header.php';
     </section>
 
     <!-- 7. CLIENT TRUST SECTION -->
-    <section class="space" style="padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05);">
+    <!-- <section class="space" style="padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.05);">
         <div class="container text-center">
             <h3 style="font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 40px;">COMPLIANCE & ENTERPRISE TRUST</h3>
             <div class="row align-items-center justify-content-center gy-30 gx-50">
@@ -934,7 +934,7 @@ include 'header.php';
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- 8. PREMIUM CTA SECTION -->
     <section class="space-bottom" style="padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.05); background: linear-gradient(180deg, transparent, rgba(224, 0, 155, 0.03));">

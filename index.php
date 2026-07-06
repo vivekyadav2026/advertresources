@@ -261,7 +261,7 @@ include 'header.php';
                 <div class="box-icon">
                   <img src="./index/about-icon2-1.svg" alt="icon" />
                 </div>
-                <div class="about-counter-wrap">Trusted By 500+ Clients</div>
+                <div class="about-counter-wrap">Next-Gen Security Experts</div>
               </div>
             </div>
           </div>
@@ -372,15 +372,12 @@ include 'header.php';
                 <a href="about-us.php" class="ot-btn"
                   >More About Us<i class="far fa-long-arrow-right ms-2"></i
                 ></a>
-                <div class="about-profile">
+                <!-- <div class="about-profile">
                   <div class="avater">
                     <img src="./index/about-profile1-1.png" alt="avater" />
                   </div>
-                  <!-- <div class="media-body">
-                    <h5 class="about-profile-name">Andy Dufren</h5>
-                    <p class="desig">CEO, Founder</p>
-                  </div> -->
-                </div>
+             
+                </div> -->
               </div>
             </div>
           </div>
@@ -885,7 +882,7 @@ include 'header.php';
         </div>
       </div>
     </section>
-    <div class="space">
+    <!-- <div class="space">
       <div class="container ot-container">
         <div
           class="swiper ot-slider swiper-initialized swiper-horizontal swiper-backface-hidden"
@@ -1055,7 +1052,7 @@ include 'header.php';
           ></span>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="space-bottom overflow-hidden shape-mockup-wrap">
       <div
         class="shape-mockup bg-gradient-shape1 why-bg-gradient1"
@@ -1335,7 +1332,7 @@ include 'header.php';
     }
     </style>
 
-    <section class="overflow-hidden shape-mockup-wrap" id="global-network-sec">
+    <!-- <section class="overflow-hidden shape-mockup-wrap" id="global-network-sec">
       <div
         class="shape-mockup bg-gradient-shape1"
         style="top: 20%; right: -3%; left: auto"
@@ -1358,101 +1355,9 @@ include 'header.php';
           </div>
         </div>
         
-        <div class="row gy-40 align-items-center">
-            <!-- Column 1: Stats & Progress Indicators -->
-            <div class="col-lg-5">
-                <div class="network-stats-box text-start">
-                    <h3 class="text-white mb-20" style="font-size: 1.5rem; font-weight: 800;">Enterprise Edge Infrastructure</h3>
-                    <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.65; margin-bottom: 30px;">
-                        Our secure edge platform routes traffic through optimized compliance POPs globally, scrubbing DDoS attempts and sniffing malware close to the source.
-                    </p>
-                    
-                    <div class="edge-metric-item">
-                        <span class="metric-lbl">TOTAL EDGE SCRUBBING CAPACITY</span>
-                        <div class="d-flex justify-content-between align-items-center mb-1">
-                            <span class="metric-val text-success" style="margin:0;">280 Tbps</span>
-                            <span style="font-family: monospace; font-size: 0.75rem; color: #10b981;">85% EFFICIENCY</span>
-                        </div>
-                        <div class="metric-bar"><div class="bar-fill" style="width: 85%; background: #10b981;"></div></div>
-                    </div>
-                    <div class="edge-metric-item">
-                        <span class="metric-lbl">AVERAGE GLOBAL ROUTING LATENCY</span>
-                        <div class="d-flex justify-content-between align-items-center mb-1">
-                            <span class="metric-val" style="margin:0; color: #60a5fa;">14.2 ms</span>
-                            <span style="font-family: monospace; font-size: 0.75rem; color: #60a5fa;">OPTIMIZED PATH</span>
-                        </div>
-                        <div class="metric-bar"><div class="bar-fill" style="width: 95%; background: #3c72fc;"></div></div>
-                    </div>
-                    <div class="edge-metric-item">
-                        <span class="metric-lbl">DDoS CONTAINMENT RATE</span>
-                        <div class="d-flex justify-content-between align-items-center mb-1">
-                            <span class="metric-val" style="margin:0; color: #E0009B;">99.999%</span>
-                            <span style="font-family: monospace; font-size: 0.75rem; color: #E0009B;">MILITARY-GRADE</span>
-                        </div>
-                        <div class="metric-bar"><div class="bar-fill" style="width: 99%; background: #E0009B;"></div></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Column 2: Spinning Wireframe Globe Vector -->
-            <div class="col-lg-4 text-center">
-                <div class="globe-vector-wrap">
-                    <svg width="280" height="280" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Outer circles -->
-                        <circle cx="150" cy="150" r="140" stroke="rgba(96, 165, 250, 0.15)" stroke-width="1" />
-                        <circle cx="150" cy="150" r="120" stroke="rgba(224, 0, 155, 0.15)" stroke-width="1" />
-                        
-                        <!-- Globe Lat/Long grid lines -->
-                        <ellipse cx="150" cy="150" rx="120" ry="40" stroke="rgba(255,255,255,0.06)" stroke-width="1" style="transform-origin: 150px 150px; animation: rotateCW 20s linear infinite;" />
-                        <ellipse cx="150" cy="150" rx="40" ry="120" stroke="rgba(255,255,255,0.06)" stroke-width="1" style="transform-origin: 150px 150px; animation: rotateCW 20s linear infinite;" />
-                        
-                        <!-- Pulsing points representing regional edge hubs -->
-                        <g class="globe-hubs">
-                            <!-- NA -->
-                            <circle cx="90" cy="100" r="5" fill="#3c72fc" style="animation: pulseNode 2s infinite;" />
-                            <!-- Europe -->
-                            <circle cx="170" cy="90" r="5" fill="#E0009B" style="animation: pulseNode 2s infinite 0.5s;" />
-                            <!-- Asia -->
-                            <circle cx="210" cy="160" r="5" fill="#10b981" style="animation: pulseNode 2s infinite 1s;" />
-                            <!-- LatAm -->
-                            <circle cx="110" cy="200" r="5" fill="#f0a230" style="animation: pulseNode 2s infinite 1.5s;" />
-                        </g>
-                        
-                        <!-- Core connection paths -->
-                        <path d="M90,100 Q130,80 170,90 Q190,125 210,160 Q160,180 110,200 Q100,150 90,100 Z" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" stroke-dasharray="6 4" />
-                    </svg>
-                </div>
-            </div>
-            
-            <!-- Column 3: Edge Nodes Status Panel -->
-            <div class="col-lg-3">
-                <div class="edge-nodes-list">
-                    <span class="nodes-hdr">> EDGE_POPS_STATUS</span>
-                    
-                    <div class="node-status-card">
-                        <span class="node-title">North America Edge</span>
-                        <span class="node-status text-success"><i class="fas fa-circle"></i> ACTIVE // 11ms</span>
-                    </div>
-                    
-                    <div class="node-status-card">
-                        <span class="node-title">Europe & MEA Edge</span>
-                        <span class="node-status text-success"><i class="fas fa-circle"></i> ACTIVE // 16ms</span>
-                    </div>
-                    
-                    <div class="node-status-card">
-                        <span class="node-title">Asia Pacific Edge</span>
-                        <span class="node-status text-success"><i class="fas fa-circle"></i> ACTIVE // 22ms</span>
-                    </div>
-                    
-                    <div class="node-status-card">
-                        <span class="node-title">Compliance Edge</span>
-                        <span class="node-status" style="color: #60a5fa;"><i class="fas fa-shield"></i> SECURED // 14ms</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+      
       </div>
-    </section>
+    </section> -->
 
     <!-- ============================================ -->
     <!-- HOW WE WORK - PROCESS SECTION -->
@@ -1690,8 +1595,8 @@ include 'header.php';
             <!-- Stats Row -->
             <div class="process-stats">
                 <div class="process-stat">
-                    <div class="process-stat-num">500+</div>
-                    <div class="process-stat-label">Clients Protected</div>
+                    <div class="process-stat-num">100%</div>
+                    <div class="process-stat-label">Secured Systems</div>
                 </div>
                 <div class="process-stat">
                     <div class="process-stat-num">99.8%</div>
@@ -2201,7 +2106,6 @@ include 'header.php';
                     <img src="./index/1-3.png" alt="img" />
                   </div>
                   <h3 class="box-title">Sarah Rahman</h3>
-                  <span class="box-subtitle">UX Designer</span>
                   <div class="testi-card-content">
                     <p class="box-text">
                       "We were struggling to manage our growing cloud
@@ -2234,7 +2138,6 @@ include 'header.php';
                     <img src="./index/1-2.png" alt="img" />
                   </div>
                   <h3 class="box-title">Mr. Michel Phelops</h3>
-                  <span class="box-subtitle">UX Designer</span>
                   <div class="testi-card-content">
                     <p class="box-text">
                       "Before partnering with Advert Resource Ltd, we were constantly worried
@@ -2267,7 +2170,6 @@ include 'header.php';
                     <img src="./index/1-1.png" alt="img" />
                   </div>
                   <h3 class="box-title">Andy Dufren</h3>
-                  <span class="box-subtitle">UX Designer</span>
                   <div class="testi-card-content">
                     <p class="box-text">
                       "The Advert Resource Ltd team is incredibly responsive and always
@@ -2300,7 +2202,6 @@ include 'header.php';
                     <img src="./index/1-4.png" alt="img" />
                   </div>
                   <h3 class="box-title">Pinakee Aveter</h3>
-                  <span class="box-subtitle">UX Designer</span>
                   <div class="testi-card-content">
                     <p class="box-text">
                       "We were struggling to manage our growing cloud
@@ -2333,7 +2234,6 @@ include 'header.php';
                     <img src="./index/1-5.png" alt="img" />
                   </div>
                   <h3 class="box-title">Arif Rahman</h3>
-                  <span class="box-subtitle">UX Designer</span>
                   <div class="testi-card-content">
                     <p class="box-text">
                       "Before partnering with Advert Resource Ltd, we were constantly worried
@@ -2366,7 +2266,6 @@ include 'header.php';
                     <img src="./index/1-6.png" alt="img" />
                   </div>
                   <h3 class="box-title">Emily Chowhan</h3>
-                  <span class="box-subtitle">UX Designer</span>
                   <div class="testi-card-content">
                     <p class="box-text">
                       "The Advert Resource Ltd team is incredibly responsive and always

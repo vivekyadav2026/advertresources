@@ -550,18 +550,23 @@ include 'header.php';
                                 <p><?php echo htmlspecialchars(getSetting('address', 'London, United Kingdom')); ?></p>
                             </div>
                             <div class="premium-contact-card">
-                                <div class="card-icon-wrap">
-                                    <i class="fas fa-envelope-open-text"></i>
-                                </div>
-                                <h5>Business Email</h5>
-                                <a href="mailto:<?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?>"><?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?></a>
-                            </div>
+                                 <div class="card-icon-wrap">
+                                     <i class="fas fa-envelope-open-text"></i>
+                                 </div>
+                                 <h5>Business Email</h5>
+                                 <?php 
+                                 $email1 = getSetting('email1');
+                                 $email2 = getSetting('email2', 'contact-us@advertresources.com');
+                                 $display_email = !empty($email1) ? $email1 : $email2;
+                                 ?>
+                                 <a href="mailto:<?php echo htmlspecialchars($display_email); ?>"><?php echo htmlspecialchars($display_email); ?></a>
+                             </div>
                             <div class="premium-contact-card">
                                 <div class="card-icon-wrap">
                                     <i class="fas fa-clock"></i>
                                 </div>
                                 <h5>Working Hours</h5>
-                                <p><?php echo htmlspecialchars(getSetting('hours', 'Mon - Sat: 10.00 AM - 4.00 PM')); ?></p>
+                                <p><?php echo htmlspecialchars(getSetting('hours', 'Mon - Fri: 9:00 AM - 6:00 PM')); ?></p>
                             </div>
                         </div>
                     </div>

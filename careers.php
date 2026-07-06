@@ -456,7 +456,7 @@ try {
                 <div class="no-jobs">
                     <i class="fas fa-briefcase"></i>
                     <h3>No Open Positions Right Now</h3>
-                    <p>We're always looking for talent. Send your CV to <a href="mailto:info@advertresources.com" style="color:#60a5fa;">info@advertresources.com</a></p>
+                    <p>We're always looking for talent. Send your CV to <a href="mailto:careers@advertresources.com" style="color:#60a5fa;">careers@advertresources.com</a></p>
                 </div>
                 <?php else: ?>
                 <div id="jobs-list">
@@ -484,6 +484,12 @@ try {
                     <?php endforeach; ?>
                 </div>
                 <?php endif; ?>
+
+                <!-- General Application Banner -->
+                <div class="general-apply-banner" style="margin-top: 50px; background: rgba(15, 23, 42, 0.45); border: 1px solid rgba(59, 130, 246, 0.15); border-radius: 12px; padding: 30px; text-align: center; backdrop-filter: blur(12px);">
+                    <h3 style="color:#fff; font-size:1.3rem; font-weight:700; margin-bottom:8px;">Don't see a fitting role?</h3>
+                    <p style="color:#a9a9a9; font-size:0.95rem; margin-bottom:0;">We are always on the lookout for elite security talent. Send your CV directly to <a href="mailto:careers@advertresources.com" style="color:#60a5fa; font-weight:600; text-decoration:none;">careers@advertresources.com</a></p>
+                </div>
             </div>
         </section>
     </div>

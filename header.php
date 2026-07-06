@@ -389,11 +389,17 @@ $pageKeywords = isset($pageKeywords) ? $pageKeywords : "cyber security, network 
               <div class="box-icon"><i class="far fa-envelope"></i></div>
               <div class="media-body">
                 <h3 class="box-title">Email</h3>
-                <a class="box-link" href="mailto:<?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?>"
-                  ><?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?>,</a
+                <?php 
+                $email1 = getSetting('email1');
+                $email2 = getSetting('email2', 'contact-us@advertresources.com');
+                if (!empty($email1)): 
+                ?>
+                <a class="box-link" href="mailto:<?php echo htmlspecialchars($email1); ?>"
+                  ><?php echo htmlspecialchars($email1); ?>,</a
                 >
-                <a class="box-link" href="mailto:<?php echo htmlspecialchars(getSetting('email2', 'contact-us@advertresources.com')); ?>"
-                  ><?php echo htmlspecialchars(getSetting('email2', 'contact-us@advertresources.com')); ?></a
+                <?php endif; ?>
+                <a class="box-link" href="mailto:<?php echo htmlspecialchars($email2); ?>"
+                  ><?php echo htmlspecialchars($email2); ?></a
                 >
               </div>
             </div>
@@ -443,10 +449,6 @@ $pageKeywords = isset($pageKeywords) ? $pageKeywords : "cyber security, network 
             <div class="col-auto d-none d-xl-block">
               <div class="header-links">
                 <ul>
-                  <li>
-                    <i class="fal fa-envelope"></i>
-                    <a href="mailto:<?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?>"><?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?></a>
-                  </li>
                   <li>
                     <i class="fal fa-envelope"></i>
                     <a href="mailto:<?php echo htmlspecialchars(getSetting('email2', 'contact-us@advertresources.com')); ?>"><?php echo htmlspecialchars(getSetting('email2', 'contact-us@advertresources.com')); ?></a>

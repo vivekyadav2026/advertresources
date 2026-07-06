@@ -15,7 +15,7 @@ function sendEnquiryEmail($name, $email, $company, $phone, $country, $service, $
     $smtp_pass = getSetting('smtp_pass');
     $smtp_secure = getSetting('smtp_secure', 'tls');
     $smtp_from_name = getSetting('smtp_from_name', 'Advert Resource Ltd');
-    $to_email = getSetting('email1', 'info@advertresources.com'); // Admin email to receive notifications
+    $to_email = getSetting('email1', ''); // Admin email to receive notifications
 
     // If SMTP credentials are not yet configured in the admin panel, skip sending
     if (empty($smtp_user) || empty($smtp_pass)) {

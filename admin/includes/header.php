@@ -69,13 +69,102 @@ require_once __DIR__ . "/../../db.php";
         .alert-banner { padding: 16px 20px; border-radius: 8px; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; font-weight: 500; }
         .alert-banner.success { background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); color: #10b981; }
         .alert-banner.error { background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.2); color: #ef4444; }
+        
+        /* Responsive design rules */
+        .mobile-header {
+            display: none;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--admin-border);
+            padding: 12px 20px;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+        .mobile-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .mobile-logo i { color: var(--admin-accent); }
+        .toggle-btn {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .sidebar-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+            z-index: 998;
+        }
+        .sidebar-overlay.active {
+            display: block;
+        }
+
+        @media (max-width: 991px) {
+            body {
+                flex-direction: column;
+            }
+            .mobile-header {
+                display: flex;
+            }
+            .sidebar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                z-index: 999;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                background: #0f172a;
+            }
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-top: 60px;
+                padding: 20px;
+                height: auto;
+                min-height: calc(100vh - 60px);
+                overflow-x: hidden;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="admin-grid"></div>
     
+    <!-- Mobile top bar -->
+    <div class="mobile-header">
+        <div class="mobile-logo">
+            <i class="fas fa-shield-virus"></i> CYBER COMMAND
+        </div>
+        <button class="toggle-btn" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+    </div>
+    
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
     <!-- Left Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar" id="adminSidebar">
         <div class="sidebar-logo">
             <i class="fas fa-shield-virus"></i> CYBER COMMAND
         </div>
@@ -84,8 +173,8 @@ require_once __DIR__ . "/../../db.php";
             
             <div style="font-size:0.75rem; font-weight:700; color:#475569; margin: 15px 0 5px 15px; letter-spacing:1px; text-transform:uppercase;">Core Modules</div>
             <li><a href="enquiries.php" class="nav-item <?= basename($_SERVER['PHP_SELF']) == 'enquiries.php' ? 'active' : '' ?>"><i class="far fa-inbox-in"></i> Enquiries Log</a></li>
-            <li><a href="careers.php" class="nav-item <?= in_array(basename($_SERVER['PHP_SELF']), ['careers.php', 'career_create.php', 'career_edit.php', 'career_applications.php']) ? 'active' : '' ?>"><i class="far fa-briefcase"></i> Careers & Jobs</a></li>
-
+            <li><a href="careers.php" class="nav-item <?= in_array(basename($_SERVER['PHP_SELF']), ['careers.php', 'career_create.php', 'career_edit.php']) ? 'active' : '' ?>"><i class="far fa-briefcase"></i> Careers & Jobs</a></li>
+            <li><a href="career_applications.php" class="nav-item <?= basename($_SERVER['PHP_SELF']) == 'career_applications.php' ? 'active' : '' ?>"><i class="far fa-file-user"></i> Job Applications</a></li>
             
             <div style="font-size:0.75rem; font-weight:700; color:#475569; margin: 15px 0 5px 15px; letter-spacing:1px; text-transform:uppercase;">System</div>
             <li><a href="settings.php" class="nav-item <?= basename($_SERVER['PHP_SELF']) == 'settings.php' ? 'active' : '' ?>"><i class="far fa-cogs"></i> Configuration</a></li>
@@ -95,3 +184,23 @@ require_once __DIR__ . "/../../db.php";
     
     <!-- Main Content Area -->
     <div class="main-content">
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleBtn = document.getElementById('sidebarToggle');
+        const sidebar = document.getElementById('adminSidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+
+        if (toggleBtn && sidebar && overlay) {
+            toggleBtn.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+            });
+
+            overlay.addEventListener('click', function() {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        }
+    });
+    </script>

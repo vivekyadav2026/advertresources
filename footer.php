@@ -162,11 +162,16 @@
                       Ready to elevate your protection with tailored cloud security solutions?
                     </h2>
                     <p class="footer-contact-text">
-                      Advert Resource Ltd is an elite cybersecurity startup operating at the forefront of digital defense, adapting to the ever-evolving threat landscape. Our seasoned professionals have a deep understanding of the latest attack vectors.
+                      Advert Resources LTD is an elite cybersecurity startup operating at the forefront of digital defense, adapting to the ever-evolving threat landscape. Our seasoned professionals have a deep understanding of the latest attack vectors.
                     </p>
                   </div>
                   
                   <div class="row g-3">
+                    <?php 
+                    $email1 = getSetting('email1');
+                    $email2 = getSetting('email2', 'contact-us@advertresources.com');
+                    if (!empty($email1)): 
+                    ?>
                     <div class="col-sm-6">
                       <div class="footer-contact-card">
                         <div class="footer-contact-card-icon">
@@ -174,18 +179,19 @@
                         </div>
                         <div>
                           <h6 class="text-white mb-1" style="font-size: 0.9rem; font-weight: 700;">Secure Email</h6>
-                          <a href="mailto:info@advertresources.com" style="font-size: 0.8rem; color: #a9a9a9; word-break: break-all;">info@advertresources.com</a>
+                          <a href="mailto:<?php echo htmlspecialchars($email1); ?>" style="font-size: 0.8rem; color: #a9a9a9; word-break: break-all;"><?php echo htmlspecialchars($email1); ?></a>
                         </div>
                       </div>
                     </div>
-                    <div class="col-sm-6">
+                    <?php endif; ?>
+                    <div class="<?php echo !empty($email1) ? 'col-sm-6' : 'col-sm-12'; ?>">
                       <div class="footer-contact-card">
                         <div class="footer-contact-card-icon">
                           <i class="fas fa-shield-alt" style="color: #c084fc;"></i>
                         </div>
                         <div>
                           <h6 class="text-white mb-1" style="font-size: 0.9rem; font-weight: 700;">Global Support</h6>
-                          <a href="mailto:contact-us@advertresources.com" style="font-size: 0.8rem; color: #a9a9a9; word-break: break-all;">contact-us@advertresources.com</a>
+                          <a href="mailto:<?php echo htmlspecialchars($email2); ?>" style="font-size: 0.8rem; color: #a9a9a9; word-break: break-all;"><?php echo htmlspecialchars($email2); ?></a>
                         </div>
                       </div>
                     </div>
@@ -261,11 +267,11 @@
                 <div class="ot-widget-about">
                   <div class="about-logo">
                     <a href="index.php"
-                      ><img src="./index/logo.svg" alt="Advert Resource Ltd" style="max-height: 50px; margin-bottom: 20px;"
+                      ><img src="./index/logo.svg" alt="Advert Resources LTD" style="max-height: 50px; margin-bottom: 20px;"
                     /></a>
                   </div>
                   <p class="about-text">
-                    Advert Resource Ltd is an innovative cybersecurity startup securing digital landscapes with next-generation zero-trust technology.
+                    Advert Resources LTD is an innovative cybersecurity startup securing digital landscapes with next-generation zero-trust technology.
                   </p>
 
                 </div>
@@ -314,7 +320,7 @@
                 <h3 class="widget_title">Quick Link</h3>
                 <div class="menu-all-pages-container">
                   <ul class="menu">
-                    <li><a href="about-us.php">About Advert Resource Ltd</a></li>
+                    <li><a href="about-us.php">About Advert Resources LTD</a></li>
                     <li><a href="services.php">Our Services</a></li>
                     <!-- <li><a href="gallery.php">Our Gallery</a></li> -->
                     <!-- <li><a href="blog.php">Our Blog</a></li> -->
@@ -355,7 +361,7 @@
                     <div class="box-icon"><i class="far fa-clock"></i></div>
                     <div class="media-body">
                       <h3 class="box-title">Opening Hour</h3>
-                      <p class="box-text"><?php echo htmlspecialchars(getSetting('hours', 'Mon - Sat: 10.00 AM - 4.00 PM')); ?></p>
+                      <p class="box-text"><?php echo htmlspecialchars(getSetting('hours', 'Mon - Fri: 9:00 AM - 6:00 PM')); ?></p>
                     </div>
                   </div>
                 </div>
@@ -382,7 +388,7 @@
             >
               <p class="copyright-text">
                 <i class="far fa-copyright"></i> Copyright <?php echo date('Y'); ?>
-                <a href="index.php">Advert Resource Ltd</a>. All Rights Reserved.
+                <a href="index.php">Advert Resources LTD</a>. All Rights Reserved.
               </p>
             </div>
             <div class="col-md-auto">
