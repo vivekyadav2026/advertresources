@@ -13,7 +13,7 @@ $error = "";
 
 // 1. Process Settings Form
 if (isset($_POST['update_settings'])) {
-    $keys = ['address', 'phone1', 'phone2', 'email1', 'email2', 'hours'];
+    $keys = ['address', 'phone1', 'phone2', 'email1', 'email2', 'hours', 'smtp_host', 'smtp_port', 'smtp_user', 'smtp_pass', 'smtp_secure', 'smtp_from_name'];
     try {
         foreach ($keys as $key) {
             if (isset($_POST[$key])) {
@@ -1129,9 +1129,49 @@ try {
                         </div>
                     </div>
                     
-                    <div class="form-group mb-4">
+                    <div class="form-group mb-3">
                         <label for="hours">Opening / Operation Hours</label>
                         <input type="text" name="hours" id="hours" value="<?php echo htmlspecialchars(getSetting('hours')); ?>" required>
+                    </div>
+                    
+                    <div style="margin: 30px 0 15px 0; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px;">
+                        <h3 style="font-family: 'Space Grotesk', sans-serif; color: #ffffff; font-size: 1.15rem; font-weight: 800; margin-bottom: 15px;">SMTP Configuration (For Gmail / SMTP Delivery)</h3>
+                    </div>
+
+                    <div class="form-row mb-3">
+                        <div class="form-group">
+                            <label for="smtp_host">SMTP Host</label>
+                            <input type="text" name="smtp_host" id="smtp_host" value="<?php echo htmlspecialchars(getSetting('smtp_host', 'smtp.gmail.com')); ?>">
+                        </div>
+                        <div class="form-group">
+                            <label for="smtp_port">SMTP Port</label>
+                            <input type="text" name="smtp_port" id="smtp_port" value="<?php echo htmlspecialchars(getSetting('smtp_port', '587')); ?>">
+                        </div>
+                    </div>
+
+                    <div class="form-row mb-3">
+                        <div class="form-group">
+                            <label for="smtp_user">SMTP Username / Email</label>
+                            <input type="text" name="smtp_user" id="smtp_user" value="<?php echo htmlspecialchars(getSetting('smtp_user')); ?>" placeholder="e.g. your-email@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="smtp_pass">SMTP Password / App Password</label>
+                            <input type="password" name="smtp_pass" id="smtp_pass" value="<?php echo htmlspecialchars(getSetting('smtp_pass')); ?>" placeholder="e.g. Gmail 16-character App Password">
+                        </div>
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <div class="form-group">
+                            <label for="smtp_secure">SMTP Encryption</label>
+                            <select name="smtp_secure" id="smtp_secure">
+                                <option value="tls" <?php echo (getSetting('smtp_secure', 'tls') == 'tls') ? 'selected' : ''; ?>>TLS (STARTTLS)</option>
+                                <option value="ssl" <?php echo (getSetting('smtp_secure') == 'ssl') ? 'selected' : ''; ?>>SSL (SMTPS)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="smtp_from_name">From Name</label>
+                            <input type="text" name="smtp_from_name" id="smtp_from_name" value="<?php echo htmlspecialchars(getSetting('smtp_from_name', 'Advert Resource Ltd')); ?>">
+                        </div>
                     </div>
                     
                     <button type="submit" class="btn-action">SAVE PARAMETERS <i class="far fa-shield-check"></i></button>

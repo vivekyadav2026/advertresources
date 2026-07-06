@@ -65,7 +65,13 @@ try {
         'phone2' => '+165-3564-7488',
         'email1' => 'info@advertresources.com',
         'email2' => 'contact-us@advertresources.com',
-        'hours' => 'Mon - Sat: 10.00 AM - 4.00 PM'
+        'hours' => 'Mon - Sat: 10.00 AM - 4.00 PM',
+        'smtp_host' => 'smtp.gmail.com',
+        'smtp_port' => '587',
+        'smtp_user' => '',
+        'smtp_pass' => '',
+        'smtp_secure' => 'tls',
+        'smtp_from_name' => 'Advert Resource Ltd'
     ];
     
     foreach ($defaultSettings as $key => $val) {

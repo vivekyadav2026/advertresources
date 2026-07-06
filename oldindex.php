@@ -207,7 +207,7 @@
             <div class="container">
                 <h3 style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 2rem;">COMPLIANCE & STANDARDS</h3>
                 <div class="cert-strip reveal">
-                    <div class="cert-badge">ISO/IEC 27001 CERTIFIED</div>
+                    <div class="cert-badge">ISO/IEC 27001 ALIGNED</div>
                     <div class="cert-badge">NIST CSF COMPLIANT</div>
                     <div class="cert-badge">GDPR DATA PRIVACY</div>
                     <div class="cert-badge">PCI-DSS COMPLIANT</div>

@@ -28,6 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ':budget'  => $budget,
                 ':message' => $message
             ]);
+
+            // Try to send email via SMTP (PHPMailer)
+            try {
+                require_once 'mail-helper.php';
+                sendEnquiryEmail($name, $email, $company, $phone, $country, $service, $budget, $message);
+            } catch (Exception $mailEx) {
+                error_log("Failed to send email notification: " . $mailEx->getMessage());
+            }
+
             // If submitted from footer, redirect back to homepage
             if ($is_footer) {
                 header("Location: index.php?msg=sent#contact-sec");
@@ -498,7 +507,7 @@ include 'header.php';
                             <!-- Badge/Small Label -->
                             <div class="contact-label">
                                 <span style="width: 8px; height: 8px; background-color: #069845; border-radius: 50%; display: inline-block; box-shadow: 0 0 10px #069845; animation: pulse 1.5s infinite;"></span>
-                                SECURE GATEWAY // PORT 443 ACTIVE
+                                SECURE GATEWAY 
                             </div>
                             
                             <!-- Large Bold Heading with Gradient Highlight -->
@@ -514,11 +523,11 @@ include 'header.php';
                             <!-- Three Trust Badges -->
                             <div class="trust-badges-row">
                                 <div class="trust-badge-item">
-                                    <i class="fas fa-shield-halved"></i>
+                                    <i class="fas fa-shield-alt"></i>
                                     <span>24/7 Security Support</span>
                                 </div>
                                 <div class="trust-badge-item">
-                                    <i class="fas fa-bolt-lightning"></i>
+                                    <i class="fas fa-bolt"></i>
                                     <span>Response Within 30 Mins</span>
                                 </div>
                                 <div class="trust-badge-item">
@@ -532,7 +541,7 @@ include 'header.php';
                         <div class="contact-cards-grid">
                             <div class="premium-contact-card">
                                 <div class="card-icon-wrap">
-                                    <i class="fas fa-map-location-dot"></i>
+                                    <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <h5>Office Location</h5>
                                 <p><?php echo htmlspecialchars(getSetting('address', 'London, United Kingdom')); ?></p>
@@ -600,7 +609,7 @@ include 'header.php';
                                     <label for="country">Country</label>
                                 </div>
                                 <div class="col-md-6 form-floating-custom">
-                                    <i class="far fa-sliders input-icon"></i>
+                                    <i class="fas fa-sliders-h input-icon"></i>
                                     <select name="service" id="service" required>
                                         <option value="" disabled selected hidden></option>
                                         <option value="assessment">Security Assessment</option>
@@ -616,7 +625,7 @@ include 'header.php';
                                     <label for="service">Service Needed</label>
                                 </div>
                                 <div class="col-12 form-floating-custom">
-                                    <i class="far fa-money-bill-1 input-icon"></i>
+                                    <i class="fas fa-money-bill-wave input-icon"></i>
                                     <input type="text" name="budget" id="budget" placeholder=" ">
                                     <label for="budget">Project Budget (Optional)</label>
                                 </div>

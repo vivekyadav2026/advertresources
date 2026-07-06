@@ -181,7 +181,7 @@
                     <div class="col-sm-6">
                       <div class="footer-contact-card">
                         <div class="footer-contact-card-icon">
-                          <i class="far fa-shield-halved" style="color: #c084fc;"></i>
+                          <i class="fas fa-shield-alt" style="color: #c084fc;"></i>
                         </div>
                         <div>
                           <h6 class="text-white mb-1" style="font-size: 0.9rem; font-weight: 700;">Global Support</h6>
@@ -221,7 +221,7 @@
                             <option value="Managed Security">Managed Security</option>
                             <option value="Penetration Testing">Penetration Testing</option>
                           </select>
-                          <i class="far fa-angle-down"></i>
+                          <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="form-group col-12">
                           <textarea name="message" id="footer_message" cols="30" placeholder="Write Message" rows="3" class="form-control" required=""></textarea>
@@ -229,7 +229,7 @@
                         <div class="form-btn col-12 mt-10">
                           <button class="ot-btn w-100" style="min-height: 48px;">
                             Submit Now
-                            <i class="far fa-long-arrow-right ms-2"></i>
+                            <i class="fas fa-arrow-right ms-2"></i>
                           </button>
                         </div>
                       </div>
@@ -288,11 +288,11 @@
                 <h3 class="widget_title">IT Solution</h3>
                 <div class="menu-all-pages-container">
                   <ul class="menu">
-                    <li><a href="contact-us.php">Malware Protection</a></li>
-                    <li><a href="contact-us.php">Computer Security</a></li>
-                    <li><a href="contact-us.php">Server Protection</a></li>
-                    <li><a href="contact-us.php">Cyber Security</a></li>
-                    <li><a href="contact-us.php">Security Monitoring</a></li>
+                    <li><a href="advanced-threat-detection.php">Malware Protection</a></li>
+                    <li><a href="services-application-security.php">Computer Security</a></li>
+                    <li><a href="services-workload-protection.php">Server Protection</a></li>
+                    <li><a href="services.php">Cyber Security</a></li>
+                    <li><a href="security-monitoring.php">Security Monitoring</a></li>
                   </ul>
                 </div>
               </div>
@@ -316,9 +316,9 @@
                   <ul class="menu">
                     <li><a href="about-us.php">About Advert Resource Ltd</a></li>
                     <li><a href="services.php">Our Services</a></li>
-                    <li><a href="pricing.php">Pricing Plan</a></li>
-                    <li><a href="project.php">Our Projects</a></li>
-                    <li><a href="team.php">Our Team</a></li>
+                    <!-- <li><a href="gallery.php">Our Gallery</a></li> -->
+                    <!-- <li><a href="blog.php">Our Blog</a></li> -->
+                    <li><a href="careers.php">Careers</a></li>
                   </ul>
                 </div>
               </div>
@@ -381,7 +381,7 @@
               "
             >
               <p class="copyright-text">
-                <i class="fal fa-copyright"></i> Copyright 2025
+                <i class="far fa-copyright"></i> Copyright 2025
                 <a href="index.php">Advert Resource Ltd</a>. All Rights Reserved.
               </p>
             </div>
@@ -400,8 +400,8 @@
                 "
               >
                 <ul>
-                  <li><a href="about-us.php">Terms &amp; Condition</a></li>
-                  <li><a href="about-us.php">Privacy Policy</a></li>
+                  <li><a href="#">Terms &amp; Condition</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
                 </ul>
               </div>
             </div>
@@ -879,18 +879,18 @@
             <i class="fas fa-home"></i>
             <span>Home</span>
         </a>
-        <a href="services.php" class="nav-item <?php echo (strpos($current_page, 'service') !== false) ? 'active' : ''; ?>">
+        <a href="services.php" class="nav-item <?php echo (strpos($current_page, 'service') !== false || $current_page == 'advanced-threat-detection.php' || $current_page == 'robust-data-protection.php' || $current_page == 'security-monitoring.php') ? 'active' : ''; ?>">
             <i class="fas fa-shield"></i>
             <span>Services</span>
         </a>
-        <a href="gallery.php" class="nav-item <?php echo ($current_page == 'gallery.php') ? 'active' : ''; ?>">
+        <!-- <a href="gallery.php" class="nav-item <?php echo ($current_page == 'gallery.php') ? 'active' : ''; ?>">
             <i class="fas fa-images"></i>
             <span>Gallery</span>
-        </a>
-        <a href="blog.php" class="nav-item <?php echo ($current_page == 'blog.php' || $current_page == 'blog-details.php') ? 'active' : ''; ?>">
+        </a> -->
+        <!-- <a href="blog.php" class="nav-item <?php echo ($current_page == 'blog.php' || $current_page == 'blog-details.php') ? 'active' : ''; ?>">
             <i class="fas fa-file-alt"></i>
             <span>Blog</span>
-        </a>
+        </a> -->
         <a href="contact-us.php" class="nav-item <?php echo ($current_page == 'contact-us.php') ? 'active' : ''; ?>">
             <i class="fas fa-envelope"></i>
             <span>Contact</span>

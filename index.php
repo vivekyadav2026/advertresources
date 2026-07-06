@@ -258,7 +258,7 @@ include 'header.php';
                 <div class="box-icon">
                   <img src="./index/about-icon2-1.svg" alt="icon" />
                 </div>
-                <div class="about-counter-wrap">Trusted By 5k Clients</div>
+                <div class="about-counter-wrap">Trusted By 500+ Clients</div>
               </div>
             </div>
           </div>
@@ -373,10 +373,10 @@ include 'header.php';
                   <div class="avater">
                     <img src="./index/about-profile1-1.png" alt="avater" />
                   </div>
-                  <div class="media-body">
+                  <!-- <div class="media-body">
                     <h5 class="about-profile-name">Andy Dufren</h5>
                     <p class="desig">CEO, Founder</p>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -1638,7 +1638,7 @@ include 'header.php';
         <div class="container">
             <!-- Header -->
             <div class="text-center mb-2">
-                <span class="process-badge"><i class="fas fa-shield-halved me-1"></i> Our Methodology</span>
+                <span class="process-badge"><i class="fas fa-shield-alt me-1"></i> Our Methodology</span>
                 <h2 class="sec-title text-white mt-2" style="font-size:clamp(2rem,4vw,2.8rem); font-weight:800; line-height:1.2;">
                     How We Secure<br><span style="background:linear-gradient(135deg,#3C72FC,#E0009B); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Your Business</span>
                 </h2>
@@ -1653,7 +1653,7 @@ include 'header.php';
                 <div class="process-card">
                     <div class="process-step-num step-num-1">01</div>
                     <span class="step-tag tag-1">Discovery</span>
-                    <i class="fas fa-magnifying-glass-chart process-icon step-icon-1"></i>
+                    <i class="fas fa-chart-line process-icon step-icon-1"></i>
                     <h4>Threat Assessment &amp; Audit</h4>
                     <p>We begin with a comprehensive audit of your existing infrastructure — identifying attack surfaces, misconfigurations, and vulnerabilities across all endpoints, cloud assets, and networks.</p>
                 </div>
@@ -1677,7 +1677,7 @@ include 'header.php';
                 <div class="process-card">
                     <div class="process-step-num step-num-4">04</div>
                     <span class="step-tag tag-4">Monitor</span>
-                    <i class="fas fa-radar process-icon step-icon-4"></i>
+                    <i class="fas fa-broadcast-tower process-icon step-icon-4"></i>
                     <h4>24/7 Continuous Monitoring</h4>
                     <p>Post-deployment, our SOC analysts provide round-the-clock threat hunting, anomaly detection, and real-time incident response — ensuring your defenses evolve faster than emerging threats.</p>
                 </div>

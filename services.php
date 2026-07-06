@@ -277,7 +277,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="services-grid-card">
-                        <div class="services-card-icon"><i class="fas fa-shield-halved"></i></div>
+                        <div class="services-card-icon"><i class="fas fa-shield-alt"></i></div>
                         <h3 class="services-card-title">Network Security</h3>
                         <p class="services-card-text">Perimeter protection schemas, multi-layered zero-trust network segments, and automated Deep Packet Inspections.</p>
                         <a href="services-network-security.php" class="services-action-btn">View Spec <i class="fas fa-arrow-right"></i></a>
@@ -293,7 +293,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="services-grid-card">
-                        <div class="services-card-icon"><i class="fas fa-file-shield"></i></div>
+                        <div class="services-card-icon"><i class="fas fa-file-contract"></i></div>
                         <h3 class="services-card-title">Compliance & Data Privacy</h3>
                         <p class="services-card-text">Engineering compliance for ISO 27001, NIST CSF, GDPR, and HIPAA frameworks. Securing robust operational resilience.</p>
                         <a href="services-compliance-and-data-privacy.php" class="services-action-btn">View Spec <i class="fas fa-arrow-right"></i></a>
@@ -301,7 +301,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="services-grid-card">
-                        <div class="services-card-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+                        <div class="services-card-icon"><i class="fas fa-chart-line"></i></div>
                         <h3 class="services-card-title">Digital Forensics & IR</h3>
                         <p class="services-card-text">Rapid threat containment, chain-of-custody log extractions, active payload analysis, and post-breach mitigation.</p>
                         <a href="services-digital-forensics.php" class="services-action-btn">View Spec <i class="fas fa-arrow-right"></i></a>
@@ -309,7 +309,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="services-grid-card">
-                        <div class="services-card-icon"><i class="fas fa-radar"></i></div>
+                        <div class="services-card-icon"><i class="fas fa-broadcast-tower"></i></div>
                         <h3 class="services-card-title">Managed Security (SOC)</h3>
                         <p class="services-card-text">24/7/365 active SIEM detection, log aggregation, real-time alert triage, and threat hunting governed by security specialists.</p>
                         <a href="services-managed-security.php" class="services-action-btn">View Spec <i class="fas fa-arrow-right"></i></a>

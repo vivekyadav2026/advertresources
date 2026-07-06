@@ -620,12 +620,12 @@
                     </div>
                     
                     <!-- Trust indicators -->
-                    <div class="about-hero-governed pt-3" style="border-top: 1px solid rgba(255,255,255,0.06);">
-                        <span style="font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.4);">Governed By:</span>
+                    <!-- <div class="about-hero-governed pt-3" style="border-top: 1px solid rgba(255,255,255,0.06);">
+                        <span style="font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.4);">Aligned With:</span>
                         <div class="d-flex align-items-center gap-2 text-white" style="font-size: 0.85rem; font-weight: 700;">
-                            <i class="fas fa-lock" style="color: #E0009B;"></i> ISO 27001 Certified
+                            <i class="fas fa-lock" style="color: #E0009B;"></i> ISO 27001 Framework
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- Right: Large Live Cyber Dashboard -->
@@ -696,12 +696,12 @@
                         </div>
                         <!-- Layer 3: Main shield orb -->
                         <div class="layered-card layer3">
-                            <i class="fas fa-shield-check fa-4x" style="color: #E0009B; filter: drop-shadow(0 0 20px rgba(224,0,155,0.5));"></i>
+                            <i class="fas fa-shield-alt fa-4x" style="color: #E0009B; filter: drop-shadow(0 0 20px rgba(224,0,155,0.5));"></i>
                         </div>
                         
                         <!-- Floating certifications -->
-                        <div class="floating-badge b1"><i class="fas fa-check-circle text-success"></i> ISO Certified</div>
-                        <div class="floating-badge b2"><i class="fas fa-lock-keyhole text-primary"></i> Zero Trust</div>
+                        <div class="floating-badge b1"><i class="fas fa-check-circle text-success"></i> ISO 27001 Aligned</div>
+                        <div class="floating-badge b2"><i class="fas fa-lock text-primary"></i> Zero Trust</div>
                         <div class="floating-badge b3"><i class="fas fa-eye text-warning"></i> 24/7 SOC</div>
                         <div class="floating-badge b4"><i class="fas fa-brain text-info"></i> AI Defense</div>
                     </div>
@@ -725,7 +725,7 @@
                         <div class="check-list style-grid mb-4">
                             <ul class="row gy-2 list-unstyled p-0 m-0">
                                 <li class="col-sm-6 text-white" style="font-weight: 600;"><i class="fas fa-check-circle text-success me-2"></i> 24/7 Active SOC</li>
-                                <li class="col-sm-6 text-white" style="font-weight: 600;"><i class="fas fa-check-circle text-success me-2"></i> ISO 27001 Certified</li>
+                                <li class="col-sm-6 text-white" style="font-weight: 600;"><i class="fas fa-check-circle text-success me-2"></i> ISO 27001 Aligned</li>
                                 <li class="col-sm-6 text-white" style="font-weight: 600;"><i class="fas fa-check-circle text-success me-2"></i> Zero-Trust Architecture</li>
                                 <li class="col-sm-6 text-white" style="font-weight: 600;"><i class="fas fa-check-circle text-success me-2"></i> Red Team Modeling</li>
                             </ul>
@@ -796,7 +796,7 @@
             
             <div class="why-features-grid">
                 <div class="feature-glass-card">
-                    <div class="feature-card-icon"><i class="fas fa-shield-halved"></i></div>
+                    <div class="feature-card-icon"><i class="fas fa-shield-alt"></i></div>
                     <h4 class="text-white mb-2">Zero Trust Architecture</h4>
                     <p class="m-0" style="font-size: 0.9rem; line-height: 1.6;">Continuous authorization and strict validation protocol applied across every node, asset, and request.</p>
                 </div>
@@ -806,7 +806,7 @@
                     <p class="m-0" style="font-size: 0.9rem; line-height: 1.6;">Integrated machine learning algorithms capable of predicting, classifying, and isolating mutating malware vectors.</p>
                 </div>
                 <div class="feature-glass-card">
-                    <div class="feature-card-icon"><i class="fas fa-cloud-bolt"></i></div>
+                    <div class="feature-card-icon"><i class="fas fa-cloud"></i></div>
                     <h4 class="text-white mb-2">Cloud Security</h4>
                     <p class="m-0" style="font-size: 0.9rem; line-height: 1.6;">Safeguarding Kubernetes instances, container workflows, and distributed APIs in hybrid cloud structures.</p>
                 </div>
@@ -816,12 +816,12 @@
                     <p class="m-0" style="font-size: 0.9rem; line-height: 1.6;">Elite cyber analysts governing alert triage, network telemetry monitoring, and patch remediation.</p>
                 </div>
                 <div class="feature-glass-card">
-                    <div class="feature-card-icon"><i class="fas fa-truck-medical"></i></div>
+                    <div class="feature-card-icon"><i class="fas fa-ambulance"></i></div>
                     <h4 class="text-white mb-2">Incident Response</h4>
                     <p class="m-0" style="font-size: 0.9rem; line-height: 1.6;">Rapid isolation protocol triggered within 15 minutes of an incident declaration to secure systems.</p>
                 </div>
                 <div class="feature-glass-card">
-                    <div class="feature-card-icon"><i class="fas fa-file-shield"></i></div>
+                    <div class="feature-card-icon"><i class="fas fa-file-contract"></i></div>
                     <h4 class="text-white mb-2">Compliance Solutions</h4>
                     <p class="m-0" style="font-size: 0.9rem; line-height: 1.6;">Audit-ready engineering architectures complying with ISO 27001, GDPR, HIPAA, and NIST CSF.</p>
                 </div>
@@ -888,7 +888,7 @@
                         <p class="m-0 text-white-50" style="font-size: 0.8rem; max-width: 160px; margin: 0 auto; line-height: 1.4;">Perimeter locking, data encryption & API hardening.</p>
                     </div>
                     <div class="process-step-node active">
-                        <div class="process-step-circle"><i class="fas fa-radar"></i></div>
+                        <div class="process-step-circle"><i class="fas fa-broadcast-tower"></i></div>
                         <h5 class="text-white mb-2" style="font-size: 1rem;">Monitoring</h5>
                         <p class="m-0 text-white-50" style="font-size: 0.8rem; max-width: 160px; margin: 0 auto; line-height: 1.4;">24/7 SIEM ingestion & heuristic analysis.</p>
                     </div>
@@ -898,7 +898,7 @@
                         <p class="m-0 text-white-50" style="font-size: 0.8rem; max-width: 160px; margin: 0 auto; line-height: 1.4;">Automated playbooks isolation & incident triage.</p>
                     </div>
                     <div class="process-step-node">
-                        <div class="process-step-circle"><i class="fas fa-arrows-spin"></i></div>
+                        <div class="process-step-circle"><i class="fas fa-sync-alt"></i></div>
                         <h5 class="text-white mb-2" style="font-size: 1rem;">Recovery</h5>
                         <p class="m-0 text-white-50" style="font-size: 0.8rem; max-width: 160px; margin: 0 auto; line-height: 1.4;">Clean system restoral & security post-mortems.</p>
                     </div>

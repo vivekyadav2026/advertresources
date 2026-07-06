@@ -446,10 +446,13 @@
             <div class="col-auto d-none d-xl-block">
               <div class="header-links">
                 <ul>
-
                   <li>
                     <i class="fal fa-envelope"></i>
                     <a href="mailto:<?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?>"><?php echo htmlspecialchars(getSetting('email1', 'info@advertresources.com')); ?></a>
+                  </li>
+                  <li>
+                    <i class="fal fa-envelope"></i>
+                    <a href="mailto:<?php echo htmlspecialchars(getSetting('email2', 'contact-us@advertresources.com')); ?>"><?php echo htmlspecialchars(getSetting('email2', 'contact-us@advertresources.com')); ?></a>
                   </li>
                 </ul>
               </div>
