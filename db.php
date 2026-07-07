@@ -75,7 +75,9 @@ try {
         'smtp_user' => '',
         'smtp_pass' => '',
         'smtp_secure' => 'tls',
-        'smtp_from_name' => 'Advert Resource Ltd'
+        'smtp_from_name' => 'Advert Resource Ltd',
+        'mfa_enabled' => '0',
+        'mfa_email' => ''
     ];
     
     foreach ($defaultSettings as $key => $val) {

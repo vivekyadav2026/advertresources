@@ -19,10 +19,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($row && password_verify($password, $row['password_hash'])) {
-            $_SESSION['admin_logged_in'] = true;
-            $_SESSION['admin_username'] = $username;
-            header("Location: index.php");
-            exit;
+            $mfa_enabled = getSetting('mfa_enabled', '0');
+            $mfa_email = getSetting('mfa_email', '');
+
+            if ($mfa_enabled === '1' && !empty($mfa_email)) {
+                // Generate secure 6-digit OTP
+                $otp = rand(100000, 999999);
+                $_SESSION['mfa_otp'] = $otp;
+                $_SESSION['mfa_otp_expiry'] = time() + 300; // valid for 5 mins
+                $_SESSION['mfa_pending_username'] = $username;
+
+                // Send email notification
+                require_once '../mail-helper.php';
+                $mailResult = sendMfaOtpEmail($mfa_email, $otp);
+                if ($mailResult === true) {
+                    header("Location: mfa_verify.php");
+                    exit;
+                } else {
+                    $error = "SMTP Error: " . htmlspecialchars($mailResult);
+                }
+            } else {
+                $_SESSION['admin_logged_in'] = true;
+                $_SESSION['admin_username'] = $username;
+                header("Location: index.php");
+                exit;
+            }
         } else {
             $error = "Access Denied: Invalid credentials.";
         }
